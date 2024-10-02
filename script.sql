@@ -12,9 +12,16 @@ CREATE TABLE Rangos(
     Nombre VARCHAR(200) NOT NULL
 );
 
+CREATE TABLE Lenguajes(
+    IdLenguaje INt NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    Nombre VARCHAR(200) NOT NULL,
+    Descripcion VARCHAR(200) NOT NULL
+);
+
 CREATE TABLE Tasks(
     IdTask INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Area VARCHAR(200) NOT NULL,
+    IdLenguaje INT NOT NULL FOREIGN KEY REFERENCES Lenguajes(IdLenguaje),
+    Area VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE Certificados(
@@ -32,7 +39,6 @@ CREATE TABLE Categorias(
 
 CREATE TABLE Proyectos(
     IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Roles(IdUsuario),
     IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
     FechaPublicacion DATE NOT NULL,
     CantIntegrantes INT NOT NULL,
@@ -45,15 +51,16 @@ CREATE TABLE Usuarios(
     IdUsuario INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdRol INT NOT NULL FOREIGN KEY Roles(IdRol),
     IdRango INT NOT NULL FOREIGN KEY Rangos(IdRango),
-    IdProyecto INT NOT NULL FOREIGN KEY UsuarioXProyecto(IdProyecto),
     IdCertificado INT NOT NULL FOREIGN KEY Certificados(IdCertificado),
     Nombre VARCHAR(200) NOT NULL,
     Apellido VARCHAR(200) NOT NULL,
     Contraseña VARCHAR(200) NOT NULL,
     Edad INT NOT NULL,
-    Enauk VARCHAR(200) NOT NULL,
+    Email VARCHAR(200) NOT NULL,
     Telefono VARCHAR(200) NOT NULL,
-    Estrellas INT NOT NULL,
+    Puntaje INT NOT NULL,
+    FotoPerfil VARCHAR(200),
+    Descripcion VARCHAR(200)
 );
 
 CREATE TABLE UsuarioXProyecto(
@@ -61,5 +68,41 @@ CREATE TABLE UsuarioXProyecto(
     IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario)
 );
 
+CREATE TABLE Chats(
+    IdChat INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    Nombrechat VARCHAR(200) NOT NULL,
+    EsGrupo BIT NOT NULL  
+);
 
+CREATE TABLE Participantes(
+    IdChat INT NOT NULL REFERENCES KEY Chats(IdChat),
+    IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
+);
 
+CREATE TABLE Mensajes(
+    IdMensaje INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    IdChat INT NOT NULL FOREIGN KEY REFERENCES Chats(IdChat),
+    IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
+    Contenido VARCHAR(700) NOT NULL,
+    Hora DATE NOT NULL,
+    EsLeido BIT
+);
+
+CREATE TABLE Contactos(
+    IdContacto INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
+    Nombre VARCHAR(200) NOT NULL,
+    Telefono VARCHAR(200) NOT NULL,
+    Email VARCHAR(200) NOT NULL,
+
+)
+
+CREATE TABLE Eventos(
+    IdEvento INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
+    IdContacto INT NOT NULL FOREIGN KEY REFERENCES Contactos(IdContacto),
+    Nombre VARCHAR(200) NOT NULL,
+    Descripcion VARCHAR(200) NOT NULL,
+    FechaInicio DATE NOT NULL,
+    FechaFin DATE NOT NULL
+)
