@@ -6,11 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NombreProyecto</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
-        NombreProyecto
+        <div class="d-flex align-items-center">
+            <a><img class="ms-4" src="~/img/SinSesion.png" height="60vh" width="60vw" style="border-radius: 50px; border: 5px solid black;"></a>
+
+            <div class="container d-flex justify-content-between">
+                <a><h5>Agenda</h5></a>
+                <a><h5>Empleos</h5></a>
+                <a><h3 class="text-success">Taskify</h3></a>
+                <a><h5>Community</h5></a>
+                <a><h5>Mejorá</h5></a>
+            </div>
+            
+            <a><img class="me-4" src="~/img/Chat.png" height="60vh" width="60vw"></a>
+        </div>
     </header>
 
     <main role="main">
@@ -23,6 +36,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
