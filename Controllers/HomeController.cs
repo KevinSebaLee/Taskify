@@ -17,4 +17,29 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    public IActionResult Agenda()
+    {
+        return View();
+    }
+
+    public IActionResult Community()
+    {
+        return View();
+    }
+
+    public IActionResult Empleos()
+    {
+        return View();
+    }
+
+    public IActionResult Perfil()
+    {
+        return View();
+    }
+
+    public IActionResult Tasks()
+    {
+        return View();
+    }
 }
