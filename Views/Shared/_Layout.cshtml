@@ -7,32 +7,49 @@
     <title>@ViewData["Title"] - NombreProyecto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="mt-3 pb-3" style="border-bottom: 1px solid black;">
-        <div class="d-flex align-items-center">
-            <a href='@Url.Action("Perfil")'><img class="ms-4" src="~/img/SinSesion.png" height="60vh" width="60vw" style="border-radius: 50px; border: 5px solid black;"></a>
-
-            <div class="container d-flex justify-content-between">
-                <a href='@Url.Action("Agenda")'><h5>Agenda</h5></a>
-                <a href='@Url.Action("Empleos")'><h5>Empleos</h5></a>
-                <a href='@Url.Action("Index")'><h3 class="text-success">Taskify</h3></a>
-                <a href='@Url.Action("Community")'><h5>Community</h5></a>
-                <a href='@Url.Action("Tasks")'><h5>Mejorá</h5></a>
+    <header class="py-3" style="background-color: #e0e0e0;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <a href='@Url.Action("Perfil")' class="me-4">
+                    <img src="~/img/SinSesion.png" height="50" width="50" style="border-radius: 50%;">
+                </a>
             </div>
 
-            <a href='@Url.Action("Chat")'><img class="me-4" src="~/img/Chat.png" height="60vh" width="60vw"></a>
+            <div class="d-flex">
+                <a href='@Url.Action("Agenda")' class="me-4 text-dark text-decoration-none">
+                    <h5 class="mb-0">Agenda</h5>
+                </a>
+                <a href='@Url.Action("Empleos")' class="me-4 text-dark text-decoration-none">
+                    <h5 class="mb-0">Empleos</h5>
+                </a>
+                <a href='@Url.Action("Index")' class="mx-4 text-dark text-decoration-none">
+                    <h3 class="text-success fw-bold mb-0">Taskify</h3>
+                </a>
+                <a href='@Url.Action("Community")' class="me-4 text-dark text-decoration-none">
+                    <h5 class="mb-0">Community</h5>
+                </a>
+                <a href='@Url.Action("Tasks")' class="me-4 text-dark text-decoration-none">
+                    <h5 class="mb-0">Mejorá</h5>
+                </a>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <a href='@Url.Action("Chat")' class="me-4">
+                    <img src="~/img/Chat.png" height="50" width="50">
+                </a>
+            </div>
         </div>
     </header>
 
     <main role="main">
         @RenderBody()
     </main>
-
-    <footer>
-        &copy; @DateTime.Now.Year - NombreProyecto
-    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
