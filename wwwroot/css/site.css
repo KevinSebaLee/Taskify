@@ -1,4 +1,5 @@
 html {
+  font-family: 'Fredoka';
   font-size: 14px;
   min-height: 100%;
 }
@@ -9,14 +10,8 @@ html {
   }
 }
 
-a{
-  color: black;
-  text-decoration: none;
-}
-
-footer {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+.Index{
+  background-image: url(../img/Index.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }

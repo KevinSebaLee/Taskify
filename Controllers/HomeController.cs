@@ -18,6 +18,11 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Chat()
+    {
+        return View();
+    }
+
     public IActionResult Agenda()
     {
         return View();
