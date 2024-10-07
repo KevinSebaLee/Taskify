@@ -10,8 +10,10 @@ html {
   }
 }
 
-.Index{
-  background-image: url(../img/Index.png);
+.Index {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(../img/fondoHero.webp);
   background-size: cover;
   background-repeat: no-repeat;
+  max-height: 70vh;
 }
+

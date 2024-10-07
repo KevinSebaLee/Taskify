@@ -19397,6 +19397,11 @@
       "FilePath": "c:\\Users\\48044115\\Desktop\\Taskify\\Views\\Home\\CrearPerfil.cshtml",
       "TargetPath": "Views\\Home\\CrearPerfil.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\48044115\\Desktop\\Taskify\\Views\\Home\\Login.cshtml",
+      "TargetPath": "Views\\Home\\Login.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.3"
