@@ -16,5 +16,4 @@ public class TaskifyService{
     public static Empleo ObtenerEmpleoSeleccionado(int idProyecto){
         return BD.ObtenerEmpleoSeleccionado(idProyecto);
     }
-
 }
