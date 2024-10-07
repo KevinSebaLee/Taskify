@@ -47,4 +47,8 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult CrearPerfil()
+    {
+        return View();
+    }
 }
