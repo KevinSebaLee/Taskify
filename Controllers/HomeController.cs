@@ -42,6 +42,25 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Login()
+    {
+
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Login(string email, string contrasenia)
+    {
+        var usuario = usuarios.FirstOrDefault(u => u.Email == email && u.Contrasenia == contrasenia);
+
+        if (usuario != null)
+        {
+            return RedirectToAction("Perfil");
+        }
+        else
+        {
+            return View();
+        }
+    }    
 
     public IActionResult Tasks()
     {
@@ -52,6 +71,6 @@ public class HomeController : Controller
     public IActionResult CrearPerfil(Usuario usuario)
     {
         usuarios.Add(usuario);
-        return View("Perfil");
+        return RedirectToAction("Perfil");
     }
 }
