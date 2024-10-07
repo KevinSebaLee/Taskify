@@ -47,8 +47,11 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult CrearPerfil()
+    private static List<Usuario> usuarios = new List<Usuario>();
+    [HttpPost]
+    public IActionResult CrearPerfil(Usuario usuario)
     {
-        return View();
+        usuarios.Add(usuario);
+        return View("Perfil");
     }
 }
