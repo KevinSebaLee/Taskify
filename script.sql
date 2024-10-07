@@ -24,6 +24,25 @@ CREATE TABLE Tasks(
     Area VARCHAR(200) NOT NULL
 );
 
+CREATE TABLE Consigna(
+    IdConsigna INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    Pregunta VARCHAR(200) INT NOT NULL,
+    Foto VARCHAR(200)
+);
+
+CREATE TABLE Respuesta(
+    IdRespuesta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    IdConsigna INT NOT NULL FOREIGN KEY REFERENCES Consigna(IdConsigna),
+    Contenido VARCHAR(200) NOT NULL,
+    Opcion INT NOT NULL,
+    EsCorrecta BIT NOT NULL
+);
+
+CREATE TABLE ConsignaXTask(
+    IdTask INT NOT NULL FOREIGN KEY REFERENCES Tasks(IdTask),
+    IdConsigna INT NOT NULL FOREIGN KEY REFERENCES Consigna(IdConsigna)
+);
+
 CREATE TABLE Certificados(
     IdCertificado INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdTask INT NOT NULL FOREIGN KEY REFERENCES Tasks(IdTask),
@@ -94,8 +113,7 @@ CREATE TABLE Contactos(
     Nombre VARCHAR(200) NOT NULL,
     Telefono VARCHAR(200) NOT NULL,
     Email VARCHAR(200) NOT NULL,
-
-)
+);
 
 CREATE TABLE Eventos(
     IdEvento INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
@@ -105,4 +123,4 @@ CREATE TABLE Eventos(
     Descripcion VARCHAR(200) NOT NULL,
     FechaInicio DATE NOT NULL,
     FechaFin DATE NOT NULL
-)
+);
