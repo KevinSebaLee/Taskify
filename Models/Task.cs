@@ -1,6 +1,6 @@
 public class Task{
-    public int IdTask;
-    public int IdLenguaje;
-    public int IdConsigna;
-    public int Progreso;
+    public int IdTask {get; set;}
+    public int IdLenguaje {get; set;}
+    public int IdConsigna {get; set;}
+    public int Progreso {get; set;}
 }
