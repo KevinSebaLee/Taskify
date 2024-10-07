@@ -19349,8 +19349,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\48044115\\Desktop\\Taskify\\Views\\Home\\PublicarProyecto.cshtml",
+      "TargetPath": "Views\\Home\\PublicarProyecto.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\48044115\\Desktop\\Taskify\\Views\\Home\\Tasks.cshtml",
       "TargetPath": "Views\\Home\\Tasks.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\48044115\\Desktop\\Taskify\\Views\\Home\\TaskSeleccionado.cshtml",
+      "TargetPath": "Views\\Home\\TaskSeleccionado.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -19381,6 +19391,11 @@
     {
       "FilePath": "c:\\Users\\48044115\\Desktop\\Taskify\\Views\\Home\\Perfil.cshtml",
       "TargetPath": "Views\\Home\\Perfil.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\48044115\\Desktop\\Taskify\\Views\\Home\\CrearPerfil.cshtml",
+      "TargetPath": "Views\\Home\\CrearPerfil.cshtml",
       "FileKind": "mvc"
     }
   ],
