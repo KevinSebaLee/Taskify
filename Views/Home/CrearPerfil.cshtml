@@ -1,0 +1,41 @@
+@{
+    ViewBag.Title = "Crear Perfil";
+}
+
+<h2>Crear Perfil</h2>
+
+<form asp-action="CrearPerfil" method="post">
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+    </div>
+    <div class="form-group">
+        <label for="Apellido">Apellido</label>
+        <input type="text" class="form-control" id="Apellido" name="Apellido" required>
+    </div>
+    <div class="form-group">
+        <label for="Contrasenia">Contraseña</label>
+        <input type="password" class="form-control" id="Contrasenia" name="Contrasenia" required>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" required>
+    </div>
+    <div class="form-group">
+        <label for="NumeroTelefono">Número de Teléfono</label>
+        <input type="text" class="form-control" id="NumeroTelefono" name="NumeroTelefono">
+    </div>
+    <div class="form-group">
+        <label for="Participa">Participa</label>
+        <input type="checkbox" id="Participa" name="Participa">
+    </div>
+    <div class="form-group">
+        <label for="FotoDePerfil">Foto de Perfil</label>
+        <input type="text" class="form-control" id="FotoDePerfil" name="FotoDePerfil">
+    </div>
+    <div class="form-group">
+        <label for="Descripcion">Descripción</label>
+        <textarea class="form-control" id="Descripcion" name="Descripcion"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Perfil</button>
+</form>
