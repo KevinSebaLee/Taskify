@@ -26,7 +26,7 @@ CREATE TABLE Tasks(
 
 CREATE TABLE Consigna(
     IdConsigna INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Pregunta VARCHAR(200) INT NOT NULL,
+    Pregunta VARCHAR(200) NOT NULL,
     Foto VARCHAR(200)
 );
 
@@ -68,9 +68,9 @@ CREATE TABLE Proyectos(
 
 CREATE TABLE Usuarios(
     IdUsuario INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    IdRol INT NOT NULL FOREIGN KEY Roles(IdRol),
-    IdRango INT NOT NULL FOREIGN KEY Rangos(IdRango),
-    IdCertificado INT NOT NULL FOREIGN KEY Certificados(IdCertificado),
+    IdRol INT NOT NULL FOREIGN KEY REFERENCES Roles(IdRol),
+	IdRango INT NOT NULL FOREIGN KEY REFERENCES Rangos(IdRango),
+	IdCertificado INT NOT NULL FOREIGN KEY REFERENCES Certificados(IdCertificado),
     Nombre VARCHAR(200) NOT NULL,
     Apellido VARCHAR(200) NOT NULL,
     Contraseña VARCHAR(200) NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE Chats(
 );
 
 CREATE TABLE Participantes(
-    IdChat INT NOT NULL REFERENCES KEY Chats(IdChat),
+    IdChat INT NOT NULL FOREIGN KEY REFERENCES Chats(IdChat),
     IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
 );
 
