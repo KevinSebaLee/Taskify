@@ -65,11 +65,18 @@ html {
   overflow: hidden;
   width: 100%;
   height: 0;
-  transition: .5s ease;
+  transition: 0.8s ease;
 }
 
 .image-container:hover .overlay {
   height: 100%;
+  animation-name: roundborder;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes roundborder {
+    100% { border-radius: 40%; }
 }
 
 .text {
