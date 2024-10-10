@@ -1,17 +1,59 @@
-@{
-    ViewData["Title"] = "Login";
-}
+<div class="Cuenta d-flex justify-content-center" style="min-height: 100vh">
+    <div class="bg-white mt-5" style="width: 50vw; max-height: 80vh; border-radius: 50px;">
+        <div class="d-flex justify-content-end me-5 pt-5">
+            <h5 class="me-3">Ya tiene una cuenta?</h5>
+            <button class="text-white bg-danger ps-5 pe-5 fw-bold" style="border: 0; border-radius: 100px">Login</button>
+        </div>
+        <div class="container ps-5">
+            <h1 class="fw-bold">Registrarse</h1>
+            <form class="mt-5">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Nombre *</h6>
+                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su nombre" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Genero *</h6>
+                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su genero" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Pais *</h6>
+                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su pais" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Email *</h6>
+                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su email" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Contraseña *</h6>
+                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su contraseña" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                        </div>
+                    </div>
 
-<h2>Login</h2>
+                    <div class="col-6 mt-5">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Apellido *</h6>
+                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su apellido" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Fecha de Nacimiento *</h6>
+                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su fecha de nacimiento" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                        </div>
+                        <div class="mb-5">
+                            <h6 class="fw-bold">Numero de Telefono *</h6>
+                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su numero de telefono" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su contraseña devuelta" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                        </div>
+                    </div>
 
-<form asp-action="Login" method="post">
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+                    <div class="d-flex justify-content-center">
+                        <button type="submit bg-success" style="width: 5vw; border: 0;">Registrarse</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label for="contrasenia">Contraseña:</label>
-        <input type="password" id="contrasenia" name="contrasenia" required />
-    </div>
-    <button type="submit">Iniciar Sesión</button>
-</form>
+</div>

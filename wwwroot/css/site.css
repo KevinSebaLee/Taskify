@@ -102,3 +102,9 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.Cuenta{
+  background-image: url(../img/LoginRegisterBG.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
