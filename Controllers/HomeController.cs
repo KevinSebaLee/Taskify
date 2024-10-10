@@ -44,33 +44,11 @@ public class HomeController : Controller
     }
     public IActionResult Login()
     {
-
         return View();
-    }
-    [HttpPost]
-    public IActionResult Login(string email, string contrasenia)
-    {
-        var usuario = usuarios.FirstOrDefault(u => u.Email == email && u.Contrasenia == contrasenia);
-
-        if (usuario != null)
-        {
-            return RedirectToAction("Perfil");
-        }
-        else
-        {
-            return View();
-        }
-    }    
+    }  
 
     public IActionResult Tasks()
     {
         return View();
-    }
-    private static List<Usuario> usuarios = new List<Usuario>();
-    [HttpPost]
-    public IActionResult CrearPerfil(Usuario usuario)
-    {
-        usuarios.Add(usuario);
-        return RedirectToAction("Perfil");
     }
 }
