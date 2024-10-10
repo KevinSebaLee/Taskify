@@ -9,71 +9,75 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Taskify
 build_property.RootNamespace = Taskify
-build_property.ProjectDir = C:\Users\48044115\Taskify\
+build_property.ProjectDir = C:\Users\devandroid\Desktop\Taskify\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\48044115\Taskify
+build_property.MSBuildProjectDirectory = C:\Users\devandroid\Desktop\Taskify
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/48044115/Taskify/Views/Home/Agenda.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/Agenda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZ2VuZGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/Chat.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/Chat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGF0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/Community.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/Community.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21tdW5pdHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/CrearPerfil.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/CrearPerfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhclBlcmZpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/Empleos.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/Empleos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbXBsZW9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/Index.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/Login.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/Perfil.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/Perfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXJmaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/PublicarProyecto.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/PublicarProyecto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQdWJsaWNhclByb3llY3RvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/Tasks.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/Tasks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUYXNrcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Home/TaskSeleccionado.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Home/TaskSeleccionado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUYXNrU2VsZWNjaW9uYWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Shared/_Layout.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/_ViewImports.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48044115/Taskify/Views/_ViewStart.cshtml]
+[C:/Users/devandroid/Desktop/Taskify/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
