@@ -124,3 +124,35 @@ CREATE TABLE Eventos(
     FechaInicio DATE NOT NULL,
     FechaFin DATE NOT NULL
 );
+
+CREATE PROCEDURE CrearPerfil
+    @Nombre VARCHAR(200),
+    @Apellido VARCHAR(200),
+    @Genero VARCHAR(200),
+    @Pais VARCHAR(200),
+    @FechaNacimiento DATE,
+    @NumeroTelefono VARCHAR(200),
+    @Email VARCHAR(200),
+    @Contraseña VARCHAR(200),
+    @IdRol INT
+AS
+BEGIN
+    DECLARE @Edad INT,
+    DECLARE @AñoActual DATE,
+    DECLARE @Puntaje INT,
+    DECLARE @IdRango INT
+
+    SET @AñoActual = GETDATE();
+    SET @Puntaje = 0;
+    SET @IdRango = 1;
+    SET @Edad = DATEDIFF(YEAR, @FechaNacimiento, @AñoActual);
+
+    IF (MONTH(@FechaNacimiento) > MONTH(AñoActual) OR
+        (MONTH(@FechaNacimiento) = MONTH(AñoActual) AND DAY(@FechaNacimiento) > DAY(@AñoActual)))
+    BEGIN
+        SET @Edad = @Edad - 1;
+    END;
+
+    INSERT INTO Usuarios(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, Edad, IdRol, IdRango)
+    VALUES(@Nombre, @Apellido, @Genero, @Pais, @FechaNacimiento, @NumeroTelefono, @Email, @Contraseña, @Edad, @IdRol, @IdRango);
+END
