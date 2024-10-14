@@ -101,4 +101,15 @@ public class BD{
         return userNuevo;
     }
 
+    public static Usuario LogIN(string Email, string Contraseña){
+        Usuario LogIn = null;
+        string sp = "SP_Login";
+
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            LogIn = db.QueryFirstOrDefault<Usuario>(sp, new {@Email = Email, @Contraseña = Contraseña});
+        }
+
+        return LogIn;
+    }
+
 }

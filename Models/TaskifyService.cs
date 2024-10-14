@@ -30,8 +30,10 @@ public class TaskifyService{
     }
 
     public static Usuario CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol){
-
-        
         return BD.CrearPerfil(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, IdRol);
+    }
+
+    public static Usuario LogIN(string Email, string Contraseña){
+        return BD.LogIN(Email, Contraseña);
     }
 }

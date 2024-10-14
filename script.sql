@@ -59,6 +59,8 @@ CREATE TABLE Categorias(
 CREATE TABLE Proyectos(
     IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
+    Nombre VARCHAR(200),
+    Ubicacion VARCHAR(200),
     FechaPublicacion DATE NOT NULL,
     CantIntegrantes INT NOT NULL,
     Descripcion VARCHAR(200),
@@ -167,6 +169,18 @@ BEGIN
     INSERT INTO Usuarios(Nombre, Apellido, IdGenero, IdPais, FechaNacimiento, NumeroTelefono, Email, Contraseña, Edad, IdRol, IdRango, Puntaje)
     VALUES(@Nombre, @Apellido, @Genero, @Pais, @FechaNacimiento, @NumeroTelefono, @Email, @Contraseña, @Edad, @IdRol, @IdRango, @Puntaje);
 END;
+
+CREATE PROCEDURE SP_Login
+    @Email VARCHAR(200),
+    @Contraseña VARCHAR(200)
+AS
+BEGIN
+    DECLARE @IdUsuario INT;
+
+    SELECT TOP 1 @IdUsuario = IdUsuario
+    FROM Usuarios
+    WHERE Email = @Email AND Contraseña = @Contraseña;
+END
 
 INSERT INTO Generos(Nombre) VALUES
 ('Masculino'),
