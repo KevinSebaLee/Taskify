@@ -2,6 +2,9 @@ public class Usuario{
     public int IdUser { get; set; }
     public int IdRol { get; set; }
     public int IdRango { get; set; }
+    public int IdCertificado {get; set;}
+    public int IdGenero {get; set;}
+    public int IdPais {get; set;}
     public string Nombre { get; set; }
     public string Apellido { get; set; }
     public string Contrasenia { get; set; }

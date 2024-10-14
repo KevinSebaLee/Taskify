@@ -66,11 +66,23 @@ CREATE TABLE Proyectos(
     Estado BIT
 );
 
+CREATE TABLE Generos(
+    IdGenero INT NOT NULL,
+    Nombre VARCHAR(200)
+);
+
+CREATE TABLE Paises(
+    IdPais INT NOT NULL,
+    Nombre VARCHAR(200)
+)
+
 CREATE TABLE Usuarios(
     IdUsuario INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdRol INT NOT NULL FOREIGN KEY REFERENCES Roles(IdRol),
 	IdRango INT NOT NULL FOREIGN KEY REFERENCES Rangos(IdRango),
-	IdCertificado INT NOT NULL FOREIGN KEY REFERENCES Certificados(IdCertificado),
+	IdCertificado INT FOREIGN KEY REFERENCES Certificados(IdCertificado),
+    IdGenero INT NOT NULL FOREIGN KEY REFERENCES Generos(IdGenero),
+    IdPais INT NOT NULL FOREIGN KEY REFERENCES Paises(IdPais),
     Nombre VARCHAR(200) NOT NULL,
     Apellido VARCHAR(200) NOT NULL,
     Contraseña VARCHAR(200) NOT NULL,
@@ -79,7 +91,8 @@ CREATE TABLE Usuarios(
     Telefono VARCHAR(200) NOT NULL,
     Puntaje INT NOT NULL,
     FotoPerfil VARCHAR(200),
-    Descripcion VARCHAR(200)
+    Descripcion VARCHAR(200),
+    FechaNacimiento DATE
 );
 
 CREATE TABLE UsuarioXProyecto(
@@ -125,11 +138,11 @@ CREATE TABLE Eventos(
     FechaFin DATE NOT NULL
 );
 
-CREATE PROCEDURE CrearPerfil
+CREATE PROCEDURE SP_CrearPerfil
     @Nombre VARCHAR(200),
     @Apellido VARCHAR(200),
-    @Genero VARCHAR(200),
-    @Pais VARCHAR(200),
+    @Genero INT,
+    @Pais INT,
     @FechaNacimiento DATE,
     @NumeroTelefono VARCHAR(200),
     @Email VARCHAR(200),
@@ -153,6 +166,6 @@ BEGIN
         SET @Edad = @Edad - 1;
     END;
 
-    INSERT INTO Usuarios(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, Edad, IdRol, IdRango)
+    INSERT INTO Usuarios(Nombre, Apellido, IdGenero, IdPais, FechaNacimiento, NumeroTelefono, Email, Contraseña, Edad, IdRol, IdRango)
     VALUES(@Nombre, @Apellido, @Genero, @Pais, @FechaNacimiento, @NumeroTelefono, @Email, @Contraseña, @Edad, @IdRol, @IdRango);
 END

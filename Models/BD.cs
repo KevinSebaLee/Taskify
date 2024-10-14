@@ -47,4 +47,26 @@ public class BD{
 
         return empleoSeleccionado;
     }
+
+    public static void CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol)
+    {
+        string sp = "SP_CrearPerfil";
+
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            db.Execute(sp, new
+            {
+                @Nombre = Nombre,
+                @Apellido = Apellido,
+                @Genero = Genero,
+                @Pais = Pais,
+                @FechaNacimiento = FechaNacimiento,
+                @NumeroTelefono = NumeroTelefono,
+                @Email = Email,
+                @Contraseña = Contraseña,
+                @IdRol = IdRol
+            }, commandType: System.Data.CommandType.StoredProcedure);
+        }
+    }
+
 }
