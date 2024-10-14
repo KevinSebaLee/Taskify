@@ -69,12 +69,12 @@ CREATE TABLE Proyectos(
 );
 
 CREATE TABLE Generos(
-    IdGenero INT NOT NULL,
+    IdGenero INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     Nombre VARCHAR(200)
 );
 
 CREATE TABLE Paises(
-    IdPais INT NOT NULL,
+    IdPais INT NOT NULL  PRIMARY KEY IDENTITY(1, 1),
     Nombre VARCHAR(200)
 )
 
