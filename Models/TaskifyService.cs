@@ -1,5 +1,5 @@
 public class TaskifyService{
-    private Usuario User {get; set;}
+    public static Usuario User;
     
     public static List<Task> ObtenerTasks(){
         return BD.ObtenerTasks();

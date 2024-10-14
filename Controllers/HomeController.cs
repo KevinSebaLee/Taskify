@@ -35,7 +35,12 @@ public class HomeController : Controller
 
     public IActionResult Empleos()
     {
-        return View();
+        if(TaskifyService.User != null){
+            return View();
+        }
+        else{
+            return RedirectToAction("Index");
+        }
     }
 
     public IActionResult Perfil()
@@ -70,6 +75,19 @@ public class HomeController : Controller
         else{
             ViewBag.Error = "No es la misma contrasseña";
             return RedirectToAction("Register");
+        }
+    }
+
+    public IActionResult LogInUser(string Contraseña, string Email){
+        Usuario LogIN = TaskifyService.LogIN(Email, Contraseña);
+
+        if(LogIN == null){
+            ViewBag.Error = "Ingreso incorrectamente el e-mail o la contraseña";
+            return RedirectToAction("Login");
+        }
+        else{
+            TaskifyService.User = LogIN;
+            return RedirectToAction("Index");
         }
     }
 }

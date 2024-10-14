@@ -57,7 +57,7 @@ CREATE TABLE Categorias(
 );
 
 CREATE TABLE Proyectos(
-    IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1) ,
     IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
     Nombre VARCHAR(200),
     Ubicacion VARCHAR(200),
@@ -69,12 +69,12 @@ CREATE TABLE Proyectos(
 );
 
 CREATE TABLE Generos(
-    IdGenero INT NOT NULL,
+    IdGenero INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     Nombre VARCHAR(200)
 );
 
 CREATE TABLE Paises(
-    IdPais INT NOT NULL,
+    IdPais INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     Nombre VARCHAR(200)
 )
 
@@ -175,9 +175,7 @@ CREATE PROCEDURE SP_Login
     @Contraseña VARCHAR(200)
 AS
 BEGIN
-    DECLARE @IdUsuario INT;
-
-    SELECT TOP 1 @IdUsuario = IdUsuario
+    SELECT IdUsuario, Nombre, Apellido, IdRol, IdRango, Edad, Email, Telefono, Puntaje
     FROM Usuarios
     WHERE Email = @Email AND Contraseña = @Contraseña;
 END
