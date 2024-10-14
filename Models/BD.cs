@@ -4,6 +4,36 @@ using Dapper;
 public class BD{
     private static string _connectionString = @"Server=localhost; DataBase=Taskify; Trusted_Connection=True;";
 
+    public static List<Pais> ObtenerPais(){
+        string query = "SELECT * FROM Paises";
+        List<Pais> Paises = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            Paises = db.Query<Pais>(query).ToList();
+        }
+
+        return Paises;
+    }
+
+    public static List<Genero> ObtenerGeneros(){
+        string query = "SELECT * FROM Generos";
+        List<Genero> Generos = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            Generos = db.Query<Genero>(query).ToList();
+        }
+
+        return Generos;
+    }
+
+    public static List<Rol> ObtenerRoles(){
+        string query = "SELECT * FROM Roles";
+        List<Rol> Roles = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            Roles = db.Query<Rol>(query).ToList();
+        }
+
+        return Roles;
+    }
+
     public static List<Task> ObtenerTasks()
     {
         string query = "SELECT * FROM Tasks";
@@ -48,13 +78,13 @@ public class BD{
         return empleoSeleccionado;
     }
 
-    public static void CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol)
+    public static Usuario CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol)
     {
+        Usuario userNuevo = null;
         string sp = "SP_CrearPerfil";
-
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            db.Execute(sp, new
+            userNuevo = db.QuerySingleOrDefault<Usuario>(sp, new
             {
                 @Nombre = Nombre,
                 @Apellido = Apellido,
@@ -67,6 +97,8 @@ public class BD{
                 @IdRol = IdRol
             }, commandType: System.Data.CommandType.StoredProcedure);
         }
+
+        return userNuevo;
     }
 
 }

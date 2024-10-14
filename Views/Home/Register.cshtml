@@ -1,3 +1,9 @@
+@{
+    int sumatoriaGenero = 0;
+    int sumatoriaPais = 0;
+    int sumatoriaRol = 0;
+}
+
 <div class="Cuenta d-flex justify-content-center" style="min-height: 100vh">
     <div class="bg-white mt-5" style="width: 50vw; max-height: 80vh; border-radius: 50px;">
         <div class="d-flex justify-content-end me-5 pt-5">
@@ -8,50 +14,71 @@
         </div>
         <div class="">
             <h1 class="fw-bold ms-5 ps-5">Registrarse</h1>
-            <form class="mt-5">
+            <form class="mt-5" action='@Url.Action("CrearPregunta")' method="post">
                 <div class="row ms-5 ps-5">
                     <div class="col-5">
                         <div class="mb-3">
                             <h6 class="fw-bold">Nombre *</h6>
-                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su nombre" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <input type="text" name="Nombre" class="bg-dark text-light ps-4" placeholder="Ingrese su nombre" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
                         </div>
                         <div class="mb-3">
                             <h6 class="fw-bold">Genero *</h6>
-                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su genero" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <select class="bg-dark text-light ps-4" name="Genero" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                                <option value="0">Eliga su genero</option>
+                                @foreach(Genero a in ViewBag.Generos){
+                                    sumatoriaGenero++;
+
+                                    <option value="@sumatoriaGenero">@a.Nombre</option>
+                                }
+                            </select>
                         </div>
                         <div class="mb-3">
-                            <h6 class="fw-bold">Pais *</h6>
-                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su pais" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <h6 class="fw-bold">País *</h6>
+                            <select class="bg-dark text-light ps-4" name="Pais" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                                <option value="0">Eliga su genero</option>
+                                @foreach(Pais b in ViewBag.Paises){
+                                    sumatoriaPais++;
+
+                                    <option value="@sumatoriaPais">@b.Nombre</option>
+                                }
+                            </select>
                         </div>
                         <div class="mb-3">
                             <h6 class="fw-bold">Email *</h6>
-                            <input type="email" class="bg-dark text-light ps-4" placeholder="Ingrese su email" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <input type="email" name="Email" class="bg-dark text-light ps-4" placeholder="Ingrese su email" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
                         </div>
                         <div class="mb-3">
                             <h6 class="fw-bold">Contraseña *</h6>
-                            <input type="password" class="bg-dark text-light ps-4" placeholder="Ingrese su contraseña" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <input type="password" name="Contraseña" class="bg-dark text-light ps-4" placeholder="Ingrese su contraseña" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
                         </div>
                     </div>
 
                     <div class="col-6 mt-5">
                         <div class="mb-3">
                             <h6 class="fw-bold">Apellido *</h6>
-                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su apellido" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <input type="text" name="Apellido" class="bg-dark text-light ps-4" placeholder="Ingrese su apellido" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
                         </div>
                         <div class="mb-3">
                             <h6 class="fw-bold">Fecha de Nacimiento *</h6>
-                            <input type="text" class="bg-dark text-light ps-4" placeholder="Ingrese su fecha de nacimiento" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <input type="date" name="FechaNacimiento" class="bg-dark text-light ps-4" placeholder="Ingrese su fecha de nacimiento" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
                         </div>
                         <div class="mb-3">
-                            <h6 class="fw-bold">Numero de Telefono *</h6>
-                            <input type="tel" class="bg-dark text-light ps-4" placeholder="Ingrese su numero de telefono" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <h6 class="fw-bold">Número de Teléfono *</h6>
+                            <input type="tel" name="NumeroTelefono" class="bg-dark text-light ps-4" placeholder="Ingrese su número de teléfono" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
                         </div>
                         <div class="mb-5">
-                            <h6 class="fw-bold">Eliga su rol *</h6>
-                            <input type="text" class="bg-dark text-light ps-4" placeholder="Eliga su rol" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <h6 class="fw-bold">Elija su rol *</h6>
+                            <select class="bg-dark text-light ps-4" name="IdRol" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                                <option value="0">Eliga su rol</option>
+                                @foreach(Rol c in ViewBag.Roles){
+                                    sumatoriaRol++;
+
+                                    <option value="@sumatoriaRol">@c.Nombre</option>
+                                }
+                            </select>
                         </div>
                         <div class="mb-3">
-                            <input type="password" class="bg-dark text-light ps-4" placeholder="Ingrese su contraseña devuelta" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                            <input type="password" name="ConfirmarContraseña" class="bg-dark text-light ps-4" placeholder="Ingrese su contraseña nuevamente" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
                         </div>
                     </div>
                 </div>
@@ -60,6 +87,7 @@
                     <button type="submit" class="bg-success text-white text-center fw-bold shadow-lg" style="width: 10vw; border: 0; border-radius: 20px; height: 7vh">Registrarse</button>
                 </div>
             </form>
+
         </div>
     </div>
 </div>

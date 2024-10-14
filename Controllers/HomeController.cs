@@ -50,11 +50,26 @@ public class HomeController : Controller
       
     public IActionResult Register()
     {
+        ViewBag.Paises = TaskifyService.ObtenerPaises();
+        ViewBag.Generos = TaskifyService.ObtenerGeneros();
+        ViewBag.Roles = TaskifyService.ObtenerRoles();
+
         return View();
     }
 
     public IActionResult Tasks()
     {
         return View();
+    }
+
+    public IActionResult CrearPregunta(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol, string ConfirmarContraseña){
+        if(Contraseña == ConfirmarContraseña){
+            Usuario userNuevo = TaskifyService.CrearPerfil(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, IdRol);
+            return RedirectToAction("Index");
+        }
+        else{
+            ViewBag.Error = "No es la misma contrasseña";
+            return RedirectToAction("Register");
+        }
     }
 }
