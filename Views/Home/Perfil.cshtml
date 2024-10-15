@@ -16,8 +16,8 @@
                     <div class="mb-2">
                         <span class="h1 text-warning">★★★★☆</span>
                     </div>
-                    <h1 class="fw-bold display-4">Crystal Row</h1>
-                    <p class="text-muted h3">Bronze <span style="color: bronze;">●</span></p>
+                    <h1 class="fw-bold display-4">@TaskifyService.User.Nombre @TaskifyService.User.Apellido</h1>
+                    <p class="text-muted h3">@TaskifyService.RangoUser.Nombre <span style="color: bronze;">●</span></p>
                 </div>
             </div>
 
@@ -25,13 +25,7 @@
                 <h1 class="fw-bold display-4">Habilidades</h1>
                 <ul class="list-unstyled ms-5 mt-5">
                     <li class="mb-2">
-                        <img src="icon1.png" alt="Icon" style="width: 2rem; vertical-align: middle;"> Lider en comunicaciones
-                    </li>
-                    <li class="mb-2">
-                        <img src="icon2.png" alt="Icon" style="width: 2rem; vertical-align: middle;"> Analista de datos
-                    </li>
-                    <li class="mb-2">
-                        <img src="icon3.png" alt="Icon" style="width: 2rem; vertical-align: middle;"> Desarrollador web
+                        <img src="icon1.png" alt="Icon" style="width: 2rem; vertical-align: middle;"> 
                     </li>
                 </ul>
             </div>
@@ -39,11 +33,12 @@
             <hr>
 
             <div class="col-md-8 offset-md-3 mt-4">
-                <p class="h3">Soy una profesional proactiva con experiencia en desarrollo web. 
-                                Me destaco por mi capacidad para resolver problemas y trabajar
-                                en equipo. Siempre busco aprender y crecer, aportando ideas
-                                innovadoras y soluciones efectivas. Estoy comprometida con la 
-                                calidad y la satisfacción del cliente.</p>
+                @if(@TaskifyService.User.Descripcion != null){
+                    <p class="h3">@TaskifyService.User.Descripcion</p>
+                }
+                else{
+                    <p>Nada en descripcion.</p>
+                }
             </div>
         </div>
     </div>
@@ -75,8 +70,6 @@
                     </div>
                 </div>
             </div>
-
-            
         </div>
     </div>
 </div>

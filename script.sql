@@ -196,7 +196,7 @@ INSERT INTO Rangos(Nombre) VALUES
 ('Platino III'),
 ('Diamante I'),
 ('Diamante II'),
-('Diamante III'),
+('Diamante III')
 
 INSERT INTO Roles(Nombre) VALUES
 ('Desarrollador'),
@@ -210,7 +210,7 @@ INSERT INTO Roles(Nombre) VALUES
 ('Especialista en UX/UI'),
 ('Full-Stack Developer'),
 ('Back-End Developer'),
-('Front-End Developer');
+('Front-End Developer')
 
 INSERT INTO Paises(Nombre) VALUES
 ('Afganistán Emirato Islámico'),
@@ -385,4 +385,4 @@ INSERT INTO Paises(Nombre) VALUES
 ('Vietnam'),
 ('Yemen'),
 ('Zambia'),
-('Zimbabue'),
+('Zimbabue')

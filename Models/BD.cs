@@ -14,6 +14,26 @@ public class BD{
         return Paises;
     }
 
+    public static Rango ObtenerRangoUsuario(int idUsuario){
+        string query = "SELECT * FROM Usuarios INNER JOIN Rangos ON Usuarios.IdRango = Rangos.IdRango WHERE Usuarios.IdUsuario = @IdUsuario";
+        Rango rangoUsuario = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            rangoUsuario = db.QueryFirstOrDefault<Rango>(query, new{@IdUsuario = idUsuario});
+        }
+
+        return rangoUsuario;
+    }
+
+    public static Rol ObtenerRolUsuario(int idUsuario){
+        string query = "SELECT * FROM Usuarios INNER JOIN Roles ON Usuarios.IdRol = Roles.IdRol WHERE Usuarios.IdUsuario = @IdUsuario";
+        Rol rolUsuario = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            rolUsuario = db.QueryFirstOrDefault<Rol>(query, new{@IdUsuario = idUsuario});
+        }
+
+        return rolUsuario;
+    }
+
     public static List<Genero> ObtenerGeneros(){
         string query = "SELECT * FROM Generos";
         List<Genero> Generos = null;

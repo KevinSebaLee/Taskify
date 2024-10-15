@@ -108,3 +108,13 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.LogIN{
+  transition: background-color 0.5s;
+}
+
+.LogIN:hover{
+  background-color: green;
+  color: white !important; 
+  border-radius: 20px;
+}
