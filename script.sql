@@ -166,7 +166,7 @@ BEGIN
         SET @Edad = @Edad - 1;
     END;
 
-    INSERT INTO Usuarios(Nombre, Apellido, IdGenero, IdPais, FechaNacimiento, NumeroTelefono, Email, Contraseña, Edad, IdRol, IdRango, Puntaje)
+    INSERT INTO Usuarios(Nombre, Apellido, IdGenero, IdPais, FechaNacimiento, Telefono, Email, Contraseña, Edad, IdRol, IdRango, Puntaje)
     VALUES(@Nombre, @Apellido, @Genero, @Pais, @FechaNacimiento, @NumeroTelefono, @Email, @Contraseña, @Edad, @IdRol, @IdRango, @Puntaje);
 END;
 
