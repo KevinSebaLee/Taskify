@@ -87,8 +87,7 @@ public class HomeController : Controller
         }
         else{
             TaskifyService.User = LogIN;
-            TaskifyService.RangoUser = TaskifyService.ObtenerRangoUsuario(LogIN.IdUser);
-            TaskifyService.RolUser = TaskifyService.ObtenerRolUsuario(LogIN.IdUser);
+        
             
             return RedirectToAction("Index");
         }
