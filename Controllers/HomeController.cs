@@ -89,7 +89,7 @@ public class HomeController : Controller
             TaskifyService.User = usuario;
             TaskifyService.RangoUser = TaskifyService.ObtenerRangoUsuario(usuario.IdUser);
             TaskifyService.RolUser = TaskifyService.ObtenerRolUsuario(usuario.IdUser);
-            
+
             return RedirectToAction("Index");
         }
     }
