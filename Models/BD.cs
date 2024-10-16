@@ -131,8 +131,6 @@ public class BD{
             usuario = db.QueryFirstOrDefault<Usuario>(sp, new { @Email = Email, @Contraseña = Contraseña }, commandType: System.Data.CommandType.StoredProcedure);
         }
 
-        
-
         return usuario;
     }
 }
