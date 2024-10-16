@@ -2,6 +2,8 @@ html {
   font-family: 'Fredoka';
   font-size: 14px;
   min-height: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
 @media (min-width: 768px) {
@@ -117,4 +119,50 @@ html {
   background-color: green;
   color: white !important; 
   border-radius: 20px;
+}
+
+.Com{
+  display: flex;
+  width: 100%;
+}
+.aside{
+  max-width: 20%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 6%;
+  padding-bottom: 3%;
+  .entreLineas{
+    padding-top: 5%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.726);
+    border-top: 2px solid rgba(0, 0, 0, 0.726);
+  }
+  h1{
+    font-weight: bold;
+  }
+}
+
+.contentCom{
+  display: flex;
+  justify-content: center;
+  background-color: #066332;
+  width: 100%;
+  padding-top: 3%;
+
+  
+  input{
+    height: 30px;
+    width: 40%;
+    border-radius: 25px;
+    border: none;
+  }
+
+  button{
+    margin-left: 1%;
+    color: white;
+    height: 30px;
+    width: 7%;
+    border-radius: 6px;
+    background-color: #05331b;
+    border: none;
+  }
 }
