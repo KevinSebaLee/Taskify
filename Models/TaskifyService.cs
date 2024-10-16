@@ -44,7 +44,6 @@ public class TaskifyService{
     }
     
     public static Rango ObtenerRangoUsuario(int idUsuario){
-        Console.WriteLine(BD.ObtenerRangoUsuario(idUsuario).Nombre);
         return BD.ObtenerRangoUsuario(idUsuario);
     }
 }

@@ -175,7 +175,7 @@ CREATE PROCEDURE SP_Login
     @Contraseña VARCHAR(200)
 AS
 BEGIN
-    SELECT IdUsuario, Nombre, Apellido, IdRol, IdRango, Edad, Email, Telefono, Puntaje
+    SELECT Usuarios.*
     FROM Usuarios
     WHERE Email = @Email AND Contraseña = @Contraseña;
 END

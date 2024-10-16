@@ -79,16 +79,16 @@ public class HomeController : Controller
     }
 
     public IActionResult LogInUser(string Contraseña, string Email){
-        Usuario LogIN = TaskifyService.LogIN(Email, Contraseña);
+        Usuario usuario = TaskifyService.LogIN(Email, Contraseña);
 
-        if(LogIN == null){
+        if(usuario == null){
             ViewBag.Error = "Ingreso incorrectamente el e-mail o la contraseña";
             return RedirectToAction("Login");
         }
         else{
-            TaskifyService.User = LogIN;
-            TaskifyService.RangoUser = TaskifyService.ObtenerRangoUsuario(LogIN.IdUser);
-            TaskifyService.RolUser = TaskifyService.ObtenerRolUsuario(LogIN.IdUser);
+            TaskifyService.User = usuario;
+            TaskifyService.RangoUser = TaskifyService.ObtenerRangoUsuario(usuario.IdUser);
+            TaskifyService.RolUser = TaskifyService.ObtenerRolUsuario(usuario.IdUser);
             
             return RedirectToAction("Index");
         }
