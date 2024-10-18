@@ -1,5 +1,5 @@
 public class Usuario{
-    public int IdUser { get; set; }
+    public int IdUsuario { get; set; }
     public int IdRol { get; set; }
     public int IdRango { get; set; }
     public int IdCertificado {get; set;}
