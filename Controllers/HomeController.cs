@@ -52,7 +52,7 @@ public class HomeController : Controller
     {
         return View();
     }
-      
+    
     public IActionResult Register()
     {
         ViewBag.Paises = TaskifyService.ObtenerPaises();
@@ -87,8 +87,8 @@ public class HomeController : Controller
         }
         else{
             TaskifyService.User = usuario;
-            TaskifyService.RangoUser = TaskifyService.ObtenerRangoUsuario(usuario.IdUser);
-            TaskifyService.RolUser = TaskifyService.ObtenerRolUsuario(usuario.IdUser);
+            TaskifyService.RangoUser = TaskifyService.ObtenerRangoUsuario(usuario.IdUsuario);
+            TaskifyService.RolUser = TaskifyService.ObtenerRolUsuario(usuario.IdUsuario);
 
             return RedirectToAction("Index");
         }

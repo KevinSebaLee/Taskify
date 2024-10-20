@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using Dapper;
 
 public class BD{
-    private static string _connectionString = @"Server=localhost; DataBase=Taskify; Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost\SQLEXPRESS; DataBase=Taskify; Trusted_Connection=True;";
 
     public static List<Pais> ObtenerPais(){
         string query = "SELECT * FROM Paises";
@@ -24,11 +24,11 @@ public class BD{
         return rangoUsuario;
     }
 
-    public static Rol ObtenerRolUsuario(int idUsuario){
+    public static List<Rol> ObtenerRolUsuario(int idUsuario){
         string query = "SELECT Roles.* FROM Usuarios INNER JOIN Roles ON Usuarios.IdRol = Roles.IdRol WHERE Usuarios.IdUsuario = @IdUsuario";
-        Rol rolUsuario = null;
+        List<Rol> rolUsuario = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            rolUsuario = db.QueryFirstOrDefault<Rol>(query, new{@IdUsuario = idUsuario});
+            rolUsuario = db.Query<Rol>(query, new{@IdUsuario = idUsuario}).ToList();
         }
 
         return rolUsuario;
@@ -130,6 +130,8 @@ public class BD{
         {
             usuario = db.QueryFirstOrDefault<Usuario>(sp, new { @Email = Email, @Contraseña = Contraseña }, commandType: System.Data.CommandType.StoredProcedure);
         }
+
+        Console.WriteLine(usuario.IdUsuario);
 
         return usuario;
     }

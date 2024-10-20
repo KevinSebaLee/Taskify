@@ -1,5 +1,5 @@
 ﻿<div class="d-flex flex-column align-items-center bg-secondary" style="min-height: 100vh;">
-    <div class="bg-white mt-5 p-5" style="width: 80vw; border-radius: 40px;">
+    <div class="bg-white mt-5 pb-5 ps-5 pe-5" style="width: 80vw; border-radius: 40px;">
         <div class="bg-success" style="width: 100%; height: 12vh; border-radius: 20px;">
             <div class="container">
                 <h3 class="text-white pt-3">Mi perfil</h3>
@@ -7,26 +7,34 @@
         </div>
 
         <div class="row mt-5 pt-3">
-            <div class="col-md-3 d-flex justify-content-center">
-                <img src="~/img/SinSesion.png" alt="Profile Image" style="border-radius: 50%; width: 15vw; height: 15vw; border: 1px solid black;">
-            </div>
+            <a class="col-md-3 d-flex justify-content-center" href='@Url.Action("Index")'>
+                <img class="FotoPerfil" src="~/img/SinSesion.png" alt="Profile Image" style="border-radius: 50%; width: 15vw; height: 15vw; border: 1px solid black;">
+            </a>
 
             <div class="col-md-4 d-flex align-items-start">
                 <div>
                     <div class="mb-2">
-                        <span class="h1 text-warning">★★★★☆</span>
+                        @for(int i=0; i < TaskifyService.User.Puntaje; i++){
+                            <span class="h1 text-warning">★</span>    
+                        }
+                        @for(int i=0; i < (5 - TaskifyService.User.Puntaje); i++){
+                            <span class="h1 text-warning">☆</span>    
+                        }
                     </div>
                     <h1 class="fw-bold display-4">@TaskifyService.User.Nombre @TaskifyService.User.Apellido</h1>
-                    <p class="text-muted h3">@TaskifyService.RangoUser.Nombre <span style="color: bronze;">●</span></p>
+                    <p class="text-muted h3">@TaskifyService.RangoUser.Nombre</p>
                 </div>
             </div>
 
             <div class="col-md-5">
-                <h1 class="fw-bold display-4">Habilidades</h1>
+                <h1 class="fw-bold display-4">Roles</h1>
                 <ul class="list-unstyled ms-5 mt-5">
-                    <li class="mb-2">
-                        <img src="icon1.png" alt="Icon" style="width: 2rem; vertical-align: middle;"> 
-                    </li>
+                    @for(int i = 0; i < TaskifyService.RolUser.Count; i++){
+                        <li class="mb-2">
+                            <img src="icon1.png" alt="Icon" style="width: 2rem; vertical-align: middle;"> 
+                            <span class="h5 ms-2">@TaskifyService.RolUser[i].Nombre</span>
+                        </li>
+                    }
                 </ul>
             </div>
 

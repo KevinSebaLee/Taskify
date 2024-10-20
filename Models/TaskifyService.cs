@@ -1,7 +1,7 @@
 public class TaskifyService{
     public static Usuario User;
     public static Rango RangoUser;
-    public static Rol RolUser;
+    public static List<Rol> RolUser;
     
     public static List<Task> ObtenerTasks(){
         return BD.ObtenerTasks();
@@ -39,7 +39,7 @@ public class TaskifyService{
         return BD.LogIN(Email, Contraseña);
     }
 
-    public static Rol ObtenerRolUsuario(int idUsuario){
+    public static List<Rol> ObtenerRolUsuario(int idUsuario){
         return BD.ObtenerRolUsuario(idUsuario);
     }
     
