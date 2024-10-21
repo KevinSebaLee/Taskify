@@ -59,16 +59,10 @@ CREATE TABLE Categorias(
     Descripcion VARCHAR(200)
 );
 
-CREATE TABLE Filtros(
-    IdFiltro INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Nombre VARCHAR(200),
-    Descripcion VARCHAR(200)
-);
 
 CREATE TABLE Proyectos(
     IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1) ,
     IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
-    IdFiltro INT NOT NULL FOREIGN KEY REFERENCES Filtros(IdFiltro),
     IdRol INT NOT NULL FOREIGN KEY REFERENCES Roles(IdRol),
     Nombre VARCHAR(200),
     NombreEmpresa VARCHAR(200),
@@ -184,15 +178,19 @@ END;
 
 CREATE PROCEDURE SP_CrearProyecto
     @Nombre VARCHAR(200),
-    @NombreProyecto VARCHAR(200),
-    @IdFiltro INT,
+    @NombreEmpresa VARCHAR(200),
+    @IdCategoria INT,
     @IdRol INT,
     @Ubicacion VARCHAR(200),
     @FechaPublicacion DATE,
     @Descripcion VARCHAR(200)
 AS
 BEGIN
-    
+    DECLARE @CantIntegrantes INT = 1;
+    DECLARE @Valoracion INT = 0;
+
+    INSERT INTO Proyectos(IdCategoria, IdRol, Nombre, NombreEmpresa, Ubicacion, FechaPublicacion, CantIntegrantes, Valoracion, Descripcion)
+    VALUES(@IdCategoria, @IdRol, @Nombre, @NombreEmpresa, @Ubicacion, @FechaPublicacion, @CantIntegrantes, @Valoracion, @Descripcion);
 END
 
 CREATE PROCEDURE SP_Login
@@ -222,6 +220,17 @@ INSERT INTO Rangos(Nombre, Color) VALUES
 ('Diamante II', '#10cdc2'),
 ('Diamante III', '#10cdc2')
 
+INSERT INTO Categorias(Nombre) VALUES
+('Desarrollo de Software'),
+('Inteligencia Artificial'),
+('Desarrollo Web'),
+('Big Data'),
+('Ciberseguridad'),
+('IoT (Internet de las Cosas)'),
+('Aplicaciones Móviles'),
+('Realidad Aumentada y Virtual'),
+('Blockchain'),
+('Automatización de Procesos');
 
 INSERT INTO Roles(Nombre) VALUES
 ('Desarrollador'),

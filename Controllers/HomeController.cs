@@ -67,7 +67,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult CrearProyecto(string Nombre, string NombreEmpresa, int IdRol, int IdFiltro, string Ubicacion, DateTime fechaPublicacion, string Descripcion){
+    public IActionResult CrearProyecto(string Nombre, string NombreEmpresa, int IdCategoria, int IdFiltro, string Ubicacion, DateTime fechaPublicacion, string Descripcion){
         return RedirectToAction("Empleos");
     }
 
