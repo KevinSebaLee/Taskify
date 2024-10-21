@@ -37,6 +37,10 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Proyecto()
+    {
+        return View();
+    }
 
     public IActionResult Perfil()
     {
