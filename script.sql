@@ -68,6 +68,8 @@ CREATE TABLE Proyectos(
     IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
     IdFiltro INT NOT NULL FOREIGN KEY REFERENCES Filtros(IdFiltro),
     Nombre VARCHAR(200),
+    NombreEmpresa VARCHAR(200),
+    Roles VARCHAR(200),
     Ubicacion VARCHAR(200),
     FechaPublicacion DATE NOT NULL,
     CantIntegrantes INT NOT NULL,

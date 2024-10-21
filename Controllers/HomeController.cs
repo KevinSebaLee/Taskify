@@ -67,6 +67,10 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult PublicarProyecto(){
+        return View();
+    }
+
     public IActionResult CrearPregunta(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol, string ConfirmarContraseña){
         if(Contraseña == ConfirmarContraseña){
             Usuario userNuevo = TaskifyService.CrearPerfil(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, IdRol);
