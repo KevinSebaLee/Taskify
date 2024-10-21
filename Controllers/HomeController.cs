@@ -52,7 +52,7 @@ public class HomeController : Controller
     {
         return View();
     }
-      
+    
     public IActionResult Register()
     {
         ViewBag.Paises = TaskifyService.ObtenerPaises();
