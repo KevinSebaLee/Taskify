@@ -28,7 +28,7 @@
                     <button class="ms-5 ps-4 pe-4 bg-success text-white" style="border: 0; border-radius: 20px">+</button>
                 </form>
             </div>
-
+        
             @for(int i = 0; i < ViewBag.Proyectos.Count; i++){
                 <div class="row d-flex justify-content-between mt-5 ms-5">
                     <div class="col-6 mb-5 me-5 shadow-lg" style="max-width: 28vw; border-radius: 40px;">
@@ -41,7 +41,9 @@
                                 <h4 class="ms-5">@ViewBag.Proyectos[i].NombreEmpresa</h4>
 
                                 <div class="d-flex align-items-center justify-content-center" style="border-radius: 10px; width: 23%; height: 12%; background-color: #00481D; opacity: 0.84; position: absolute; bottom: 20px; right: 20px;">
-                                    <button class="bg-transparent" style="border: 0;"><h4 class="text-white">Más</h4></button>
+                                    <form action='@Url.Action("Proyecto", "Home", new{IdProyecto=ViewBag.Proyectos[i].IdProyecto})'>
+                                        <button class="bg-transparent" style="border: 0;"><h4 class="text-white">Más</h4></button>
+                                    </form>
                                 </div>
                             </div>
                             

@@ -35,11 +35,12 @@ public class HomeController : Controller
 
     public IActionResult Empleos()
     {
-        ViewBag.Proyectos = BD.ObtenerProyectos();
+        ViewBag.Proyectos = TaskifyService.ObtenerEmpleos();
         return View();
     }
-    public IActionResult Proyecto()
+    public IActionResult Proyecto(int IdProyecto)
     {
+        ViewBag.ProyectoElegido = TaskifyService.ObtenerEmpleoSeleccionado(IdProyecto);
         return View();
     }
 

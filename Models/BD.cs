@@ -75,15 +75,15 @@ public class BD{
         return Tasks;
     }
 
-    public static List<Empleo> ObtenerEmpleos()
+    public static List<Proyecto> ObtenerEmpleos()
     {
         string query = "SELECT * FROM Proyectos";
-        List<Empleo> Empleos = null;
+        List<Proyecto> proyectos = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            Empleos = db.Query<Empleo>(query).ToList();
+            proyectos = db.Query<Proyecto>(query).ToList();
         }
 
-        return Empleos;
+        return proyectos;
     }
 
     public static List<Proyecto> ObtenerProyectos(){
@@ -107,12 +107,12 @@ public class BD{
         return tasksSeleccionado;
     }
 
-    public static Empleo ObtenerEmpleoSeleccionado(int IdProyecto)
+    public static Proyecto ObtenerEmpleoSeleccionado(int IdProyecto)
     {
         string query ="SELECT * FROM Proyectos WHERE Proyectos.IdProyecto = @id";
-        Empleo empleoSeleccionado = null;
+        Proyecto empleoSeleccionado = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            empleoSeleccionado = db.QueryFirstOrDefault<Empleo>(query, new {@id = IdProyecto});
+            empleoSeleccionado = db.QueryFirstOrDefault<Proyecto>(query, new {@id = IdProyecto});
         }
 
         return empleoSeleccionado;
@@ -170,8 +170,6 @@ public class BD{
         {
             usuario = db.QueryFirstOrDefault<Usuario>(sp, new { @Email = Email, @Contraseña = Contraseña }, commandType: System.Data.CommandType.StoredProcedure);
         }
-
-        Console.WriteLine(usuario.IdUsuario);
 
         return usuario;
     }

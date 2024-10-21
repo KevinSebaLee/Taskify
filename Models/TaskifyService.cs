@@ -27,11 +27,13 @@ public class TaskifyService{
         return BD.ObtenerTaskSeleccionado(IdTask);
     }
 
-    public static List<Empleo> ObtenerEmpleos(){
+    public static List<Proyecto> ObtenerEmpleos(){
         return BD.ObtenerEmpleos();
     }
 
-    public static Empleo ObtenerEmpleoSeleccionado(int idProyecto){
+    public static Proyecto ObtenerEmpleoSeleccionado(int idProyecto){
+        Console.WriteLine(idProyecto);
+
         return BD.ObtenerEmpleoSeleccionado(idProyecto);
     }
 

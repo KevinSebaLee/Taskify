@@ -13,11 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Taskify")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+958350b8d99e490fce904161fe7804b6fb9ce4ce")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+513fe51f9ae69cf64862cea48f104700d05565cf")]
->>>>>>> ebe880386c9a363cb0cc64f0c8aac07b29b44ef8
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc9fa250b641506792767ec3a52f6bcf6e307c9e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Taskify")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Taskify")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
