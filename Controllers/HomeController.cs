@@ -35,12 +35,7 @@ public class HomeController : Controller
 
     public IActionResult Empleos()
     {
-        if(TaskifyService.User != null){
-            return View();
-        }
-        else{
-            return RedirectToAction("Index");
-        }
+        return View();
     }
 
     public IActionResult Perfil()
@@ -68,10 +63,15 @@ public class HomeController : Controller
     }
 
     public IActionResult PublicarProyecto(){
+        ViewBag.Roles = TaskifyService.ObtenerRoles();
         return View();
     }
 
-    public IActionResult CrearPregunta(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol, string ConfirmarContraseña){
+    public IActionResult CrearProyecto(string Nombre, string NombreEmpresa, int IdRol, int IdFiltro, string Ubicacion, DateTime fechaPublicacion, string Descripcion){
+        return RedirectToAction("Empleos");
+    }
+
+    public IActionResult CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol, string ConfirmarContraseña, int IdFiltro){
         if(Contraseña == ConfirmarContraseña){
             Usuario userNuevo = TaskifyService.CrearPerfil(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, IdRol);
             return RedirectToAction("Index");

@@ -69,9 +69,9 @@ CREATE TABLE Proyectos(
     IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1) ,
     IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
     IdFiltro INT NOT NULL FOREIGN KEY REFERENCES Filtros(IdFiltro),
+    IdRol INT NOT NULL FOREIGN KEY REFERENCES Roles(IdRol),
     Nombre VARCHAR(200),
     NombreEmpresa VARCHAR(200),
-    Roles VARCHAR(200),
     Ubicacion VARCHAR(200),
     FechaPublicacion DATE NOT NULL,
     CantIntegrantes INT NOT NULL,
@@ -181,6 +181,19 @@ BEGIN
     INSERT INTO Usuarios(Nombre, Apellido, IdGenero, IdPais, FechaNacimiento, Telefono, Email, Contraseña, Edad, IdRol, IdRango, Puntaje)
     VALUES(@Nombre, @Apellido, @Genero, @Pais, @FechaNacimiento, @NumeroTelefono, @Email, @Contraseña, @Edad, @IdRol, @IdRango, @Puntaje);
 END;
+
+CREATE PROCEDURE SP_CrearProyecto
+    @Nombre VARCHAR(200),
+    @NombreProyecto VARCHAR(200),
+    @IdFiltro INT,
+    @IdRol INT,
+    @Ubicacion VARCHAR(200),
+    @FechaPublicacion DATE,
+    @Descripcion VARCHAR(200)
+AS
+BEGIN
+    
+END
 
 CREATE PROCEDURE SP_Login
     @Email VARCHAR(200),
