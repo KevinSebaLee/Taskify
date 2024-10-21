@@ -9,7 +9,8 @@ CREATE TABLE Roles(
 
 CREATE TABLE Rangos(
     IdRango INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Nombre VARCHAR(200) NOT NULL
+    Nombre VARCHAR(200) NOT NULL,
+    Color VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE Lenguajes(
@@ -56,9 +57,16 @@ CREATE TABLE Categorias(
     Descripcion VARCHAR(200)
 );
 
+CREATE TABLE Filtros(
+    IdFiltro INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    Nombre VARCHAR(200),
+    Descripcion VARCHAR(200)
+);
+
 CREATE TABLE Proyectos(
     IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1) ,
     IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
+    IdFiltro INT NOT NULL FOREIGN KEY REFERENCES Filtros(IdFiltro),
     Nombre VARCHAR(200),
     Ubicacion VARCHAR(200),
     FechaPublicacion DATE NOT NULL,

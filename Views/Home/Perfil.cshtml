@@ -7,17 +7,22 @@
         </div>
 
         <div class="row mt-5 pt-3">
-            <div class="col-md-3 d-flex justify-content-center">
+            <a href='@Url.Action("Index")' class="col-md-3 d-flex justify-content-center">
                 <img src="~/img/SinSesion.png" alt="Profile Image" style="border-radius: 50%; width: 15vw; height: 15vw; border: 1px solid black;">
-            </div>
+            </a>
 
             <div class="col-md-4 d-flex align-items-start">
                 <div>
                     <div class="mb-2">
-                        <span class="h1 text-warning">★★★★☆</span>
+                        @for(int i = 0; i < TaskifyService.User.Puntaje; i++){
+                            <span class="h1 text-warning">★</span>
+                        }
+                        @for(int i = 0; i < (5-TaskifyService.User.Puntaje); i++){
+                            <span class="h1 text-warning">☆</span>
+                        }
                     </div>
                     <h1 class="fw-bold display-4">@TaskifyService.User.Nombre @TaskifyService.User.Apellido</h1>
-                    <p class="text-muted h3">@TaskifyService.RangoUser.Nombre <span style="color: bronze;">●</span></p>
+                    <p class="text-muted h3">@TaskifyService.RangoUser.Nombre</p>
                 </div>
             </div>
 
