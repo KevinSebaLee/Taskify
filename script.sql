@@ -196,19 +196,19 @@ INSERT INTO Generos(Nombre) VALUES
 ('Masculino'),
 ('Femenino')
 
-INSERT INTO Rangos(Nombre) VALUES
-('Bronce I'),
-('Bronce II'),
-('Bronce III'),
-('Plata I'),
-('Plata II'),
-('Plata III'),
-('Platino I'),
-('Platino II'),
-('Platino III'),
-('Diamante I'),
-('Diamante II'),
-('Diamante III')
+INSERT INTO Rangos(Nombre, Color) VALUES
+('Bronce II', '#c0620a'),
+('Bronce III', '#c0620a'),
+('Plata I', '#c7c7c7'),
+('Plata II', '#c7c7c7'),
+('Plata III', '#c7c7c7'),
+('Platino I', '#797878'),
+('Platino II', '#797878'),
+('Platino III', '#797878'),
+('Diamante I', '#10cdc2'),
+('Diamante II', '#10cdc2'),
+('Diamante III', '#10cdc2')
+
 
 INSERT INTO Roles(Nombre) VALUES
 ('Desarrollador'),
