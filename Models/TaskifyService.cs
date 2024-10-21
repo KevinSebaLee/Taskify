@@ -19,6 +19,10 @@ public class TaskifyService{
         return BD.ObtenerPais();
     }
 
+    public static List<Categoria> ObtenerCategorias(){
+        return BD.ObtenerCategorias();
+    }
+
     public static Task ObtenerTaskSeleccionado(int IdTask){
         return BD.ObtenerTaskSeleccionado(IdTask);
     }

@@ -1,28 +1,52 @@
-<form action='@Url.Action("Empleos")'>
+@{
+    int sumatoriaRol = 0;
+    int sumatoriaCategoria = 0;
+}
+
+<form action='@Url.Action("CrearProyecto")'>
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"></span>
-        <input type="text" name="" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" name="Nombre" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <input type="text" name="NombreEmpresa" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
         <span class="input-group-text" id="basic-addon2"></span>
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text">$</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <input type="text" name="Ubicacion" class="form-control" aria-label="Amount (to the nearest dollar)">
         <span class="input-group-text">.00</span>
     </div>
 
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-        <span class="input-group-text"></span>
-        <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+    <select class="bg-dark text-light ps-4" name="IdRol" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+        <option value="0">Eliga su rol</option>
+        @foreach(Rol c in ViewBag.Roles){
+            sumatoriaRol++;
+
+            <option value="@sumatoriaRol">@c.Nombre</option>
+        }
+    </select>
+
+    <select class="bg-dark text-light ps-4" name="IdCategoria" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+        <option value="0">Eliga su categoria</option>
+        @foreach(Categoria c in ViewBag.Categorias){
+            sumatoriaCategoria++;
+
+            <option value="@sumatoriaCategoria">@c.Nombre</option>
+        }
+    </select>
+
+    <div class="mb-3">
+        <h6 class="fw-bold">Fecha de Nacimiento *</h6>
+        <input type="date" name="fechaPublicacion" class="bg-dark text-light ps-4" placeholder="Ingrese su fecha de nacimiento" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
     </div>
 
     <div class="input-group">
         <span class="input-group-text">With textarea</span>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
+        <textarea name="Descripcion" class="form-control" aria-label="With textarea"></textarea>
     </div>
+    
+    <button type="submit">enviar</button>
 </form>

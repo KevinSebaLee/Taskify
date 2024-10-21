@@ -29,31 +29,33 @@
                 </form>
             </div>
 
-            <div class="row d-flex justify-content-between mt-5 ms-5">
-                <div class="col-6 mb-5 me-5 shadow-lg" style="max-width: 28vw; border-radius: 40px;">
-                    <div class="row">
-                        <div class="aplicacion col-6 text-white" style="min-height: 40vh; min-width: 28vw; border-radius: 40px; overflow: hidden; position: relative;">
-                            <p class="mt-4 ms-5">Hace 3 horas</p>
-                            <div class="row">
-                                <h1 class="col-8 ms-5">Desarollo de Aplicacion Movil</h1>
-                            </div>
-                            <h4 class="ms-5">Mercado Libre</h4>
+            @for(int i = 0; i < ViewBag.Proyectos.Count; i++){
+                <div class="row d-flex justify-content-between mt-5 ms-5">
+                    <div class="col-6 mb-5 me-5 shadow-lg" style="max-width: 28vw; border-radius: 40px;">
+                        <div class="row">
+                            <div class="aplicacion col-6 text-white" style="min-height: 40vh; min-width: 28vw; border-radius: 40px; overflow: hidden; position: relative;">
+                                <p class="mt-4 ms-5">@ViewBag.Proyectos[i].FechaPublicacion.ToShortDateString()</p>
+                                <div class="row">
+                                    <h1 class="col-8 ms-5">@ViewBag.Proyectos[i].Nombre</h1>
+                                </div>
+                                <h4 class="ms-5">@ViewBag.Proyectos[i].NombreEmpresa</h4>
 
-                            <div class="d-flex align-items-center justify-content-center" style="border-radius: 10px; width: 23%; height: 12%; background-color: #00481D; opacity: 0.84; position: absolute; bottom: 20px; right: 20px;">
-                                <button class="bg-transparent" style="border: 0;"><h3 class="text-white">Más</h3></button>
+                                <div class="d-flex align-items-center justify-content-center" style="border-radius: 10px; width: 23%; height: 12%; background-color: #00481D; opacity: 0.84; position: absolute; bottom: 20px; right: 20px;">
+                                    <button class="bg-transparent" style="border: 0;"><h4 class="text-white">Más</h4></button>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="mt-4 mb-5" style="min-height: 7vh">
-                            <div class="row">
-                                <div class="col-md-8 offset-md-2">    
-                                    <h5 class="text-center">Crear una app para gestionar personales, enfocada en la usabilidad y diseño intuitivo.</h5>
+                            
+                            <div class="mt-4 mb-5" style="min-height: 7vh">
+                                <div class="row">
+                                    <div class="col-md-7 offset-md-2">    
+                                        <h5>@ViewBag.Proyectos[i].Descripcion</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>   
+            }
         </div>
     </div>
 </div>
