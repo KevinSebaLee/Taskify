@@ -44,6 +44,16 @@ public class BD{
         return Generos;
     }
 
+    public static List<Categoria> ObtenerCategorias(){
+        string query = "SELECT * FROM Categorias";
+        List<Categoria> Categorias = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            Categorias = db.Query<Categoria>(query).ToList();
+        }
+
+        return Categorias;
+    }
+
     public static List<Rol> ObtenerRoles(){
         string query = "SELECT * FROM Roles";
         List<Rol> Roles = null;
@@ -96,6 +106,26 @@ public class BD{
         }
 
         return empleoSeleccionado;
+    }
+
+    public static Proyecto CrearProyecto(string Nombre, string NombreEmpresa, int IdCategoria, int IdRol, string Ubicacion, DateTime fechaPublicacion, string Descripcion){
+        Proyecto proyectoNuevo = null;
+        string sp = "SP_CrearProyecto";
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            proyectoNuevo = db.QuerySingleOrDefault<Proyecto>(sp, new
+            {
+                @Nombre = Nombre,
+                @NombreEmpresa = NombreEmpresa,
+                @IdCategoria = IdCategoria,
+                @IdRol = IdRol,
+                @Ubicacion = Ubicacion,
+                @FechaPublicacion = fechaPublicacion,
+                @Descripcion = Descripcion,
+            }, commandType: System.Data.CommandType.StoredProcedure);
+        }
+
+        return proyectoNuevo;
     }
 
     public static Usuario CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol)

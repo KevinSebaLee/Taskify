@@ -64,10 +64,14 @@ public class HomeController : Controller
 
     public IActionResult PublicarProyecto(){
         ViewBag.Roles = TaskifyService.ObtenerRoles();
+        ViewBag.Categorias = TaskifyService.ObtenerCategorias();
+
         return View();
     }
 
-    public IActionResult CrearProyecto(string Nombre, string NombreEmpresa, int IdCategoria, int IdFiltro, string Ubicacion, DateTime fechaPublicacion, string Descripcion){
+    public IActionResult CrearProyecto(string Nombre, string NombreEmpresa, int IdCategoria, int IdRol, string Ubicacion, DateTime fechaPublicacion, string Descripcion){
+        Proyecto proyectoNuevo = BD.CrearProyecto(Nombre, NombreEmpresa, IdCategoria, IdRol, Ubicacion, fechaPublicacion, Descripcion);
+
         return RedirectToAction("Empleos");
     }
 
