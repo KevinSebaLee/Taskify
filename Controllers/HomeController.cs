@@ -35,6 +35,7 @@ public class HomeController : Controller
 
     public IActionResult Empleos()
     {
+        ViewBag.Proyectos = BD.ObtenerProyectos();
         return View();
     }
 

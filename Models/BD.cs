@@ -86,6 +86,16 @@ public class BD{
         return Empleos;
     }
 
+    public static List<Proyecto> ObtenerProyectos(){
+        string query = "SELECT * FROM Proyectos";
+        List<Proyecto> Proyectos = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            Proyectos = db.Query<Proyecto>(query).ToList();
+        }
+
+        return Proyectos;
+    }
+
     public static Task ObtenerTaskSeleccionado(int IdTask)
     {
         string query ="SELECT * FROM Tasks WHERE Tasks.IdTask = @id";
