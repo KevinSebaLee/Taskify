@@ -1,32 +1,7 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\48042387\\Desktop\\Taskify\\Taskify.csproj": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\Tung Shu Lee\\Desktop\\Taskify\\Taskify.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Tung Shu Lee\\Desktop\\Taskify\\Taskify.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Tung Shu Lee\\Desktop\\Taskify\\Taskify.csproj",
-        "projectName": "Taskify",
-        "projectPath": "C:\\Users\\Tung Shu Lee\\Desktop\\Taskify\\Taskify.csproj",
-        "packagesPath": "C:\\Users\\Tung Shu Lee\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tung Shu Lee\\Desktop\\Taskify\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\Tung Shu Lee\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-    "C:\\Users\\warfa\\OneDrive\\Escritorio\\Taskify\\Taskify.csproj": {}
->>>>>>> d3d99ce2a2c2fd6e7874224e7daa788d82deb499
   },
   "projects": {
     "C:\\Users\\48042387\\Desktop\\Taskify\\Taskify.csproj": {
@@ -42,13 +17,8 @@
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\48042387\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\warfa\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 0a951ec7479824abcc15c0f3869d7bc31c48fe66
->>>>>>> d3d99ce2a2c2fd6e7874224e7daa788d82deb499
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,6 +38,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -103,15 +77,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
-=======
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
->>>>>>> 0a951ec7479824abcc15c0f3869d7bc31c48fe66
->>>>>>> d3d99ce2a2c2fd6e7874224e7daa788d82deb499
         }
       }
     }
