@@ -40,7 +40,9 @@ public class HomeController : Controller
     }
     public IActionResult Proyecto(int IdProyecto)
     {
+        Console.WriteLine(IdProyecto);
         ViewBag.ProyectoElegido = TaskifyService.ObtenerEmpleoSeleccionado(IdProyecto);
+        
         return View();
     }
 

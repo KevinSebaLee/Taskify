@@ -1,7 +1,7 @@
 <div class="heroPro">
     <h1>@ViewBag.ProyectoElegido.Nombre</h1>
-    <h3>Ubicación, UBI | Puntaje ★</h3>
-    <p>Empleo</p>
+    <h3>Ubicación, @ViewBag.ProyectoElegido.Ubicacion | Puntaje @for(int i = 0; i < TaskifyService.User.Puntaje; i++){<span class="h1 text-warning">★</span> }</h3>
+    <p> @ViewBag.ProyectoElegido.Roles.Nombre</p>
     <a rol="button" href='@Url.Action("Empleos")' type="button" class="btn btn-success">Send</a>
     <a rol="button" href='@Url.Action("Agenda")' type="button" class="btn btn-light">Save</a>
 </div>
