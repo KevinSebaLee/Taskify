@@ -23,6 +23,10 @@ public class TaskifyService{
         return BD.ObtenerCategorias();
     }
 
+    public static List<string> ObtenerMail(){
+        return BD.ObtenerMail();
+    }
+
     public static Task ObtenerTaskSeleccionado(int IdTask){
         return BD.ObtenerTaskSeleccionado(IdTask);
     }

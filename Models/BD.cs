@@ -96,6 +96,17 @@ public class BD{
         return Proyectos;
     }
 
+    public static List<string> ObtenerMail()
+    {
+        string query = "SELECT Email FROM Usuarios";
+        List<string> Email = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            Email = db.Query<string>(query).ToList();
+        }
+
+        return Email;
+    }
+
     public static Task ObtenerTaskSeleccionado(int IdTask)
     {
         string query ="SELECT * FROM Tasks WHERE Tasks.IdTask = @id";

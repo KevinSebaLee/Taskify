@@ -82,9 +82,15 @@ public class HomeController : Controller
     }
 
     public IActionResult CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol, string ConfirmarContraseña, int IdFiltro){
-        if(Contraseña == ConfirmarContraseña){
+        List<string> Mail = TaskifyService.ObtenerMail();
+        
+        if(Contraseña == ConfirmarContraseña && !(Mail.Contains(Email))){
             Usuario userNuevo = TaskifyService.CrearPerfil(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, IdRol);
             return RedirectToAction("Index");
+        }
+        else if(Mail.Contains(Email)){
+            ViewBag.Error = "El mail ya esta registrado";
+            return RedirectToAction("Register");
         }
         else{
             ViewBag.Error = "No es la misma contrasseña";

@@ -208,6 +208,7 @@ INSERT INTO Generos(Nombre) VALUES
 ('Femenino')
 
 INSERT INTO Rangos(Nombre, Color) VALUES
+('Bronce I', '#c0620a'),
 ('Bronce II', '#c0620a'),
 ('Bronce III', '#c0620a'),
 ('Plata I', '#c7c7c7'),
@@ -232,19 +233,19 @@ INSERT INTO Categorias(Nombre) VALUES
 ('Blockchain'),
 ('Automatización de Procesos');
 
-INSERT INTO Roles(Nombre) VALUES
-('Desarrollador'),
-('Administrador de Sistemas'),
-('Ingeniero DevOps'),
-('Analista de Seguridad'),
-('Administrador de Base de Datos'),
-('Ingeniero de Soporte Técnico'),
-('Analista de Datos'),
-('Tester/QA'),
-('Especialista en UX/UI'),
-('Full-Stack Developer'),
-('Back-End Developer'),
-('Front-End Developer')
+INSERT INTO Roles(Nombre, Imagen) VALUES
+('Desarrollador', 'https://img.icons8.com/?size=256w&id=2264&format=png'),
+('Administrador de Sistemas', 'https://img.icons8.com/?size=256w&id=9bjHQ56ezpj1&format=png'),
+('Ingeniero DevOps', 'https://img.icons8.com/?size=256w&id=9VkgHjEOTadU&format=png'),
+('Analista de Seguridad', 'https://img.icons8.com/?size=256w&id=39138&format=png'),
+('Administrador de Base de Datos', 'https://img.icons8.com/?size=256w&id=11360&format=png'),
+('Ingeniero de Soporte Técnico', 'https://img.icons8.com/?size=256w&id=6yWJYXNVngAT&format=png'),
+('Analista de Datos', 'https://img.icons8.com/?size=256w&id=1476&format=png'),
+('Tester/QA', 'https://img.icons8.com/?size=256w&id=IUz2CWOWjp51&format=png'),
+('Especialista en UX/UI', 'https://img.icons8.com/?size=256w&id=53451&format=png'),
+('Full-Stack Developer', 'https://img.icons8.com/?size=256w&id=wWh3KNXLFm0y&format=png'),
+('Back-End Developer', 'https://img.icons8.com/?size=256w&id=SBEjRDmczSCC&format=png'),
+('Front-End Developer', 'https://img.icons8.com/?size=256w&id=SBEjRDmczSCC&format=png')
 
 INSERT INTO Paises(Nombre) VALUES
 ('Afganistán Emirato Islámico'),
