@@ -505,23 +505,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\48042387\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\94643227\\.nuget\\packages\\": {},
+>>>>>>> 51becbcfc5f4d398b5546e151cd996256a1d2950
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\48042387\\Desktop\\Taskify\\Taskify.csproj",
       "projectName": "Taskify",
       "projectPath": "C:\\Users\\48042387\\Desktop\\Taskify\\Taskify.csproj",
       "packagesPath": "C:\\Users\\48042387\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\48042387\\Desktop\\Taskify\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\94643227\\Desktop\\Taskify\\Taskify.csproj",
+      "projectName": "Taskify",
+      "projectPath": "C:\\Users\\94643227\\Desktop\\Taskify\\Taskify.csproj",
+      "packagesPath": "C:\\Users\\94643227\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\94643227\\Desktop\\Taskify\\obj\\",
+>>>>>>> 51becbcfc5f4d398b5546e151cd996256a1d2950
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\48042387\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\94643227\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 51becbcfc5f4d398b5546e151cd996256a1d2950
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
