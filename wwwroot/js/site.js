@@ -1,4 +1,15 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function ObtenerFechaHoy(){
+    const formCompletar = document.getElementById('FechaHoy');
 
-// Write your JavaScript code.
+    const Fecha = new Date();
+
+    let Dia = Fecha.getDay();
+    let Mes = Fecha.getMonth();
+    let Año = Fecha.getFullYear();
+
+    let FechaHoy = `${Dia}-${Mes}-${Año}`;
+
+    formCompletar.value = FechaHoy;
+}
+
+ObtenerFechaHoy();

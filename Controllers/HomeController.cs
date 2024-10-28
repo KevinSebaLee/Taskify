@@ -40,7 +40,6 @@ public class HomeController : Controller
     }
     public IActionResult Proyecto(int IdProyecto)
     {
-        Console.WriteLine(IdProyecto);
         ViewBag.ProyectoElegido = TaskifyService.ObtenerEmpleoSeleccionado(IdProyecto);
         
         return View();
@@ -92,11 +91,14 @@ public class HomeController : Controller
         }
         else if(Mail.Contains(Email)){
             ViewBag.Error = "El mail ya esta registrado";
-            return RedirectToAction("Register");
+            ViewBag.Paises = TaskifyService.ObtenerPaises();
+            ViewBag.Generos = TaskifyService.ObtenerGeneros();
+            ViewBag.Roles = TaskifyService.ObtenerRoles();
+            return View("Register");
         }
         else{
             ViewBag.Error = "No es la misma contrasseña";
-            return RedirectToAction("Register");
+            return View("Register");
         }
     }
 

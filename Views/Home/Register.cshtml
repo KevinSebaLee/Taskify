@@ -13,7 +13,10 @@
             </div>
         </div>
         <div>
-            <h1 class="fw-bold ms-5 ps-5">Registrarse</h1>
+            <div class="d-flex justify-content-start align-items-center">
+                <h1 class="fw-bold ms-5 ps-5 pe-5">Registrarse</h1>
+                <h3 class="text-danger">@ViewBag.Error</h3>
+            </div>
             <form class="mt-5" action='@Url.Action("CrearPerfil")' method="post">
                 <div class="row ms-5 ps-5">
                     <div class="col-5">
@@ -84,8 +87,6 @@
                 </div>
 
                 <div class="text-center mt-4 mx-auto">
-                    <h5>@ViewBag.Error</h5>
-                
                     <button type="submit" class="bg-success text-white text-center fw-bold shadow-lg" style="width: 10vw; border: 0; border-radius: 20px; height: 7vh">Registrarse</button>
                 </div>
             </form>
