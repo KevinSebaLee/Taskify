@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Taskify.Models;
+using System.Text.RegularExpressions;
+
 
 namespace Taskify.Controllers;
 
@@ -86,8 +88,10 @@ public class HomeController : Controller
     public IActionResult CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol, string ConfirmarContraseña, int IdFiltro){
         List<string> Mail = TaskifyService.ObtenerMail();
         
-        if(Contraseña == ConfirmarContraseña && !(Mail.Contains(Email))){
+        if(Contraseña == ConfirmarContraseña && !(Mail.Contains(Email)) && verificarContraseña(Contraseña)){
             Usuario userNuevo = TaskifyService.CrearPerfil(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, IdRol);
+            Console.WriteLine("entró aca");
+
             return RedirectToAction("Index");
         }
         else if(Mail.Contains(Email)){
@@ -98,6 +102,16 @@ public class HomeController : Controller
             ViewBag.Error = "No es la misma contrasseña";
             return RedirectToAction("Register");
         }
+    }
+
+    private bool verificarContraseña (string contraseña){
+
+        Console.WriteLine("entró");
+
+        Regex validateGuidRegex  = new Regex("^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$");
+
+        return validateGuidRegex.IsMatch(contraseña);
+
     }
 
     public IActionResult LogInUser(string Contraseña, string Email){
