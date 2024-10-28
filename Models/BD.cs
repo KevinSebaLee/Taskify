@@ -129,7 +129,7 @@ public class BD{
         return empleoSeleccionado;
     }
 
-    public static Proyecto CrearProyecto(string Nombre, string NombreEmpresa, int IdCategoria, int IdRol, string Ubicacion, DateTime fechaPublicacion, string Descripcion){
+    public static Proyecto CrearProyecto(string Nombre, string NombreEmpresa, int IdCategoria, int IdRol, int IdCreadorUsuario, string Ubicacion, DateTime fechaPublicacion, string Descripcion){
         Proyecto proyectoNuevo = null;
         string sp = "SP_CrearProyecto";
         using (SqlConnection db = new SqlConnection(_connectionString))
@@ -140,6 +140,7 @@ public class BD{
                 @NombreEmpresa = NombreEmpresa,
                 @IdCategoria = IdCategoria,
                 @IdRol = IdRol,
+                @IdCreadorUsuario = IdCreadorUsuario,
                 @Ubicacion = Ubicacion,
                 @FechaPublicacion = fechaPublicacion,
                 @Descripcion = Descripcion,

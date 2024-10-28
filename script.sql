@@ -59,21 +59,6 @@ CREATE TABLE Categorias(
     Descripcion VARCHAR(200)
 );
 
-
-CREATE TABLE Proyectos(
-    IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1) ,
-    IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
-    IdRol INT NOT NULL FOREIGN KEY REFERENCES Roles(IdRol),
-    Nombre VARCHAR(200),
-    NombreEmpresa VARCHAR(200),
-    Ubicacion VARCHAR(200),
-    FechaPublicacion DATE NOT NULL,
-    CantIntegrantes INT NOT NULL,
-    Descripcion VARCHAR(200),
-    Valoracion INT NOT NULL,
-    Estado BIT
-);
-
 CREATE TABLE Generos(
     IdGenero INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     Nombre VARCHAR(200)
@@ -101,6 +86,21 @@ CREATE TABLE Usuarios(
     FotoPerfil VARCHAR(200),
     Descripcion VARCHAR(200),
     FechaNacimiento DATE
+);
+
+CREATE TABLE Proyectos(
+    IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1) ,
+    IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
+    IdRol INT NOT NULL FOREIGN KEY REFERENCES Roles(IdRol),
+    IdCreadorUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
+    Nombre VARCHAR(200),
+    NombreEmpresa VARCHAR(200),
+    Ubicacion VARCHAR(200),
+    FechaPublicacion DATE NOT NULL,
+    CantIntegrantes INT NOT NULL,
+    Descripcion VARCHAR(200),
+    Valoracion INT NOT NULL,
+    Estado BIT
 );
 
 CREATE TABLE UsuarioXProyecto(
@@ -181,6 +181,7 @@ CREATE PROCEDURE SP_CrearProyecto
     @NombreEmpresa VARCHAR(200),
     @IdCategoria INT,
     @IdRol INT,
+	@IdCreadorUsuario INT,
     @Ubicacion VARCHAR(200),
     @FechaPublicacion DATE,
     @Descripcion VARCHAR(200)
@@ -189,8 +190,8 @@ BEGIN
     DECLARE @CantIntegrantes INT = 1;
     DECLARE @Valoracion INT = 0;
 
-    INSERT INTO Proyectos(IdCategoria, IdRol, Nombre, NombreEmpresa, Ubicacion, FechaPublicacion, CantIntegrantes, Valoracion, Descripcion)
-    VALUES(@IdCategoria, @IdRol, @Nombre, @NombreEmpresa, @Ubicacion, @FechaPublicacion, @CantIntegrantes, @Valoracion, @Descripcion);
+    INSERT INTO Proyectos(IdCategoria, IdRol, IdCreadorUsuario, Nombre, NombreEmpresa, Ubicacion, FechaPublicacion, CantIntegrantes, Valoracion, Descripcion)
+    VALUES(@IdCategoria, @IdRol, @IdCreadorUsuario, @Nombre, @NombreEmpresa, @Ubicacion, @FechaPublicacion, @CantIntegrantes, @Valoracion, @Descripcion);
 END
 
 CREATE PROCEDURE SP_Login

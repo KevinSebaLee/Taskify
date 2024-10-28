@@ -38,7 +38,8 @@
         }
     </select>
 
-    <input type="hidden" id="FechaHoy" name="fechaPublicacion" class="bg-dark text-light ps-4" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+    <input type="hidden" id="FechaHoy" name="fechaPublicacion" required>
+    <input type="hidden" name="IdCreadorUsuario" value="@TaskifyService.User.IdUsuario" required>
 
     <div class="input-group">
         <span class="input-group-text">With textarea</span>
