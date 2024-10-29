@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Taskify.Models;
 using System.Text.RegularExpressions;
 
-
 namespace Taskify.Controllers;
 
 public class HomeController : Controller
@@ -87,33 +86,32 @@ public class HomeController : Controller
     public IActionResult CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol, string ConfirmarContraseña, int IdFiltro){
         List<string> Mail = TaskifyService.ObtenerMail();
         
-        if(Contraseña == ConfirmarContraseña && !(Mail.Contains(Email)) && verificarContraseña(Contraseña)){
+        if(Contraseña == ConfirmarContraseña && !(Mail.Contains(Email)) && TaskifyService.VerificarContraseña(Contraseña)){
             Usuario userNuevo = TaskifyService.CrearPerfil(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, IdRol);
             Console.WriteLine("entró aca");
 
             return RedirectToAction("Index");
         }
-        else if(Mail.Contains(Email)){
-            ViewBag.Error = "El mail ya esta registrado";
+        else{
+            if(!TaskifyService.VerificarContraseña(Contraseña)){
+                ViewBag.Error = new List<bool>();
+
+                ViewBag.Error.Add(!Regex.IsMatch(Contraseña, "^.{8,}$"));
+                ViewBag.Error.Add(!Regex.IsMatch(Contraseña, "^(?=.*?[0-9])"));
+                ViewBag.Error.Add(!Regex.IsMatch(Contraseña, "^(?=.*?[A-Z])"));
+            }
+            else if(Mail.Contains(Email)){
+                ViewBag.Error = "El mail ya esta registrado";
+            }
+            else{
+                ViewBag.Error = "No ingreso la misma contraseña las 2 veces.";
+            }
+
             ViewBag.Paises = TaskifyService.ObtenerPaises();
             ViewBag.Generos = TaskifyService.ObtenerGeneros();
             ViewBag.Roles = TaskifyService.ObtenerRoles();
             return View("Register");
         }
-        else{
-            ViewBag.Error = "No es la misma contrasseña";
-            return View("Register");
-        }
-    }
-
-    private bool verificarContraseña (string contraseña){
-
-        Console.WriteLine("entró");
-
-        Regex validateGuidRegex  = new Regex("^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$");
-
-        return validateGuidRegex.IsMatch(contraseña);
-
     }
 
     public IActionResult LogInUser(string Contraseña, string Email){

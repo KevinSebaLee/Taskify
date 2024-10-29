@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 public class TaskifyService{
     public static Usuario User;
     public static Rango RangoUser;
@@ -55,5 +57,11 @@ public class TaskifyService{
     
     public static Rango ObtenerRangoUsuario(int idUsuario){
         return BD.ObtenerRangoUsuario(idUsuario);
+    }
+
+    public static bool VerificarContraseña (string contraseña){
+        Regex validateGuidRegex  = new Regex("^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$");
+
+        return validateGuidRegex.IsMatch(contraseña);
     }
 }
