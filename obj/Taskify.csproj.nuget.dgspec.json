@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\48042387\\Desktop\\Taskify\\Taskify.csproj": {}
   },
   "projects": {
@@ -13,29 +12,12 @@
         "projectPath": "C:\\Users\\48042387\\Desktop\\Taskify\\Taskify.csproj",
         "packagesPath": "C:\\Users\\48042387\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\48042387\\Desktop\\Taskify\\obj\\",
-=======
-    "C:\\Users\\94643227\\Desktop\\Taskify\\Taskify.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\94643227\\Desktop\\Taskify\\Taskify.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\94643227\\Desktop\\Taskify\\Taskify.csproj",
-        "projectName": "Taskify",
-        "projectPath": "C:\\Users\\94643227\\Desktop\\Taskify\\Taskify.csproj",
-        "packagesPath": "C:\\Users\\94643227\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\94643227\\Desktop\\Taskify\\obj\\",
->>>>>>> 51becbcfc5f4d398b5546e151cd996256a1d2950
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\48042387\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\94643227\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 51becbcfc5f4d398b5546e151cd996256a1d2950
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -95,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
