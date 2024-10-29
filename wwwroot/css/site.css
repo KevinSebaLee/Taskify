@@ -122,9 +122,10 @@ html {
 }
 
 .FotoPerfil:hover{
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
   opacity: calc(1 - 0.4);
 }
+
 
 /* Inicio Proyecto */
 
