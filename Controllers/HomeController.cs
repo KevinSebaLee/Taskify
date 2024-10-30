@@ -93,14 +93,7 @@ public class HomeController : Controller
             return RedirectToAction("Index");
         }
         else{
-            if(!TaskifyService.VerificarContraseña(Contraseña)){
-                ViewBag.Error = new List<bool>();
-
-                ViewBag.Error.Add(!Regex.IsMatch(Contraseña, "^.{8,}$"));
-                ViewBag.Error.Add(!Regex.IsMatch(Contraseña, "^(?=.*?[0-9])"));
-                ViewBag.Error.Add(!Regex.IsMatch(Contraseña, "^(?=.*?[A-Z])"));
-            }
-            else if(Mail.Contains(Email)){
+            if(Mail.Contains(Email)){
                 ViewBag.Error = "El mail ya esta registrado";
             }
             else{
