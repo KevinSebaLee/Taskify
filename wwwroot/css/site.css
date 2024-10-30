@@ -176,3 +176,66 @@ html {
 }
 
 /* Fin Proyecto */
+/* Inicio Agenda */
+.costado{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 20%;
+  background-color: #00481D;
+  opacity: 0.84;
+  padding: 3%;
+
+
+  h1{
+    padding-bottom: 5%;
+    border-bottom: 2px solid white;
+    margin-bottom: 10%;
+    margin-top: 20%;
+  }
+
+  p{
+    font-size: 1.3em;
+  }
+
+  h4{
+    color: black;
+  }
+
+}
+/* Fin Agenda */
+/* Inicio PublicarProyecto */
+
+.create{
+  margin: 3%;
+  width: 60%;
+  border: 2px solid white;
+  border-radius: 20px;
+  background-color: rgb(51, 51, 51);
+
+
+
+  h1{
+    background-color: rgb(255, 255, 255);
+    padding: 2%;
+    text-align: center;
+    border-radius: 20px;
+    color: black;
+  }
+}
+
+.contentForm{
+  padding-bottom: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 3%;
+}
+
+.containerForm{
+  display: flex;
+  justify-content: center;
+  background-image: url(../img/LoginRegisterBG.jpg);
+
+}
+/* Fin PublicarProyecto */

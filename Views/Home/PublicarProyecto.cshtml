@@ -2,22 +2,25 @@
     int sumatoriaRol = 0;
     int sumatoriaCategoria = 0;
 }
+<div class="containerForm">
 
-<form action='@Url.Action("CrearProyecto")'>
+<form class="create" action='@Url.Action("CrearProyecto")'>
+    <h1>Create project</h1>
+    
+    <div class="contentForm">
     <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1"></span>
-        <input type="text" name="Nombre" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <span class="input-group-text" id="basic-addon1">Name</span>
+        <input type="text" name="Nombre" class="form-control" placeholder="Project name" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="input-group mb-3">
-        <input type="text" name="NombreEmpresa" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-        <span class="input-group-text" id="basic-addon2"></span>
+        <span class="input-group-text" id="basic-addon2">Company</span>
+        <input type="text" name="NombreEmpresa" class="form-control" placeholder="Company name" aria-label="Recipient's username" aria-describedby="basic-addon2">
     </div>
 
     <div class="input-group mb-3">
-        <span class="input-group-text">$</span>
+        <span class="input-group-text">Location</span>
         <input type="text" name="Ubicacion" class="form-control" aria-label="Amount (to the nearest dollar)">
-        <span class="input-group-text">.00</span>
     </div>
 
     <select class="bg-dark text-light ps-4" name="IdRol" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
@@ -42,9 +45,11 @@
     <input type="hidden" name="IdCreadorUsuario" value="@TaskifyService.User.IdUsuario" required>
 
     <div class="input-group">
-        <span class="input-group-text">With textarea</span>
+        <span class="input-group-text">About the project</span>
         <textarea name="Descripcion" class="form-control" aria-label="With textarea"></textarea>
     </div>
     
-    <button type="submit">enviar</button>
+    <button type="submit" class="btn btn-light">Create Project</button>
+    </div>
 </form>
+</div>
