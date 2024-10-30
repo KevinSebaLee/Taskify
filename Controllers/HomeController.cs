@@ -88,7 +88,10 @@ public class HomeController : Controller
         
         if(Contraseña == ConfirmarContraseña && !(Mail.Contains(Email)) && TaskifyService.VerificarContraseña(Contraseña)){
             Usuario userNuevo = TaskifyService.CrearPerfil(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, IdRol);
-            Console.WriteLine("entró aca");
+            Usuario usuario = TaskifyService.LogIN(Email, Contraseña);
+            TaskifyService.User = usuario;
+            TaskifyService.RangoUser = TaskifyService.ObtenerRangoUsuario(usuario.IdUsuario);
+            TaskifyService.RolUser = TaskifyService.ObtenerRolUsuario(usuario.IdUsuario);
 
             return RedirectToAction("Index");
         }

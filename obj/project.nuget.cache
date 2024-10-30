@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Vky+/EgtgINCMZXXE69vLrPd0OL7pLqkLOuWbgPMLna830NIbxC8kPA2FYGbrYakWqVhaIK5Kf42nfOUdnECeQ==",
+  "dgSpecHash": "b8J7UF3IYtbko1oCRhAXeZ94NZSHf7Co+2sVOK0xeaEaRrIds6pV9cwGjrD0JjDmF/N16VGykXGJnwyxzpAPTg==",
   "success": true,
   "projectFilePath": "C:\\Users\\48044115\\Desktop\\Taskify\\Taskify.csproj",
   "expectedPackageFiles": [
@@ -15,12 +15,5 @@
     "C:\\Users\\48044115\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\48044115\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\48044115\\Desktop\\Taskify\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
