@@ -13,7 +13,7 @@ html {
 }
 
 .Index {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(../img/fondoHero.webp);
+  background-image: url(../img/fondoHero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   max-height: 80vh;
