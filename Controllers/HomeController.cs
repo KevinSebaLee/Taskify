@@ -142,6 +142,7 @@ public class HomeController : Controller
     public IActionResult CrearRespuesta(string Respuesta, int IdUsuarioCreador, int IdPregunta){
         RespestaPregunta nuevaRespuesta = BD.CrearRespuesta(Respuesta, IdUsuarioCreador, IdPregunta);
         ViewBag.PreguntaElegida = TaskifyService.ObtenerPreguntaSeleccionada(IdPregunta);
+        ViewBag.Respuestas = TaskifyService.ObtenerRespuestas(IdPregunta);
         
         return View("PreguntaSeleccionada");
     }
