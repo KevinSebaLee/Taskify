@@ -25,10 +25,12 @@ Contraseña.addEventListener('input', () => {
         if (!contraseñaNumeros.test(passwordValue)) {
             Numeros.style.color = 'red';
         }
-
+        
+        Registrarse.style.opacity = 0.6;
         Registrarse.disabled = true;
     }
     else{
+        Registrarse.style.opacity = 1;
         Registrarse.disabled = false;
     }
 });
