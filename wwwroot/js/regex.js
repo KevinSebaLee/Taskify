@@ -2,6 +2,7 @@ const Contraseña = document.getElementById('Contraseña');
 const Mayusculas = document.getElementById('Mayusculas');
 const Caracteres = document.getElementById('Caracteres');
 const Numeros = document.getElementById('Numeros');
+const Registrarse = document.getElementById('registrarse');
 const contraseñaSegura = new RegExp("^(?=.*[A-Z])(?=.*[0-9]).{8,}$");
 const contraseñaCaracteres = new RegExp("^.{8,}$");
 const contraseñaNumeros = new RegExp("^(?=.*[0-9]).+$");
@@ -14,13 +15,20 @@ Contraseña.addEventListener('input', () => {
     Caracteres.style.color = 'black';
     Numeros.style.color = 'black';
 
-    if (!contraseñaCaracteres.test(passwordValue)) {
-        Caracteres.style.color = 'red';
+    if(!contraseñaSegura.test(passwordValue)){
+        if (!contraseñaCaracteres.test(passwordValue)) {
+            Caracteres.style.color = 'red';
+        }
+        if (!contraseñaMayuscula.test(passwordValue)) {
+            Mayusculas.style.color = 'red';
+        }
+        if (!contraseñaNumeros.test(passwordValue)) {
+            Numeros.style.color = 'red';
+        }
+
+        Registrarse.disabled = true;
     }
-    if (!contraseñaMayuscula.test(passwordValue)) {
-        Mayusculas.style.color = 'red';
-    }
-    if (!contraseñaNumeros.test(passwordValue)) {
-        Numeros.style.color = 'red';
+    else{
+        Registrarse.disabled = false;
     }
 });

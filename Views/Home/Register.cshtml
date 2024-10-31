@@ -2,8 +2,6 @@
     int sumatoriaGenero = 0;
     int sumatoriaPais = 0;
     int sumatoriaRol = 0;
-
-
 }
 
 <div class="Cuenta d-flex justify-content-center" style="min-height: 100vh">
@@ -40,7 +38,7 @@
                         <div class="mb-3">
                             <h6 class="fw-bold">País *</h6>
                             <select class="bg-dark text-light ps-4" name="Pais" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
-                                <option value="0">Eliga su genero</option>
+                                <option value="0">Eliga su pais</option>
                                 @foreach(Pais b in ViewBag.Paises){
                                     sumatoriaPais++;
 
@@ -97,7 +95,7 @@
                             <input type="password" name="ConfirmarContraseña" class="bg-dark text-light ps-4" placeholder="Ingrese su contraseña nuevamente" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh; margin-top:19px" required>
                         </div>
                         <div class="text-center mt-4 mx-auto">
-                    <button type="submit" class="bg-success text-white text-center fw-bold shadow-lg" style="width: 8vw; border: 0; border-radius: 15px; height: 5vh; margin-top:17px">Registrarse</button>
+                    <button type="submit" id="registrarse" class="bg-success text-white text-center fw-bold shadow-lg" style="width: 8vw; border: 0; border-radius: 15px; height: 5vh; margin-top:17px">Registrarse</button>
                 </div>
                     </div>
                 </div>
