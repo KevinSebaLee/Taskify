@@ -146,6 +146,20 @@ CREATE TABLE Eventos(
     FechaFin DATE NOT NULL
 );
 
+CREATE TABLE Preguntas(
+	IdPregunta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+	IdUsuarioCreador INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
+	Titulo VARCHAR(200) NOT NULL,
+	Preguntas VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE RespuestaPregunta(
+	IdRespuesta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+	IdPregunta INT NOT NULL FOREIGN KEY REFERENCES Preguntas(IdPregunta),
+	IdUsuarioPregunta INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
+	Respuesta VARCHAR(200) NOT NULL
+);
+
 CREATE PROCEDURE SP_CrearPerfil
     @Nombre VARCHAR(200),
     @Apellido VARCHAR(200),
@@ -194,6 +208,15 @@ BEGIN
     VALUES(@IdCategoria, @IdRol, @IdCreadorUsuario, @Nombre, @NombreEmpresa, @Ubicacion, @FechaPublicacion, @CantIntegrantes, @Valoracion, @Descripcion);
 END
 
+CREATE PROCEDURE SP_CrearPregunta
+	@IdUsuarioCreador INT,
+	@Titulo VARCHAR(200),
+	@Pregunta VARCHAR(200)
+AS
+BEGIN
+	INSERT INTO Preguntas(IdUsuarioCreador, Titulo, Preguntas)
+	VALUES(@IdUsuarioCreador, @Titulo, @Pregunta)
+END
 CREATE PROCEDURE SP_Login
     @Email VARCHAR(200),
     @Contraseña VARCHAR(200)

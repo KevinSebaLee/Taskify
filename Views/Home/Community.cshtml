@@ -13,38 +13,37 @@
         </div>
     </div>
 
-    <div class="col-sm-10 bg-success pt-5 text-white d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="bg-white text-dark p-3 shadow-sm" style="width: 38vw; height: 15vh; border-radius: 30px;">
-                    <div class="d-flex align-items-center">
-                        <img src="https://via.placeholder.com/50" class="rounded-circle ms-4" style="height: 12vh; width: 7vw;" alt="User profile image">
-                        <div class="row">
-                            <div class="col-md-10">
-                                <p class="mb-0 ps-5 h5">Alguien que sepa sobre CSHTML que quiera ser parte de un proyecto con fines educativos?</p>
-                            </div>
-                            <div class="col-md-2 d-flex align-items-end">
-                                <a href=""><p class="h6 text-success text-decoration-underline">Respuestas</p></a>
+    <div class="col-sm-10 bg-success pt-5 text-white">
+         <div class="d-flex justify-content-center mt-3">
+            <input class="bg-light ps-5 shadow" type="text" placeholder="Busque una pregunta" style="border: 0; min-height: 6vh; min-width: 30vw; border-top-left-radius: 150px; border-bottom-left-radius: 150px">
+            <button class="bg-secondary shadow" style="border: 0; min-width: 5vw; border-top-right-radius: 150px; border-bottom-right-radius: 150px;">
+
+            <form action='@Url.Action("PublicarPregunta")'>
+                <button class="ms-5 ps-4 pe-4 bg-dark text-white" style="border: 0; border-radius: 20px">+</button>
+            </form>
+        </div>
+
+        <div class="row d-flex justify-content-center mt-5">
+            @for(int i = 0; i < ViewBag.Preguntas.Count; i++){
+                <div class="col-md-6 mt-5">
+                    <div class="bg-white text-dark p-3 shadow-sm" style="width: 38vw; height: 15vh; border-radius: 30px;">
+                        <div class="d-flex align-items-center">
+                            <img src="~/img/SinSesion.png" class="rounded-circle ms-4" style="height: 12vh; width: 7vw;" alt="User profile image">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <p class="mb-0 ps-5 h5">@ViewBag.Preguntas[i].Titulo</p>
+                                </div>
+                                <div class="col-md-2 d-flex align-items-end">
+                                    <form action='@Url.Action("PreguntaSeleccionada")'>
+                                        <input type="hidden" name="IdPregunta" value="@ViewBag.Preguntas[i].IdPregunta">
+                                        <button type="submit"><p class="h6 text-success text-decoration-underline">Respuestas</p></button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-             <div class="col-md-6">
-                <div class="bg-white text-dark p-3 shadow-sm" style="width: 38vw; height: 15vh; border-radius: 30px;">
-                    <div class="d-flex align-items-center">
-                        <img src="https://via.placeholder.com/50" class="rounded-circle ms-4" style="height: 12vh; width: 7vw;" alt="User profile image">
-                        <div class="row">
-                            <div class="col-md-10">
-                                <p class="mb-0 ps-5 h5">Alguien que sepa sobre CSHTML que quiera ser parte de un proyecto con fines educativos?</p>
-                            </div>
-                            <div class="col-md-1 d-flex align-items-end">
-                                <a href=""><p class="h6 text-success text-decoration-underline">Respuestas</p></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>

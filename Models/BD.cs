@@ -96,6 +96,16 @@ public class BD{
         return Proyectos;
     }
 
+    public static List<Pregunta> ObtenerPreguntas(){
+        string query = "SELECT * FROM Preguntas";
+        List<Pregunta> Preguntas = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            Preguntas = db.Query<Pregunta>(query).ToList();
+        }
+
+        return Preguntas;
+    }
+
     public static List<string> ObtenerMail()
     {
         string query = "SELECT Email FROM Usuarios";
@@ -124,6 +134,17 @@ public class BD{
         Proyecto empleoSeleccionado = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
             empleoSeleccionado = db.QueryFirstOrDefault<Proyecto>(query, new {@id = IdProyecto});
+        }
+
+        return empleoSeleccionado;
+    }
+
+    public static Pregunta ObtenerPreguntaSeleccionada(int IdPregunta)
+    {
+        string query ="SELECT * FROM Preguntas WHERE Preguntas.IdPregunta = @id";
+        Pregunta empleoSeleccionado = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            empleoSeleccionado = db.QueryFirstOrDefault<Pregunta>(query, new {@id = IdPregunta});
         }
 
         return empleoSeleccionado;
@@ -171,6 +192,21 @@ public class BD{
         }
 
         return userNuevo;
+    }
+
+    public static Pregunta CrearPregunta(string Pregunta, int IdUsuarioCreador, string Titulo){
+        Pregunta preguntaNueva = null;
+        string sp = "SP_CrearPregunta";
+        using (SqlConnection db = new SqlConnection(_connectionString)){
+            preguntaNueva = db.QuerySingleOrDefault<Pregunta>(sp, new
+            {
+                @IdUsuarioCreador = IdUsuarioCreador,
+                @Titulo = Titulo,
+                @Pregunta = Pregunta
+            }, commandType: System.Data.CommandType.StoredProcedure);
+        }
+
+        return preguntaNueva;
     }
 
     public static Usuario LogIN(string Email, string Contraseña)

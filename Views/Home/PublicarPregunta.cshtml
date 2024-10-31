@@ -1,0 +1,17 @@
+<form class="create" action='@Url.Action("CrearPregunta")'>
+    <div class="contentForm">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+            <input type="text" name="Titulo" class="form-control" placeholder="Project name" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <input type="hidden" name="IdUsuarioCreador" value="@TaskifyService.User.IdUsuario">        
+
+        <div class="input-group">
+            <span class="input-group-text">About the project</span>
+            <textarea name="Pregunta" class="form-control" aria-label="With textarea"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-light">Create Pregunta</button>
+    </div>
+</form>

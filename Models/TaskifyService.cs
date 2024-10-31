@@ -29,6 +29,10 @@ public class TaskifyService{
         return BD.ObtenerMail();
     }
 
+    public static List<Pregunta> ObtenerPreguntas(){
+        return BD.ObtenerPreguntas();
+    }
+
     public static Task ObtenerTaskSeleccionado(int IdTask){
         return BD.ObtenerTaskSeleccionado(IdTask);
     }
@@ -38,13 +42,19 @@ public class TaskifyService{
     }
 
     public static Proyecto ObtenerEmpleoSeleccionado(int idProyecto){
-        Console.WriteLine(idProyecto);
-
         return BD.ObtenerEmpleoSeleccionado(idProyecto);
+    }
+
+    public static Pregunta ObtenerPreguntaSeleccionada(int IdPregunta){
+        return BD.ObtenerPreguntaSeleccionada(IdPregunta);
     }
 
     public static Usuario CrearPerfil(string Nombre, string Apellido, int Genero, int Pais, DateTime FechaNacimiento, string NumeroTelefono, string Email, string Contraseña, int IdRol){
         return BD.CrearPerfil(Nombre, Apellido, Genero, Pais, FechaNacimiento, NumeroTelefono, Email, Contraseña, IdRol);
+    }
+
+    public static Pregunta CrearPregunta(string Pregunta, int IdUsuarioCreador, string Titulo){
+        return BD.CrearPregunta(Pregunta, IdUsuarioCreador, Titulo);
     }
 
     public static Usuario LogIN(string Email, string Contraseña){
