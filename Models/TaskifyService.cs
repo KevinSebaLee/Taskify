@@ -57,6 +57,10 @@ public class TaskifyService{
         return BD.CrearPregunta(Pregunta, IdUsuarioCreador, Titulo);
     }
 
+    public static RespestaPregunta CrearRespuesta(string Respuesta, int IdPregunta, int IdUsuarioCreador){
+        return BD.CrearRespuesta(Respuesta, IdUsuarioCreador, IdPregunta);
+    }
+
     public static Usuario LogIN(string Email, string Contraseña){
         return BD.LogIN(Email, Contraseña);
     }
@@ -67,6 +71,10 @@ public class TaskifyService{
     
     public static Rango ObtenerRangoUsuario(int idUsuario){
         return BD.ObtenerRangoUsuario(idUsuario);
+    }
+
+    public static List<RespestaPregunta> ObtenerRespuestas(int IdPregunta){
+        return BD.ObtenerRespuestasSeleccionadas(IdPregunta);
     }
 
     public static bool VerificarContraseña (string contraseña){

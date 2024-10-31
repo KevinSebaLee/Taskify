@@ -217,6 +217,17 @@ BEGIN
 	INSERT INTO Preguntas(IdUsuarioCreador, Titulo, Preguntas)
 	VALUES(@IdUsuarioCreador, @Titulo, @Pregunta)
 END
+
+CREATE PROCEDURE SP_CrearRespuesta
+	@IdPregunta INT,
+	@IdUsuarioPregunta INT,
+	@Respuesta VARCHAR(200)
+AS
+BEGIN
+	INSERT INTO RespuestaPregunta(IdPregunta, IdUsuarioPregunta, Respuesta)
+	VALUES(@IdPregunta, @IdUsuarioPregunta, @Respuesta)
+END
+
 CREATE PROCEDURE SP_Login
     @Email VARCHAR(200),
     @Contraseña VARCHAR(200)

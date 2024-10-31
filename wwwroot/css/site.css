@@ -238,4 +238,9 @@ html {
   background-image: url(../img/LoginRegisterBG.jpg);
 
 }
-/* Fin PublicarProyecto */
+
+.fondoRespuestas{
+  background-image: url(../img/fondoHero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -52,7 +52,8 @@ public class HomeController : Controller
     public IActionResult PreguntaSeleccionada(int IdPregunta)
     {
         ViewBag.PreguntaElegida = TaskifyService.ObtenerPreguntaSeleccionada(IdPregunta);
-        
+        ViewBag.Respuestas = TaskifyService.ObtenerRespuestas(IdPregunta);
+
         return View();
     }
 
@@ -82,6 +83,12 @@ public class HomeController : Controller
 
     public IActionResult PublicarPregunta()
     {
+        return View();
+    }
+
+    public IActionResult PublicarRespuesta(int IdPregunta)
+    {
+        ViewBag.IdPregunta = IdPregunta;
         return View();
     }
 
@@ -125,10 +132,18 @@ public class HomeController : Controller
         }
     }
 
-    public IActionResult CrearPregunta(string Pregunta, int IdUsuarioCreador, string Titulo){
+    public IActionResult CrearPregunta(string Pregunta, int IdUsuarioCreador, string Titulo)
+    {
         Pregunta nuevaPregunta = BD.CrearPregunta(Pregunta, IdUsuarioCreador, Titulo);
 
-        return View("Community");
+        return RedirectToAction("Community");
+    }
+
+    public IActionResult CrearRespuesta(string Respuesta, int IdUsuarioCreador, int IdPregunta){
+        RespestaPregunta nuevaRespuesta = BD.CrearRespuesta(Respuesta, IdUsuarioCreador, IdPregunta);
+        ViewBag.PreguntaElegida = TaskifyService.ObtenerPreguntaSeleccionada(IdPregunta);
+        
+        return View("PreguntaSeleccionada");
     }
 
     public IActionResult LogInUser(string Contraseña, string Email){

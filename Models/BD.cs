@@ -150,6 +150,17 @@ public class BD{
         return empleoSeleccionado;
     }
 
+    public static List<RespestaPregunta> ObtenerRespuestasSeleccionadas(int IdPregunta)
+    {
+        string query ="SELECT RespuestaPregunta.* FROM RespuestaPregunta INNER JOIN Preguntas ON Preguntas.IdPregunta = RespuestaPregunta.IdPregunta WHERE Preguntas.IdPregunta = @id";
+        List<RespestaPregunta> Respuestas = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            Respuestas = db.Query<RespestaPregunta>(query, new {@id = IdPregunta}).ToList();
+        }
+
+        return Respuestas;
+    }
+
     public static Proyecto CrearProyecto(string Nombre, string NombreEmpresa, int IdCategoria, int IdRol, int IdCreadorUsuario, string Ubicacion, DateTime fechaPublicacion, string Descripcion){
         Proyecto proyectoNuevo = null;
         string sp = "SP_CrearProyecto";
@@ -207,6 +218,21 @@ public class BD{
         }
 
         return preguntaNueva;
+    }
+
+    public static RespestaPregunta CrearRespuesta(string Respuesta, int IdUsuarioCreador, int IdPregunta){
+        RespestaPregunta respuestNueva = null;
+        string sp = "SP_CrearRespuesta";
+        using (SqlConnection db = new SqlConnection(_connectionString)){
+            respuestNueva = db.QuerySingleOrDefault<RespestaPregunta>(sp, new
+            {
+                @IdUsuarioPregunta = IdUsuarioCreador,
+                @IdPregunta = IdPregunta,
+                @Respuesta = Respuesta
+            }, commandType: System.Data.CommandType.StoredProcedure);
+        }
+
+        return respuestNueva;
     }
 
     public static Usuario LogIN(string Email, string Contraseña)
