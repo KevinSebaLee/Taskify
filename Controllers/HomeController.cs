@@ -33,7 +33,6 @@ public class HomeController : Controller
     {
         ViewBag.Preguntas = TaskifyService.ObtenerPreguntas();
 
-        Console.WriteLine(ViewBag.Preguntas.Count);
         return View();
     }
 

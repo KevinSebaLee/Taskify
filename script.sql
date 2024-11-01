@@ -160,7 +160,7 @@ CREATE TABLE RespuestaPregunta(
 	Respuesta VARCHAR(200) NOT NULL
 );
 
-CREATE PROCEDURE SP_CrearPerfil
+CREATE PROCEDURE [dbo].[SP_CrearPerfil]
     @Nombre VARCHAR(200),
     @Apellido VARCHAR(200),
     @Genero INT,
@@ -176,6 +176,9 @@ BEGIN
     DECLARE @AñoActual DATE;
     DECLARE @Puntaje INT = 0;
     DECLARE @IdRango INT = 1;
+	DECLARE @HashedPassword NVARCHAR(64);
+
+	SET @HashedPassword = CONVERT(NVARCHAR(64), HASHBYTES('SHA2_256', @Contraseña), 2);
 
     SET @AñoActual = GETDATE();
     SET @Edad = DATEDIFF(YEAR, @FechaNacimiento, @AñoActual);
@@ -187,7 +190,7 @@ BEGIN
     END;
 
     INSERT INTO Usuarios(Nombre, Apellido, IdGenero, IdPais, FechaNacimiento, Telefono, Email, Contraseña, Edad, IdRol, IdRango, Puntaje)
-    VALUES(@Nombre, @Apellido, @Genero, @Pais, @FechaNacimiento, @NumeroTelefono, @Email, @Contraseña, @Edad, @IdRol, @IdRango, @Puntaje);
+    VALUES(@Nombre, @Apellido, @Genero, @Pais, @FechaNacimiento, @NumeroTelefono, @Email, @HashedPassword, @Edad, @IdRol, @IdRango, @Puntaje);
 END;
 
 CREATE PROCEDURE SP_CrearProyecto
@@ -233,9 +236,10 @@ CREATE PROCEDURE SP_Login
     @Contraseña VARCHAR(200)
 AS
 BEGIN
-    SELECT Usuarios.*
-    FROM Usuarios
-    WHERE Email = @Email AND Contraseña = @Contraseña;
+	DECLARE @HashedPassword NVARCHAR(64);
+    SET @HashedPassword = CONVERT(NVARCHAR(64), HASHBYTES('SHA2_256', @Contraseña), 2);
+
+    SELECT Usuarios.* FROM Usuarios WHERE Email = @Email AND Contraseña = @HashedPassword;
 END
 
 INSERT INTO Generos(Nombre) VALUES
