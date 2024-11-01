@@ -14,6 +14,7 @@ html {
 
 header{
   background-color: #fcfcfc00;
+  padding-top: 20%;
 }
 
 .Index {
@@ -259,27 +260,59 @@ header{
   padding-top: 3%;
   input{
     background-color: rgb(51, 51, 51);
+    color: white;
   } 
   input::placeholder{
-      color: white;
+      color: rgba(255, 255, 255, 0.719);
     }
   }
   input-group{
     background-color: rgb(51, 51, 51);
     border-style: dashed;
     margin-bottom: 10%;
+    border: white;
+    
   }
 
-  .input1{
-    width: 50px !important;
+  .group{
+    display: flex;
   }
 
   .CreateBtn{
     margin-top: 2%;
   }
 
+  .input1{
+    margin-right: 5%;
+  }
+
   .Select{
-    margin-right: 2%;
+    margin-bottom: 30%;
+    margin-right: 4%;
+  }
+
+  .About{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .form-control{
+      width: 100%;
+      background-color: rgb(51, 51, 51);
+      border-style: dashed;
+      
+    }
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.733);
+    }
+    p{
+      font-weight: bold;
+    }
+    .Dead{
+      color: white;
+      width: 20px;
+    }
   }
 
 /* Fin CrearPro */
