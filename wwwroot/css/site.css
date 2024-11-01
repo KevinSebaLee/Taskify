@@ -12,11 +12,17 @@ html {
   }
 }
 
+header{
+  background-color: #fcfcfc00;
+}
+
 .Index {
   background-image: url(../img/fondoHero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   max-height: 80vh;
+  color: white;
+
 }
 
 .Opiniones{
@@ -210,7 +216,6 @@ html {
 .create{
   margin: 3%;
   width: 60%;
-  border: 2px solid white;
   border-radius: 20px;
   background-color: rgb(51, 51, 51);
 
@@ -244,3 +249,37 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+/* Inicio CrearPro */
+.contentFormPro{
+  padding-bottom: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 3%;
+  input{
+    background-color: rgb(51, 51, 51);
+  } 
+  input::placeholder{
+      color: white;
+    }
+  }
+  input-group{
+    background-color: rgb(51, 51, 51);
+    border-style: dashed;
+    margin-bottom: 10%;
+  }
+
+  .input1{
+    width: 50px !important;
+  }
+
+  .CreateBtn{
+    margin-top: 2%;
+  }
+
+  .Select{
+    margin-right: 2%;
+  }
+
+/* Fin CrearPro */

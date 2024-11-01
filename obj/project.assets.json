@@ -505,19 +505,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\48044115\\.nuget\\packages\\": {}
+    "C:\\Users\\48042387\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\48044115\\Desktop\\Taskify\\Taskify.csproj",
+      "projectUniqueName": "C:\\Users\\48042387\\Desktop\\Taskify\\Taskify.csproj",
       "projectName": "Taskify",
-      "projectPath": "C:\\Users\\48044115\\Desktop\\Taskify\\Taskify.csproj",
-      "packagesPath": "C:\\Users\\48044115\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\48044115\\Desktop\\Taskify\\obj\\",
+      "projectPath": "C:\\Users\\48042387\\Desktop\\Taskify\\Taskify.csproj",
+      "packagesPath": "C:\\Users\\48042387\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\48042387\\Desktop\\Taskify\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\48044115\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\48042387\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

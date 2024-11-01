@@ -6,10 +6,10 @@
     <form class="create" action='@Url.Action("CrearProyecto")'>
         <h1>Create project</h1>
         
-        <div class="contentForm">
+        <div class="contentFormPro">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Name</span>
-            <input type="text" name="Nombre" class="form-control" placeholder="Project name" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" name="Nombre" class="form-control input1" placeholder="Project name">
         </div>
 
         <div class="input-group mb-3">
@@ -22,7 +22,7 @@
             <input type="text" name="Ubicacion" class="form-control" aria-label="Amount (to the nearest dollar)">
         </div>
 
-        <select class="bg-dark text-light ps-4" name="IdRol" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+        <select class="bg-light text-dark ps-4 Select" name="IdRol" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh; margin-bottom:15px">
             <option value="0">Eliga su rol</option>
             @foreach(Rol c in ViewBag.Roles){
                 sumatoriaRol++;
@@ -31,7 +31,7 @@
             }
         </select>
 
-        <select class="bg-dark text-light ps-4" name="IdCategoria" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+        <select class="bg-light text-dark ps-4" name="IdCategoria" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
             <option value="0">Eliga su categoria</option>
             @foreach(Categoria c in ViewBag.Categorias){
                 sumatoriaCategoria++;
@@ -48,7 +48,7 @@
             <textarea name="Descripcion" class="form-control" aria-label="With textarea"></textarea>
         </div>
         
-        <button type="submit" class="btn btn-light">Create Project</button>
+        <button type="submit" class="btn btn-light CreateBtn">Create Project</button>
         </div>
     </form>
 </div>

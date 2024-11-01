@@ -91,7 +91,6 @@ CREATE TABLE Usuarios(
 CREATE TABLE Proyectos(
     IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1) ,
     IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
-    IdRol INT NOT NULL FOREIGN KEY REFERENCES Roles(IdRol),
     IdCreadorUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
     Nombre VARCHAR(200),
     NombreEmpresa VARCHAR(200),
@@ -101,6 +100,11 @@ CREATE TABLE Proyectos(
     Descripcion VARCHAR(200),
     Valoracion INT NOT NULL,
     Estado BIT
+);
+
+CREATE TABLE ProyectosXRol(
+    IdProyecto INT NOT NULL FOREIGN KEY REFERENCES Proyectos(IdProyecto),
+    IdRol INT NOT NULL FOREIGN KEY REFERENCES Roles(IdRol)
 );
 
 CREATE TABLE UsuarioXProyecto(
