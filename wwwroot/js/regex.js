@@ -8,6 +8,10 @@ const contraseñaCaracteres = new RegExp("^.{8,}$");
 const contraseñaNumeros = new RegExp("^(?=.*[0-9]).+$");
 const contraseñaMayuscula = new RegExp("^(?=.*[A-Z]).+$");
 
+Mayusculas.style.color = 'red';
+Caracteres.style.color = 'red';
+Numeros.style.color = 'red';
+
 Contraseña.addEventListener('input', () => {
     const passwordValue = Contraseña.value;
 
