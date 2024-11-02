@@ -4,39 +4,39 @@ USE Taskify;
 
 CREATE TABLE Roles(
     IdRol INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Nombre VARCHAR(200) NOT NULL,
-    Descripcion VARCHAR(200),
-    Imagen VARCHAR(200)
+    Nombre NVARCHAR(200) NOT NULL,
+    Descripcion NVARCHAR(200),
+    Imagen NVARCHAR(200)
 );
 
 CREATE TABLE Rangos(
     IdRango INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Nombre VARCHAR(200) NOT NULL,
-    Color VARCHAR(200) NOT NULL
+    Nombre NVARCHAR(200) NOT NULL,
+    Color NVARCHAR(200) NOT NULL
 );
 
 CREATE TABLE Lenguajes(
     IdLenguaje INt NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Nombre VARCHAR(200) NOT NULL,
-    Descripcion VARCHAR(200) NOT NULL
+    Nombre NVARCHAR(200) NOT NULL,
+    Descripcion NVARCHAR(200) NOT NULL
 );
 
 CREATE TABLE Tasks(
     IdTask INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdLenguaje INT NOT NULL FOREIGN KEY REFERENCES Lenguajes(IdLenguaje),
-    Area VARCHAR(200) NOT NULL
+    Area NVARCHAR(200) NOT NULL
 );
 
 CREATE TABLE Consigna(
     IdConsigna INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Pregunta VARCHAR(200) NOT NULL,
-    Foto VARCHAR(200)
+    Pregunta NVARCHAR(200) NOT NULL,
+    Foto NVARCHAR(200)
 );
 
 CREATE TABLE Respuesta(
     IdRespuesta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdConsigna INT NOT NULL FOREIGN KEY REFERENCES Consigna(IdConsigna),
-    Contenido VARCHAR(200) NOT NULL,
+    Contenido NVARCHAR(200) NOT NULL,
     Opcion INT NOT NULL,
     EsCorrecta BIT NOT NULL
 );
@@ -49,24 +49,24 @@ CREATE TABLE ConsignaXTask(
 CREATE TABLE Certificados(
     IdCertificado INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdTask INT NOT NULL FOREIGN KEY REFERENCES Tasks(IdTask),
-    Nombre VARCHAR(200) NOT NULL,
-    Area VARCHAR(200) NOT NULL,
+    Nombre NVARCHAR(200) NOT NULL,
+    Area NVARCHAR(200) NOT NULL,
 );
 
 CREATE TABLE Categorias(
     IdCategoria INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Nombre VARCHAR(200) NOT NULL,
-    Descripcion VARCHAR(200)
+    Nombre NVARCHAR(200) NOT NULL,
+    Descripcion NVARCHAR(200)
 );
 
 CREATE TABLE Generos(
     IdGenero INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Nombre VARCHAR(200)
+    Nombre NVARCHAR(200)
 );
 
 CREATE TABLE Paises(
     IdPais INT NOT NULL  PRIMARY KEY IDENTITY(1, 1),
-    Nombre VARCHAR(200)
+    Nombre NVARCHAR(200)
 )
 
 CREATE TABLE Usuarios(
@@ -76,15 +76,15 @@ CREATE TABLE Usuarios(
 	IdCertificado INT FOREIGN KEY REFERENCES Certificados(IdCertificado),
     IdGenero INT NOT NULL FOREIGN KEY REFERENCES Generos(IdGenero),
     IdPais INT NOT NULL FOREIGN KEY REFERENCES Paises(IdPais),
-    Nombre VARCHAR(200) NOT NULL,
-    Apellido VARCHAR(200) NOT NULL,
-    Contraseña VARCHAR(200) NOT NULL,
+    Nombre NVARCHAR(200) NOT NULL,
+    Apellido NVARCHAR(200) NOT NULL,
+    Contraseña NVARCHAR(200) NOT NULL,
     Edad INT NOT NULL,
-    Email VARCHAR(200) NOT NULL,
-    Telefono VARCHAR(200) NOT NULL,
+    Email NVARCHAR(200) NOT NULL,
+    Telefono NVARCHAR(200) NOT NULL,
     Puntaje INT NOT NULL,
-    FotoPerfil VARCHAR(200),
-    Descripcion VARCHAR(200),
+    FotoPerfil NVARCHAR(200),
+    Descripcion NVARCHAR(200),
     FechaNacimiento DATE
 );
 
@@ -92,12 +92,12 @@ CREATE TABLE Proyectos(
     IdProyecto INT NOT NULL PRIMARY KEY IDENTITY(1, 1) ,
     IdCategoria INT NOT NULL FOREIGN KEY REFERENCES Categorias(IdCategoria),
     IdCreadorUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
-    Nombre VARCHAR(200),
-    NombreEmpresa VARCHAR(200),
-    Ubicacion VARCHAR(200),
+    Nombre NVARCHAR(200),
+    NombreEmpresa NVARCHAR(200),
+    Ubicacion NVARCHAR(200),
     FechaPublicacion DATE NOT NULL,
     CantIntegrantes INT NOT NULL,
-    Descripcion VARCHAR(200),
+    Descripcion NVARCHAR(200),
     Valoracion INT NOT NULL,
     Estado BIT
 );
@@ -114,7 +114,7 @@ CREATE TABLE UsuarioXProyecto(
 
 CREATE TABLE Chats(
     IdChat INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-    Nombrechat VARCHAR(200) NOT NULL,
+    Nombrechat NVARCHAR(200) NOT NULL,
     EsGrupo BIT NOT NULL  
 );
 
@@ -127,7 +127,7 @@ CREATE TABLE Mensajes(
     IdMensaje INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdChat INT NOT NULL FOREIGN KEY REFERENCES Chats(IdChat),
     IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
-    Contenido VARCHAR(700) NOT NULL,
+    Contenido NVARCHAR(700) NOT NULL,
     Hora DATE NOT NULL,
     EsLeido BIT
 );
@@ -135,17 +135,17 @@ CREATE TABLE Mensajes(
 CREATE TABLE Contactos(
     IdContacto INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
-    Nombre VARCHAR(200) NOT NULL,
-    Telefono VARCHAR(200) NOT NULL,
-    Email VARCHAR(200) NOT NULL,
+    Nombre NVARCHAR(200) NOT NULL,
+    Telefono NVARCHAR(200) NOT NULL,
+    Email NVARCHAR(200) NOT NULL,
 );
 
 CREATE TABLE Eventos(
     IdEvento INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
     IdContacto INT NOT NULL FOREIGN KEY REFERENCES Contactos(IdContacto),
-    Nombre VARCHAR(200) NOT NULL,
-    Descripcion VARCHAR(200) NOT NULL,
+    Nombre NVARCHAR(200) NOT NULL,
+    Descripcion NVARCHAR(200) NOT NULL,
     FechaInicio DATE NOT NULL,
     FechaFin DATE NOT NULL
 );
@@ -153,26 +153,26 @@ CREATE TABLE Eventos(
 CREATE TABLE Preguntas(
 	IdPregunta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
 	IdUsuarioCreador INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
-	Titulo VARCHAR(200) NOT NULL,
-	Preguntas VARCHAR(200) NOT NULL
+	Titulo NVARCHAR(200) NOT NULL,
+	Preguntas NVARCHAR(200) NOT NULL
 );
 
 CREATE TABLE RespuestaPregunta(
 	IdRespuesta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
 	IdPregunta INT NOT NULL FOREIGN KEY REFERENCES Preguntas(IdPregunta),
 	IdUsuarioPregunta INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
-	Respuesta VARCHAR(200) NOT NULL
+	Respuesta NVARCHAR(200) NOT NULL
 );
 
 CREATE PROCEDURE [dbo].[SP_CrearPerfil]
-    @Nombre VARCHAR(200),
-    @Apellido VARCHAR(200),
+    @Nombre NVARCHAR(200),
+    @Apellido NVARCHAR(200),
     @Genero INT,
     @Pais INT,
     @FechaNacimiento DATE,
-    @NumeroTelefono VARCHAR(200),
-    @Email VARCHAR(200),
-    @Contraseña VARCHAR(200),
+    @NumeroTelefono NVARCHAR(200),
+    @Email NVARCHAR(200),
+    @Contraseña NVARCHAR(200),
     @IdRol INT
 AS
 BEGIN
@@ -198,14 +198,14 @@ BEGIN
 END;
 
 CREATE PROCEDURE SP_CrearProyecto
-    @Nombre VARCHAR(200),
-    @NombreEmpresa VARCHAR(200),
+    @Nombre NVARCHAR(200),
+    @NombreEmpresa NVARCHAR(200),
     @IdCategoria INT,
     @IdRol INT,
 	@IdCreadorUsuario INT,
-    @Ubicacion VARCHAR(200),
+    @Ubicacion NVARCHAR(200),
     @FechaPublicacion DATE,
-    @Descripcion VARCHAR(200)
+    @Descripcion NVARCHAR(200)
 AS
 BEGIN
     DECLARE @CantIntegrantes INT = 1;
@@ -217,8 +217,8 @@ END
 
 CREATE PROCEDURE SP_CrearPregunta
 	@IdUsuarioCreador INT,
-	@Titulo VARCHAR(200),
-	@Pregunta VARCHAR(200)
+	@Titulo NVARCHAR(200),
+	@Pregunta NVARCHAR(200)
 AS
 BEGIN
 	INSERT INTO Preguntas(IdUsuarioCreador, Titulo, Preguntas)
@@ -228,7 +228,7 @@ END
 CREATE PROCEDURE SP_CrearRespuesta
 	@IdPregunta INT,
 	@IdUsuarioPregunta INT,
-	@Respuesta VARCHAR(200)
+	@Respuesta NVARCHAR(200)
 AS
 BEGIN
 	INSERT INTO RespuestaPregunta(IdPregunta, IdUsuarioPregunta, Respuesta)
@@ -236,8 +236,8 @@ BEGIN
 END
 
 CREATE PROCEDURE SP_Login
-    @Email VARCHAR(200),
-    @Contraseña VARCHAR(200)
+    @Email NVARCHAR(200),
+    @Contraseña NVARCHAR(200)
 AS
 BEGIN
 	DECLARE @HashedPassword NVARCHAR(64);
