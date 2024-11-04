@@ -133,7 +133,8 @@ public class HomeController : Controller
 
         return RedirectToAction("Community");
     }
-
+    
+    [HttpPost]
     public IActionResult CrearRespuesta(string Respuesta, int IdUsuarioCreador, int IdPregunta){
         RespestaPregunta nuevaRespuesta = BD.CrearRespuesta(Respuesta, IdUsuarioCreador, IdPregunta);
         ViewBag.PreguntaElegida = TaskifyService.ObtenerPreguntaSeleccionada(IdPregunta);

@@ -26,7 +26,8 @@ CREATE TABLE Tasks(
     IdLenguaje INT NOT NULL FOREIGN KEY REFERENCES Lenguajes(IdLenguaje),
     Area NVARCHAR(200) NOT NULL,
     Titulo NVARCHAR(200) NOT NULL,
-    FechaPubli Date NOT NULL
+    FechaPubli Date NOT NULL,
+    Progreso INT NOT NULL
 );
 
 CREATE TABLE Consigna(
