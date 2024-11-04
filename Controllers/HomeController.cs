@@ -180,4 +180,27 @@ public class HomeController : Controller
         ViewBag.ConsignasXTask = TaskifyService.ConsignasXTask(IdTask);
         return View("TaskSeleccionado");
     }
+
+    [HttpPost]
+    public IActionResult UploadProfilePic(IFormFile profilePic)
+    {
+        if (profilePic != null && profilePic.Length > 0)
+        {
+            var supportedTypes = new[] { "img/jpeg", "img/png", "img/gif", "img/webp" };
+            if (!supportedTypes.Contains(profilePic.ContentType))
+            {
+                return BadRequest(new { message = "Invalid file type. Only JPEG, PNG, GIF, and WEBP are supported." });
+            }
+
+            var filePath = Path.Combine("~/img", profilePic.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                profilePic.CopyTo(stream);
+            }
+
+            return Ok(new { message = "Profile picture updated" });
+        }
+
+        return BadRequest(new { message = "Invalid file" });
+    }
 }
