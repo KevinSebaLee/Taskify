@@ -266,4 +266,14 @@ public class BD{
         }
         return ListTask;
     }
+
+    public static List<RespestaPregunta> RespuestasXConsigna (int IdConsigna){
+        List<RespestaPregunta> RespuestasXConsigna = null;
+        string query ="SELECT * FROM RespuestaPregunta WHERE RespuestaPregunta.IdPregunta = @id";
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            RespuestasXConsigna = db.Query<RespestaPregunta>(query, new {@id = IdConsigna}).ToList();
+        }
+
+        return RespuestasXConsigna;
+    }
 }

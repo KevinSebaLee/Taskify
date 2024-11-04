@@ -90,4 +90,8 @@ public class TaskifyService{
     public static List<Task> ObtenerTask (){
         return BD.ObtenerTask();
     }
+
+    public static List<RespestaPregunta> RespestaXConsigna (int IdConsigna){
+        return BD.RespuestasXConsigna(IdConsigna);
+    }
 }

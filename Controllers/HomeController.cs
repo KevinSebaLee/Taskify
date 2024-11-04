@@ -166,6 +166,9 @@ public class HomeController : Controller
 
     public IActionResult TaskSeleccionado (int IdTask){
         ViewBag.ConsignasXTask = TaskifyService.ConsignasXTask(IdTask);
+        foreach(Consigna c in ViewBag.ConsignasXTask) {
+            c.Respuestas = TaskifyService.RespestaXConsigna(IdTask);
+        }
         return View("TaskSeleccionado");
     }
 }
