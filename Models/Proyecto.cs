@@ -8,7 +8,7 @@ public class Proyecto
     public string NombreEmpresa {get; set;}
     public Rol Roles {get; set;}
     public string Ubicacion {get; set;}
-    public string FechaPublicacion { get; set; }
+    public DateTime FechaPublicacion { get; set; }
     public int CantIntegrantes { get; set; }
     public string Descripcion { get; set; }
     public decimal Valoracion { get; set; }
