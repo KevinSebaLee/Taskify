@@ -37,6 +37,10 @@ public class TaskifyService{
         return BD.ObtenerTaskSeleccionado(IdTask);
     }
 
+    public static Usuario ObtenerUsuario(int idUsuario){
+        return BD.ObtenerUsuario(idUsuario);
+    }
+
     public static List<Proyecto> ObtenerEmpleos(){
         return BD.ObtenerEmpleos();
     }

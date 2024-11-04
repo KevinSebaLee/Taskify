@@ -32,6 +32,13 @@ public class HomeController : Controller
     public IActionResult Community()
     {
         ViewBag.Preguntas = TaskifyService.ObtenerPreguntas();
+        ViewBag.Usuarios = new List<Usuario>();
+
+        foreach (Pregunta a in ViewBag.Preguntas)
+        {
+            Usuario userNuevo = TaskifyService.ObtenerUsuario(a.IdUsuarioCreador);
+            ViewBag.Usuarios.Add(userNuevo);
+        }
 
         return View();
     }
@@ -39,8 +46,10 @@ public class HomeController : Controller
     public IActionResult Empleos()
     {
         ViewBag.Proyectos = TaskifyService.ObtenerEmpleos();
+        
         return View();
     }
+
     public IActionResult Proyecto(int IdProyecto)
     {
         ViewBag.ProyectoElegido = TaskifyService.ObtenerEmpleoSeleccionado(IdProyecto);
@@ -126,6 +135,8 @@ public class HomeController : Controller
             return View("Register");
         }
     }
+
+    [HttpPost]
 
     public IActionResult CrearPregunta(string Pregunta, int IdUsuarioCreador, string Titulo)
     {
