@@ -24,6 +24,16 @@ public class BD{
         return rangoUsuario;
     }
 
+    public static Usuario ObtenerUsuario(int idUsuario){
+        string query = "SELECT * FROM Usuarios WHERE Usuarios.IdUsuario = @id";
+        Usuario user = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            user = db.QueryFirstOrDefault<Usuario>(query, new{@id = idUsuario});
+        }
+
+        return user;
+    }
+
     public static List<Rol> ObtenerRolUsuario(int idUsuario){
         string query = "SELECT Roles.* FROM Usuarios INNER JOIN Roles ON Usuarios.IdRol = Roles.IdRol WHERE Usuarios.IdUsuario = @IdUsuario";
         List<Rol> rolUsuario = null;

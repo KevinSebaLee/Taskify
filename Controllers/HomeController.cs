@@ -32,6 +32,13 @@ public class HomeController : Controller
     public IActionResult Community()
     {
         ViewBag.Preguntas = TaskifyService.ObtenerPreguntas();
+        ViewBag.Usuarios = new List<Usuario>();
+
+        foreach (Pregunta a in ViewBag.Preguntas)
+        {
+            Usuario userNuevo = TaskifyService.ObtenerUsuario(a.IdUsuarioCreador);
+            ViewBag.Usuarios.Add(userNuevo);
+        }
 
         return View();
     }
@@ -39,8 +46,10 @@ public class HomeController : Controller
     public IActionResult Empleos()
     {
         ViewBag.Proyectos = TaskifyService.ObtenerEmpleos();
+        
         return View();
     }
+
     public IActionResult Proyecto(int IdProyecto)
     {
         ViewBag.ProyectoElegido = TaskifyService.ObtenerEmpleoSeleccionado(IdProyecto);
@@ -127,13 +136,16 @@ public class HomeController : Controller
         }
     }
 
+    [HttpPost]
+
     public IActionResult CrearPregunta(string Pregunta, int IdUsuarioCreador, string Titulo)
     {
         Pregunta nuevaPregunta = BD.CrearPregunta(Pregunta, IdUsuarioCreador, Titulo);
 
         return RedirectToAction("Community");
     }
-
+    
+    [HttpPost]
     public IActionResult CrearRespuesta(string Respuesta, int IdUsuarioCreador, int IdPregunta){
         RespestaPregunta nuevaRespuesta = BD.CrearRespuesta(Respuesta, IdUsuarioCreador, IdPregunta);
         ViewBag.PreguntaElegida = TaskifyService.ObtenerPreguntaSeleccionada(IdPregunta);
@@ -170,5 +182,28 @@ public class HomeController : Controller
             c.Respuestas = TaskifyService.RespestaXConsigna(IdTask);
         }
         return View("TaskSeleccionado");
+    }
+
+    [HttpPost]
+    public IActionResult UploadProfilePic(IFormFile profilePic)
+    {
+        if (profilePic != null && profilePic.Length > 0)
+        {
+            var supportedTypes = new[] { "img/jpeg", "img/png", "img/gif", "img/webp" };
+            if (!supportedTypes.Contains(profilePic.ContentType))
+            {
+                return BadRequest(new { message = "Invalid file type. Only JPEG, PNG, GIF, and WEBP are supported." });
+            }
+
+            var filePath = Path.Combine("~/img", profilePic.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                profilePic.CopyTo(stream);
+            }
+
+            return Ok(new { message = "Profile picture updated" });
+        }
+
+        return BadRequest(new { message = "Invalid file" });
     }
 }

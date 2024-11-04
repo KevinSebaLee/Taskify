@@ -7,9 +7,16 @@
         </div>
 
         <div class="row mt-5 pt-3">
-            <a href='@Url.Action("Index")' class="col-md-3 d-flex justify-content-center FotoPerfil">
+            <a href="#" id="changeProfilePicLink" class="col-md-3 d-flex justify-content-center FotoPerfil">
                 <img src="~/img/SinSesion.png" alt="Profile Image" style="border-radius: 50%; width: 15vw; height: 15vw; border: 1px solid black;">
             </a>
+
+            <div id="profilePicModal" class="modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+                <form id="profilePicForm" enctype="multipart/form-data">
+                    <input type="file" name="profilePic" id="profilePicInput" required />
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
 
             <div class="col-md-4 d-flex align-items-start">
                 <div>
@@ -81,3 +88,6 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/PfpChange.js" asp-append-version="true"></script>
