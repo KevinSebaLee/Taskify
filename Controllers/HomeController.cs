@@ -75,10 +75,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Tasks()
-    {
-        return View();
-    }
 
     public IActionResult PublicarPregunta()
     {
@@ -160,5 +156,16 @@ public class HomeController : Controller
 
             return RedirectToAction("Index");
         }
+    }
+
+    public IActionResult Tasks()
+    {
+        ViewBag.ListaTask = TaskifyService.ObtenerTask();
+        return View();
+    }
+
+    public IActionResult TaskSeleccionado (int IdTask){
+        ViewBag.ConsignasXTask = TaskifyService.ConsignasXTask(IdTask);
+        return View("TaskSeleccionado");
     }
 }

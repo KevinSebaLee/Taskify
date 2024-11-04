@@ -24,11 +24,14 @@ CREATE TABLE Lenguajes(
 CREATE TABLE Tasks(
     IdTask INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdLenguaje INT NOT NULL FOREIGN KEY REFERENCES Lenguajes(IdLenguaje),
-    Area NVARCHAR(200) NOT NULL
+    Area NVARCHAR(200) NOT NULL,
+    Titulo NVARCHAR(200) NOT NULL,
+    FechaPubli Date NOT NULL
 );
 
 CREATE TABLE Consigna(
     IdConsigna INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
+    IdTask INT NOT NULL FOREIGN KEY REFERENCES Tasks(IdTask),
     Pregunta NVARCHAR(200) NOT NULL,
     Foto NVARCHAR(200)
 );
@@ -39,11 +42,6 @@ CREATE TABLE Respuesta(
     Contenido NVARCHAR(200) NOT NULL,
     Opcion INT NOT NULL,
     EsCorrecta BIT NOT NULL
-);
-
-CREATE TABLE ConsignaXTask(
-    IdTask INT NOT NULL FOREIGN KEY REFERENCES Tasks(IdTask),
-    IdConsigna INT NOT NULL FOREIGN KEY REFERENCES Consigna(IdConsigna)
 );
 
 CREATE TABLE Certificados(
@@ -211,8 +209,8 @@ BEGIN
     DECLARE @CantIntegrantes INT = 1;
     DECLARE @Valoracion INT = 0;
 
-    INSERT INTO Proyectos(IdCategoria, IdRol, IdCreadorUsuario, Nombre, NombreEmpresa, Ubicacion, FechaPublicacion, CantIntegrantes, Valoracion, Descripcion)
-    VALUES(@IdCategoria, @IdRol, @IdCreadorUsuario, @Nombre, @NombreEmpresa, @Ubicacion, @FechaPublicacion, @CantIntegrantes, @Valoracion, @Descripcion);
+    INSERT INTO Proyectos(IdCategoria, IdCreadorUsuario, Nombre, NombreEmpresa, Ubicacion, FechaPublicacion, CantIntegrantes, Valoracion, Descripcion)
+    VALUES(@IdCategoria, @IdCreadorUsuario, @Nombre, @NombreEmpresa, @Ubicacion, @FechaPublicacion, @CantIntegrantes, @Valoracion, @Descripcion);
 END
 
 CREATE PROCEDURE SP_CrearPregunta

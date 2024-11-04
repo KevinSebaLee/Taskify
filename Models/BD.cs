@@ -247,4 +247,23 @@ public class BD{
 
         return usuario;
     }
+
+    public static List<Consigna> ObtenerConsignasXTask(int IdTask){
+        List<Consigna> ConsignasXTask = null;
+        string query ="SELECT Pregunta FROM Consigna WHERE Consigna.IdTask = @id";
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            ConsignasXTask = db.Query<Consigna>(query, new {@id = IdTask}).ToList();
+        }
+
+        return ConsignasXTask;
+    }
+
+    public static List<Task> ObtenerTask (){
+        string query = "SELECT * FROM Tasks";
+        List<Task> ListTask = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            ListTask = db.Query<Task>(query).ToList();
+        }
+        return ListTask;
+    }
 }

@@ -82,4 +82,12 @@ public class TaskifyService{
 
         return validateGuidRegex.IsMatch(contraseña);
     }
+
+    public static List<Consigna> ConsignasXTask (int IdTask){
+        return BD.ObtenerConsignasXTask(IdTask);
+    }
+
+    public static List<Task> ObtenerTask (){
+        return BD.ObtenerTask();
+    }
 }
