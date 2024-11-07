@@ -463,3 +463,110 @@ INSERT INTO Paises(Nombre) VALUES
 ('Yemen'),
 ('Zambia'),
 ('Zimbabue')
+
+INSERT INTO lenguajes (NOMBRE, DESCRIPCION) VALUES
+('Python', 'Lenguaje de programación interpretado, de alto nivel y con énfasis en la legibilidad del código. Muy popular en ciencia de datos, desarrollo web y automatización.'),
+('JavaScript', 'Lenguaje de programación interpretado utilizado principalmente en desarrollo web para crear páginas interactivas y dinámicas.'),
+('Java', 'Lenguaje de programación orientado a objetos, ampliamente utilizado en aplicaciones empresariales, desarrollo de Android y sistemas grandes.'),
+('C', 'Lenguaje de programación de bajo nivel que permite la manipulación directa de memoria. Es base de otros lenguajes como C++ y C#.'),
+('C++', 'Lenguaje de programación basado en C, pero con características de programación orientada a objetos. Se usa en desarrollo de videojuegos, sistemas y aplicaciones de alto rendimiento.'),
+('Ruby', 'Lenguaje de programación dinámico y de alto nivel, conocido por su simplicidad y elegancia. Popular en el desarrollo web con Ruby on Rails.'),
+('Go', 'Lenguaje de programación de código abierto creado por Google. Es conocido por su eficiencia en concurrencia y alto rendimiento en sistemas distribuidos.'),
+('Swift', 'Lenguaje de programación desarrollado por Apple para crear aplicaciones en sus plataformas como iOS, macOS, watchOS y tvOS.'),
+('PHP', 'Lenguaje de programación de código abierto, utilizado principalmente en el desarrollo web del lado del servidor. Es especialmente popular en el desarrollo de aplicaciones dinámicas.'),
+('R', 'Lenguaje de programación y entorno de software para la estadística y el análisis de datos, ampliamente utilizado en investigación y ciencia de datos.');
+
+INSERT INTO tasks (IdLenguaje, Area, Titulo, FechaPubli, Progreso) VALUES
+(1, 'Automatización de Tareas', 'Automatizar la recolección de datos con Python', '2024-09-05', 50),
+(2, 'Desarrollo Web', 'Desarrollar una aplicación de chat en tiempo real con Node.js y Socket.io', '2024-10-12', 80),
+(5, 'Desarrollo de Software', 'Crear un sistema de gestión de inventarios con Ruby on Rails', '2024-07-30', 10),
+(6, 'Ciencia de Datos', 'Análisis de grandes volúmenes de datos usando R para la predicción de ventas', '2024-10-15', 60);
+
+-- Tópico 1: Python - Automatización de Tareas
+INSERT INTO consigna (IdTask, Pregunta) VALUES
+(14, '¿Cómo puedes utilizar Python para automatizar tareas repetitivas en tu sistema?'),
+(14, '¿Qué librerías de Python son más populares para realizar scraping web?'),
+(14, 'Explica cómo usar Python para crear un script que recupere datos de una API pública.'),
+(14, '¿Qué es el módulo `os` en Python y cómo puede ayudarte en la automatización de tareas?'),
+(14, 'Menciona al menos tres casos de uso donde Python sea ideal para automatización de procesos.'),
+(14, '¿Cómo puedes automatizar el envío de correos electrónicos con Python?'),
+(14, 'Explica cómo puedes programar tareas recurrentes en Python utilizando el módulo `schedule`.'),
+(14, '¿Qué es `Selenium` y cómo puede ayudarte a automatizar interacciones con un navegador web?'),
+(14, '¿Cuál es la importancia de los `cron jobs` en combinación con Python para la automatización de procesos?'),
+(14, '¿Cómo puedes usar Python para procesar archivos CSV de manera automática?'),
+(14, '¿Qué ventajas tiene la automatización de tareas con Python frente a otras herramientas de programación?'),
+(14, '¿Cómo puedes utilizar Python para organizar y mover archivos automáticamente en un directorio?'),
+(14, '¿Qué consideraciones de seguridad debes tener en cuenta al automatizar tareas en Python?'),
+(14, '¿Cómo puedes crear un script en Python para generar informes automáticos a partir de datos de bases de datos?'),
+(14, '¿Qué es `pyautogui` y cómo puede ayudarte a automatizar la interacción con la interfaz gráfica del sistema operativo?'),
+(14, '¿Cómo puedes usar Python para monitorear un directorio y ejecutar acciones automáticamente cuando cambien los archivos?'),
+(14, 'Explica cómo utilizar `BeautifulSoup` y `requests` para automatizar la recolección de datos desde un sitio web.'),
+(14, '¿Qué desafíos pueden surgir al automatizar tareas complejas en Python y cómo podrías abordarlos?'),
+(14, '¿Cómo puedes usar Python para crear un archivo de log que registre las acciones realizadas por tus scripts de automatización?'),
+(14, '¿Qué es un “web scraper” y cómo lo puedes construir utilizando Python?');
+
+-- Tópico 2: JavaScript - Desarrollo Web
+INSERT INTO consigna (IdTask, Pregunta) VALUES
+(15, '¿Cómo JavaScript mejora la interactividad de las páginas web?'),
+(15, '¿Qué es el modelo de objetos del documento (DOM) y cómo interactúa JavaScript con él?'),
+(15, 'Explica la diferencia entre `var`, `let` y `const` en JavaScript.'),
+(15, '¿Cómo puedes manejar eventos en JavaScript y cuáles son los tipos de eventos más comunes?'),
+(15, '¿Cómo puedes realizar una petición HTTP usando JavaScript para obtener datos de un servidor?'),
+(15, '¿Qué es AJAX y cómo se utiliza en JavaScript para cargar contenido de manera asíncrona?'),
+(15, 'Explica qué es la promesa en JavaScript y cómo se utiliza para manejar operaciones asincrónicas.'),
+(15, '¿Cómo puedes manipular los estilos de una página web usando JavaScript?'),
+(15, '¿Qué son las funciones flecha (`arrow functions`) y cómo se diferencian de las funciones tradicionales en JavaScript?'),
+(15, '¿Cómo puedes validar formularios en el lado del cliente usando JavaScript?'),
+(15, 'Explica qué es un "callback" en JavaScript y cómo se utilizan en la programación asincrónica.'),
+(15, '¿Cuál es la importancia de `localStorage` y `sessionStorage` en JavaScript para almacenar datos en el navegador?'),
+(15, '¿Cómo puedes gestionar errores y excepciones en JavaScript usando `try`, `catch`, y `finally`?'),
+(15, '¿Qué es una SPA (Single Page Application) y cómo JavaScript facilita su desarrollo?'),
+(15, 'Explica el concepto de "closure" en JavaScript y da un ejemplo práctico.'),
+(15, '¿Cómo puedes realizar una redirección en JavaScript a otra página web o URL?'),
+(15, '¿Qué es `fetch` en JavaScript y cómo puedes usarlo para hacer peticiones HTTP?'),
+(15, '¿Cómo se pueden crear animaciones y transiciones en JavaScript para mejorar la experiencia de usuario?'),
+(15, 'Explica el uso de `setTimeout` y `setInterval` en JavaScript y da un ejemplo de cada uno.'),
+(15, '¿Qué son las plantillas literales (template literals) y cómo facilitan la creación de cadenas de texto en JavaScript?');
+
+-- Tópico 3: Ruby on Rails - Desarrollo de Software
+INSERT INTO consigna (IdTask, Pregunta) VALUES
+(16, '¿Qué es Ruby on Rails y por qué se considera un framework eficiente para el desarrollo web?'),
+(16, '¿Cómo puedes crear un nuevo proyecto de Ruby on Rails desde cero?'),
+(16, 'Explica el patrón de arquitectura MVC en el contexto de Ruby on Rails.'),
+(16, '¿Qué son los "migraciones" en Ruby on Rails y cómo se utilizan para modificar la base de datos?'),
+(16, '¿Cómo puedes manejar relaciones entre modelos en Ruby on Rails, como "has_many" y "belongs_to"?'),
+(16, 'Explica cómo crear una ruta personalizada en Ruby on Rails y qué archivo se debe modificar para hacerlo.'),
+(16, '¿Qué son los "scaffolds" en Rails y cómo ayudan a acelerar el desarrollo de una aplicación?'),
+(16, '¿Qué es ActiveRecord en Ruby on Rails y cómo se utiliza para interactuar con bases de datos?'),
+(16, '¿Cómo puedes validar los datos de un formulario en Ruby on Rails?'),
+(16, 'Explica cómo se implementa la autenticación de usuarios en Ruby on Rails.'),
+(16, '¿Qué son las "seeds" en Rails y cómo se utilizan para poblar la base de datos con datos de prueba?'),
+(16, '¿Cómo puedes realizar una consulta compleja en Rails utilizando ActiveRecord?'),
+(16, 'Explica cómo Rails maneja la autenticación de sesiones y cookies.'),
+(16, '¿Cómo puedes optimizar el rendimiento de una aplicación Ruby on Rails?'),
+(16, '¿Cómo se maneja el enrutamiento en Rails y qué es el archivo `routes.rb`?'),
+(16, 'Explica el uso de los "partials" en Rails para reutilizar código en vistas.'),
+(16, '¿Qué son los "concerns" en Ruby on Rails y cómo pueden ayudar a organizar mejor el código?'),
+(16, '¿Cómo puedes generar una nueva migración en Rails para agregar un campo a una tabla existente?'),
+(16, 'Explica cómo configurar un entorno de pruebas en Ruby on Rails utilizando RSpec o MiniTest.');
+
+-- Tópico 4: R - Ciencia de Datos
+INSERT INTO consigna (IdTask, Pregunta) VALUES
+(17, '¿Cómo puedes cargar un conjunto de datos en R utilizando la función `read.csv`?'),
+(17, 'Explica qué son los data frames en R y cómo se utilizan para almacenar datos tabulares.'),
+(17, '¿Cómo puedes manejar valores faltantes (NA) en un conjunto de datos en R?'),
+(17, '¿Qué es una variable categórica en R y cómo se puede representar visualmente?'),
+(17, '¿Cómo puedes realizar un análisis exploratorio de datos en R utilizando el paquete `ggplot2`?'),
+(17, 'Explica cómo crear y manipular una serie temporal en R utilizando el paquete `zoo`.'),
+(17, '¿Qué son las funciones de agregación en R y cómo puedes utilizarlas para resumir datos?'),
+(17, '¿Cómo puedes aplicar un modelo de regresión lineal en R usando el paquete `lm`?'),
+(17, '¿Qué son las "funciones anónimas" en R y en qué situaciones pueden ser útiles?'),
+(17, 'Explica cómo realizar una validación cruzada para un modelo de machine learning en R.'),
+(17, '¿Cómo puedes visualizar la distribución de una variable numérica en R usando `hist()`?'),
+(17, '¿Qué es la "normalización" de datos y cómo se puede realizar en R?'),
+(17, '¿Cómo puedes realizar un análisis de correlación entre dos variables en R?'),
+(17, 'Explica el concepto de "overfitting" y cómo prevenirlo al construir modelos predictivos en R.'),
+(17, '¿Cómo se puede usar el paquete `dplyr` para manipular y transformar datos en R?'),
+(17, '¿Qué es un modelo de clasificación en R y cómo se entrena uno con `rpart`?'),
+(17, 'Explica cómo crear una matriz de confusión en R y qué información nos proporciona.'),
+(17, '¿Cómo puedes aplicar un análisis de componentes principales (PCA) en R para reducción de dimensionalidad');
