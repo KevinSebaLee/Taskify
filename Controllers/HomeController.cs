@@ -2,6 +2,10 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Taskify.Models;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Taskify.Controllers;
 
@@ -185,25 +189,24 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult UploadProfilePic(IFormFile profilePic)
+public async Task<IActionResult> ChangeProfilePicture(IFormFile profilePicture)
+{
+    if (profilePicture != null && profilePicture.Length > 0)
     {
-        if (profilePic != null && profilePic.Length > 0)
+        // Save the file to a location
+        var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "uploads", profilePicture.FileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
         {
-            var supportedTypes = new[] { "img/jpeg", "img/png", "img/gif", "img/webp" };
-            if (!supportedTypes.Contains(profilePic.ContentType))
-            {
-                return BadRequest(new { message = "Invalid file type. Only JPEG, PNG, GIF, and WEBP are supported." });
-            }
-
-            var filePath = Path.Combine("~/img", profilePic.FileName);
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                profilePic.CopyTo(stream);
-            }
-
-            return Ok(new { message = "Profile picture updated" });
+            await profilePicture.CopyToAsync(stream);
         }
 
-        return BadRequest(new { message = "Invalid file" });
+        // Update the user's profile picture in the database
+        // ...
+
+        return RedirectToAction("Profile");
     }
+
+    return View();
+}
 }
