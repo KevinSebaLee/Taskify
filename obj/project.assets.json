@@ -801,24 +801,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\warfa\\.nuget\\packages\\": {}
+    "C:\\Users\\48044115\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\warfa\\Desktop\\Taskify\\Taskify.csproj",
+      "projectUniqueName": "C:\\Users\\48044115\\Desktop\\Taskify\\Taskify.csproj",
       "projectName": "Taskify",
-      "projectPath": "C:\\Users\\warfa\\Desktop\\Taskify\\Taskify.csproj",
-      "packagesPath": "C:\\Users\\warfa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\warfa\\Desktop\\Taskify\\obj\\",
+      "projectPath": "C:\\Users\\48044115\\Desktop\\Taskify\\Taskify.csproj",
+      "packagesPath": "C:\\Users\\48044115\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\48044115\\Desktop\\Taskify\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\warfa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\48044115\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -878,16 +885,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\warfa\\Desktop\\Taskify\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

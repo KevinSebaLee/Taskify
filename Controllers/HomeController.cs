@@ -6,12 +6,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Taskify.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IWebHostEnvironment _hostingEnvironment;
 
     public HomeController(ILogger<HomeController> logger)
     {

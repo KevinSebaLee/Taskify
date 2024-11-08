@@ -26,7 +26,9 @@ namespace Taskify.Controllers
                     Scopes,
                     "user",
                     CancellationToken.None,
-                    new FileDataStore("token.json", true)).Result;
+                    new FileDataStore("token.json", true),
+                    new CustomLocalServerCodeReceiver("http://localhost:5088/Home/Agenda")
+                ).Result;
             }
 
             return new CalendarService(new BaseClientService.Initializer()
