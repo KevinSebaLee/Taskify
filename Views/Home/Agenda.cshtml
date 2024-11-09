@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Agenda";
 }
 
 <div class="Agenda">
@@ -9,5 +9,23 @@
         <p>Postulaciones</p>
         <p>Entregas</p>
     </div>
+    <div id="calendar-events">
+        <!-- Calendar events will be loaded here -->
+    </div>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('/Calendar/events')
+            .then(response => response.json())
+            .then(data => {
+                const eventsContainer = document.getElementById('calendar-events');
+                data.forEach(event => {
+                    const eventElement = document.createElement('p');
+                    eventElement.textContent = `${event.summary} - ${new Date(event.start.dateTime).toLocaleString()}`;
+                    eventsContainer.appendChild(eventElement);
+                });
+            })
+            .catch(error => console.error('Error fetching calendar events:', error));
+    });
+</script>
