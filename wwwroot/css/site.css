@@ -1,5 +1,4 @@
 html {
-  font-family: 'Fredoka';
   font-size: 14px;
   min-height: 100%;
   padding: 0px;
@@ -325,4 +324,10 @@ header{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Inicio Mejorá */
+button{
+  background-color: #fcfcfc00;
+  border: none;
 }

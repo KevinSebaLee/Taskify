@@ -1,16 +1,25 @@
-<p>@ViewBag.TaskSelec.FechaPubli.ToShortDateString()</p>
-<h3>@ViewBag.TaskSelec.Titulo // @ViewBag.TaskSelec.Progreso%</h3>
-@foreach(Consigna c in @ViewBag.ConsignasXTask){
-    <h1>@c.Pregunta</h1>
-    @for(int x = 0; x < 4; x++){
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">
-            Acá va la respuesta
-          </label>
+@foreach (Consigna c in ViewBag.ConsignasXTask)
+{
+    <h4>@c.Pregunta</h4>
 
-        </div>
+    Dictionary<int, List<Respuesta>> respuestasPorConsigna = ViewBag.RespuestasPorConsigna;
+
+    if (respuestasPorConsigna != null && respuestasPorConsigna.ContainsKey(c.IdConsigna) && respuestasPorConsigna[c.IdConsigna].Any())
+    {
+        List<Respuesta> respuestas = respuestasPorConsigna[c.IdConsigna];
+        
+        for (int x = 0; x < respuestas.Count; x++)
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault-@c.IdConsigna" id="flexRadioDefault-@c.IdConsigna-@x">
+                <label class="form-check-label" for="flexRadioDefault-@c.IdConsigna-@x">
+                    @respuestas[x].Contenido
+                </label>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No hay respuestas disponibles para esta consigna.</p>
     }
 }
-
-<a href='@Url.Action("Tasks")'>Send</a>

@@ -181,37 +181,31 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult TaskSeleccionado (int IdTask){
-        Console.WriteLine(IdTask);
-        List<Task> Tasks = TaskifyService.ObtenerTask();
+    public IActionResult TaskSeleccionado(int IdTask)
+    {
+        List<Consigna> consignasXTask = TaskifyService.ConsignasXTask(IdTask);
+        ViewBag.ConsignasXTask = consignasXTask;
 
-        ViewBag.ConsignasXTask = TaskifyService.ConsignasXTask(IdTask);
-        ViewBag.TaskSelec = Tasks.FirstOrDefault(t => t.IdTask == IdTask);
-        foreach(Consigna c in ViewBag.ConsignasXTask) {
-            c.Respuestas = TaskifyService.RespuestaXConsigna(IdTask);
+        Dictionary<int, List<Respuesta>> respuestasPorConsigna = new Dictionary<int, List<Respuesta>>();
+
+        foreach (Consigna consigna in consignasXTask)
+        {
+            List<Respuesta> respuestas = TaskifyService.RespuestaXConsigna(consigna.IdConsigna);
+
+            if (respuestasPorConsigna.ContainsKey(consigna.IdConsigna))
+            {
+                respuestasPorConsigna[consigna.IdConsigna].AddRange(respuestas);
+            }
+            else
+            {
+                respuestasPorConsigna.Add(consigna.IdConsigna, respuestas);
+            }
         }
+
+        ViewBag.RespuestasPorConsigna = respuestasPorConsigna;
+
         return View("TaskSeleccionado");
     }
 
-    [HttpPost]
-public async Task<IActionResult> ChangeProfilePicture(IFormFile profilePicture)
-{
-    if (profilePicture != null && profilePicture.Length > 0)
-    {
-        // Save the file to a location
-        var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "uploads", profilePicture.FileName);
 
-        using (var stream = new FileStream(filePath, FileMode.Create))
-        {
-            await profilePicture.CopyToAsync(stream);
-        }
-
-        // Update the user's profile picture in the database
-        // ...
-
-        return RedirectToAction("Profile");
-    }
-
-    return View();
-}
 }
