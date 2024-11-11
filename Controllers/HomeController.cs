@@ -90,7 +90,6 @@ public class HomeController : Controller
         return View();
     }
 
-
     public IActionResult PublicarPregunta()
     {
         return View();
