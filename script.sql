@@ -37,7 +37,7 @@ CREATE TABLE Consigna(
     Foto NVARCHAR(200)
 );
 
-CREATE TABLE RespuestaPregunta(
+CREATE TABLE RespuestaChat(
     IdRespuesta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdConsigna INT NOT NULL FOREIGN KEY REFERENCES Consigna(IdConsigna),
     Contenido NVARCHAR(200) NOT NULL,
@@ -160,7 +160,7 @@ CREATE TABLE RespuestaChat(
 	IdRespuesta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
 	IdPregunta INT NOT NULL FOREIGN KEY REFERENCES Preguntas(IdPregunta),
 	IdUsuarioPregunta INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
-	RespuestaPregunta NVARCHAR(200) NOT NULL
+	RespuestaChat NVARCHAR(200) NOT NULL
 );
 
 CREATE PROCEDURE [dbo].[SP_CrearPerfil]
@@ -224,13 +224,13 @@ BEGIN
 	VALUES(@IdUsuarioCreador, @Titulo, @Pregunta)
 END
 
-CREATE PROCEDURE SP_CrearRespuesta
+CREATE PROCEDURE [dbo].[SP_CrearRespuesta]
 	@IdPregunta INT,
 	@IdUsuarioPregunta INT,
 	@RespuestaPregunta NVARCHAR(200)
 AS
 BEGIN
-	INSERT INTO RespuestaPregunta(IdPregunta, IdUsuarioPregunta, RespuestaPregunta)
+	INSERT INTO RespuestaChat(IdPregunta, IdUsuarioPregunta, RespuestaPregunta)
 	VALUES(@IdPregunta, @IdUsuarioPregunta, @RespuestaPregunta)
 END
 
@@ -571,79 +571,80 @@ INSERT INTO consigna (IdTask, Pregunta) VALUES
 (4, 'Explica cómo crear una matriz de confusión en R y qué información nos proporciona.'),
 (4, '¿Cómo puedes aplicar un análisis de componentes principales (PCA) en R para reducción de dimensionalidad');
 
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 2, N'Usando bibliotecas como `os`, `shutil` y `subprocess` para automatizar tareas del sistema', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES (2, N'Usando Python únicamente para crear interfaces gráficas', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 2, N'Automatizando tareas con herramientas como Task Scheduler o Cron', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 2, N'Utilizando Python para generar documentación de código automáticamente', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 3, N'Las librerías más populares son `BeautifulSoup`, `Scrapy` y `Selenium`', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 3, N'Las librerías más populares son `NumPy` y `Pandas`', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 3, N'La librería más popular es `os`', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 3, N'No es posible hacer scraping con Python', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 4, N'Utilizando `requests` para hacer solicitudes HTTP y `json` para procesar los datos', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 4, N'Usando `matplotlib` para representar los datos de la API', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 4, N'Usando `tkinter` para crear una interfaz gráfica que consuma la API', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 4, N'Creando una API RESTful con Flask para consumir los datos', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 5, N'El módulo `os` permite interactuar con el sistema operativo, manejar archivos y directorios, y ejecutar comandos del sistema', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 5, N'El módulo `os` permite crear interfaces gráficas', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 5, N'El módulo `os` está diseñado para la automatización de redes', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 5, N'El módulo `os` es utilizado solo para crear aplicaciones web', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 6, N'Automatización de tareas repetitivas, procesamiento de datos en lote y envío de correos electrónicos', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 6, N'Automatización de gráficos 3D en videojuegos', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 6, N'Automatización de transacciones bancarias', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 6, N'Automatización de tareas exclusivamente para servidores web', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 7, N'Usando la librería `smtplib` para enviar correos con un script en Python', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 7, N'Usando `matplotlib` para crear gráficos en los correos', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 7, N'Utilizando `requests` para interactuar con servicios de correo', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 7, N'No es posible automatizar el envío de correos en Python', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 8, N'Utilizando el módulo `schedule` para ejecutar funciones en intervalos regulares', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 8, N'Usando `tkinter` para crear una interfaz que permita programar tareas', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 8, N'Utilizando `flask` para crear una API que controle la programación de tareas', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 8, N'Usando `pygame` para crear una interfaz de usuario para tareas programadas', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 9, N'Selenium es una herramienta para automatizar navegadores web y realizar pruebas de interfaz de usuario', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 9, N'Selenium es una librería de Python para crear interfaces gráficas', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 9, N'Selenium es una herramienta para crear APIs RESTful', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 9, N'Selenium es utilizado para crear bases de datos en Python', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 10, N'Los `cron jobs` son procesos programados en el sistema operativo que permiten ejecutar scripts de Python automáticamente', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 10, N'Los `cron jobs` se utilizan únicamente para tareas en servidores web', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 10, N'Los `cron jobs` son una característica exclusiva de Windows', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 10, N'No se puede usar `cron jobs` para la automatización con Python', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 11, N'Utilizando la librería `csv` de Python para leer y escribir archivos CSV automáticamente', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 11, N'Utilizando `flask` para crear un servidor web que gestione los archivos CSV', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 11, N'Usando `matplotlib` para visualizar los archivos CSV', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 11, N'Automatizando el procesamiento de archivos CSV con `pygame`', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 12, N'Puedes usar la librería `shutil` para mover archivos, y `os` para renombrarlos o eliminarlos', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 12, N'Utilizando solo `tkinter` para organizar archivos en una interfaz gráfica', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 12, N'Puedes usar `pygame` para mover archivos', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 12, N'No es posible mover archivos con Python', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 13, N'Debes tener en cuenta el manejo de permisos de archivos, la validación de datos y la protección contra inyecciones de código', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 13, N'La seguridad no es un aspecto relevante en la automatización con Python', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 13, N'La seguridad es solo importante en aplicaciones web, no en scripts de automatización', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 13, N'No es necesario implementar ningún tipo de seguridad en tus scripts de automatización', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 14, N'Puedes usar `pandas` para procesar los datos y `matplotlib` para generar gráficos automáticamente', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 14, N'Es necesario usar `tkinter` para crear la interfaz gráfica para la generación de informes', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 14, N'Utilizando `pygame` para crear gráficos interactivos a partir de los datos de la base de datos', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 14, N'No es posible generar informes con Python', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 15, N'`pyautogui` permite automatizar interacciones con la interfaz gráfica del sistema operativo, como hacer clic y escribir texto', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 15, N'`pyautogui` se utiliza solo para crear gráficos interactivos', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 15, N'`pyautogui` es una librería para interactuar con bases de datos', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 15, N'No es posible automatizar interacciones con la interfaz gráfica en Python', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 16, N'Usando `watchdog` para monitorear el directorio y ejecutar un script cuando cambian los archivos', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 16, N'Usando `tkinter` para crear una interfaz gráfica que monitoree los cambios en un directorio', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 16, N'Usando `pygame` para monitorear directorios', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 16, N'Todas son correctas', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 17, N'Usando `subprocess` para ejecutar comandos en el sistema', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 17, N'Usando `random` para crear interfaces gráficas', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 17, N'Usando `collections` para monitorear directorios', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 17, N'Todas son correctas', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 18, N'Usando `psutil` para obtener información del sistema, como uso de CPU y memoria', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 18, N'Usando `socket` para monitorear directorios', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 18, N'Usando `json` para crear gráficos', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 18, N'Todas son correctas', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 19, N'Usando `logging` para registrar eventos en un archivo de log', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 19, N'Usando `email` para manejar gráficos', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 19, N'Usando `itertools` para crear interfaces gráficas', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 19, N'Todas son correctas', 4, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 20, N'Usando `schedule` para programar tareas en intervalos de tiempo', 1, 1)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 20, N'Usando `unittest` para monitorear directorios', 2, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 20, N'Usando `csv` para enviar correos electrónicos', 3, 0)
-INSERT [dbo].[RespuestaPregunta]( [IdConsigna], [Contenido], [Opcion], [EsCorrecta]) VALUES ( 20, N'Todas son correctas', 4, 0)
+INSERT INTO RespuestaChat (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES 
+( 2, N'Usando bibliotecas como `os`, `shutil` y `subprocess` para automatizar tareas del sistema', 1, 1),
+( 2, N'Usando Python únicamente para crear interfaces gráficas', 2, 0),
+( 2, N'Automatizando tareas con herramientas como Task Scheduler o Cron', 3, 0),
+( 2, N'Utilizando Python para generar documentación de código automáticamente', 4, 0),
+( 3, N'Las librerías más populares son `BeautifulSoup`, `Scrapy` y `Selenium`', 1, 1),
+( 3, N'Las librerías más populares son `NumPy` y `Pandas`', 2, 0),
+( 3, N'La librería más popular es `os`', 3, 0),
+( 3, N'No es posible hacer scraping con Python', 4, 0),
+( 4, N'Utilizando `requests` para hacer solicitudes HTTP y `json` para procesar los datos', 1, 1),
+( 4, N'Usando `matplotlib` para representar los datos de la API', 2, 0),
+( 4, N'Usando `tkinter` para crear una interfaz gráfica que consuma la API', 3, 0),
+( 4, N'Creando una API RESTful con Flask para consumir los datos', 4, 0),
+( 5, N'El módulo `os` permite interactuar con el sistema operativo, manejar archivos y directorios, y ejecutar comandos del sistema', 1, 1),
+( 5, N'El módulo `os` permite crear interfaces gráficas', 2, 0),
+( 5, N'El módulo `os` está diseñado para la automatización de redes', 3, 0),
+( 5, N'El módulo `os` es utilizado solo para crear aplicaciones web', 4, 0),
+( 6, N'Automatización de tareas repetitivas, procesamiento de datos en lote y envío de correos electrónicos', 1, 1),
+( 6, N'Automatización de gráficos 3D en videojuegos', 2, 0),
+( 6, N'Automatización de transacciones bancarias', 3, 0),
+( 6, N'Automatización de tareas exclusivamente para servidores web', 4, 0),
+( 7, N'Usando la librería `smtplib` para enviar correos con un script en Python', 1, 1),
+( 7, N'Usando `matplotlib` para crear gráficos en los correos', 2, 0),
+( 7, N'Utilizando `requests` para interactuar con servicios de correo', 3, 0),
+( 7, N'No es posible automatizar el envío de correos en Python', 4, 0),
+( 8, N'Utilizando el módulo `schedule` para ejecutar funciones en intervalos regulares', 1, 1),
+( 8, N'Usando `tkinter` para crear una interfaz que permita programar tareas', 2, 0),
+( 8, N'Utilizando `flask` para crear una API que controle la programación de tareas', 3, 0),
+( 8, N'Usando `pygame` para crear una interfaz de usuario para tareas programadas', 4, 0),
+( 9, N'Selenium es una herramienta para automatizar navegadores web y realizar pruebas de interfaz de usuario', 1, 1),
+( 9, N'Selenium es una librería de Python para crear interfaces gráficas', 2, 0),
+( 9, N'Selenium es una herramienta para crear APIs RESTful', 3, 0),
+( 9, N'Selenium es utilizado para crear bases de datos en Python', 4, 0),
+( 10, N'Los `cron jobs` son procesos programados en el sistema operativo que permiten ejecutar scripts de Python automáticamente', 1, 1),
+( 10, N'Los `cron jobs` se utilizan únicamente para tareas en servidores web', 2, 0),
+( 10, N'Los `cron jobs` son una característica exclusiva de Windows', 3, 0),
+( 10, N'No se puede usar `cron jobs` para la automatización con Python', 4, 0),
+( 11, N'Utilizando la librería `csv` de Python para leer y escribir archivos CSV automáticamente', 1, 1),
+( 11, N'Utilizando `flask` para crear un servidor web que gestione los archivos CSV', 2, 0),
+( 11, N'Usando `matplotlib` para visualizar los archivos CSV', 3, 0),
+( 11, N'Automatizando el procesamiento de archivos CSV con `pygame`', 4, 0),
+( 12, N'Puedes usar la librería `shutil` para mover archivos, y `os` para renombrarlos o eliminarlos', 1, 1),
+( 12, N'Utilizando solo `tkinter` para organizar archivos en una interfaz gráfica', 2, 0),
+( 12, N'Puedes usar `pygame` para mover archivos', 3, 0),
+( 12, N'No es posible mover archivos con Python', 4, 0),
+( 13, N'Debes tener en cuenta el manejo de permisos de archivos, la validación de datos y la protección contra inyecciones de código', 1, 1),
+( 13, N'La seguridad no es un aspecto relevante en la automatización con Python', 2, 0),
+( 13, N'La seguridad es solo importante en aplicaciones web, no en scripts de automatización', 3, 0),
+( 13, N'No es necesario implementar ningún tipo de seguridad en tus scripts de automatización', 4, 0),
+( 14, N'Puedes usar `pandas` para procesar los datos y `matplotlib` para generar gráficos automáticamente', 1, 1),
+( 14, N'Es necesario usar `tkinter` para crear la interfaz gráfica para la generación de informes', 2, 0),
+( 14, N'Utilizando `pygame` para crear gráficos interactivos a partir de los datos de la base de datos', 3, 0),
+( 14, N'No es posible generar informes con Python', 4, 0),
+( 15, N'`pyautogui` permite automatizar interacciones con la interfaz gráfica del sistema operativo, como hacer clic y escribir texto', 1, 1),
+( 15, N'`pyautogui` se utiliza solo para crear gráficos interactivos', 2, 0),
+( 15, N'`pyautogui` es una librería para interactuar con bases de datos', 3, 0),
+( 15, N'No es posible automatizar interacciones con la interfaz gráfica en Python', 4, 0),
+( 16, N'Usando `watchdog` para monitorear el directorio y ejecutar un script cuando cambian los archivos', 1, 1),
+( 16, N'Usando `tkinter` para crear una interfaz gráfica que monitoree los cambios en un directorio', 2, 0),
+( 16, N'Usando `pygame` para monitorear directorios', 3, 0),
+( 16, N'Todas son correctas', 4, 0),
+( 17, N'Usando `subprocess` para ejecutar comandos en el sistema', 1, 1),
+( 17, N'Usando `random` para crear interfaces gráficas', 2, 0),
+( 17, N'Usando `collections` para monitorear directorios', 3, 0),
+( 17, N'Todas son correctas', 4, 0),
+( 18, N'Usando `psutil` para obtener información del sistema, como uso de CPU y memoria', 1, 1),
+( 18, N'Usando `socket` para monitorear directorios', 2, 0),
+( 18, N'Usando `json` para crear gráficos', 3, 0),
+( 18, N'Todas son correctas', 4, 0),
+( 19, N'Usando `logging` para registrar eventos en un archivo de log', 1, 1),
+( 19, N'Usando `email` para manejar gráficos', 2, 0),
+( 19, N'Usando `itertools` para crear interfaces gráficas', 3, 0),
+( 19, N'Todas son correctas', 4, 0),
+( 20, N'Usando `schedule` para programar tareas en intervalos de tiempo', 1, 1),
+( 20, N'Usando `unittest` para monitorear directorios', 2, 0),
+( 20, N'Usando `csv` para enviar correos electrónicos', 3, 0),
+( 20, N'Todas son correctas', 4, 0)

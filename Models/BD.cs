@@ -160,12 +160,12 @@ public class BD{
         return empleoSeleccionado;
     }
 
-    public static List<RespestaPregunta> ObtenerRespuestasSeleccionadas(int IdPregunta)
+    public static List<RespuestaChat> ObtenerRespuestasSeleccionadas(int IdPregunta)
     {
-        string query ="SELECT RespuestaPregunta.* FROM RespuestaPregunta INNER JOIN Preguntas ON Preguntas.IdPregunta = RespuestaPregunta.IdPregunta WHERE Preguntas.IdPregunta = @id";
-        List<RespestaPregunta> Respuestas = null;
+        string query ="SELECT RespuestaChat.* FROM RespuestaChat INNER JOIN Preguntas ON Preguntas.IdPregunta = RespuestaChat.IdPregunta WHERE Preguntas.IdPregunta = @id";
+        List<RespuestaChat> Respuestas = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            Respuestas = db.Query<RespestaPregunta>(query, new {@id = IdPregunta}).ToList();
+            Respuestas = db.Query<RespuestaChat>(query, new {@id = IdPregunta}).ToList();
         }
 
         return Respuestas;
@@ -230,15 +230,15 @@ public class BD{
         return preguntaNueva;
     }
 
-    public static RespestaPregunta CrearRespuesta(string Respuesta, int IdUsuarioCreador, int IdPregunta){
-        RespestaPregunta respuestNueva = null;
+    public static RespuestaChat CrearRespuesta(string Respuesta, int IdUsuarioCreador, int IdPregunta){
+        RespuestaChat respuestNueva = null;
         string sp = "SP_CrearRespuesta";
         using (SqlConnection db = new SqlConnection(_connectionString)){
-            respuestNueva = db.QuerySingleOrDefault<RespestaPregunta>(sp, new
+            respuestNueva = db.QuerySingleOrDefault<RespuestaChat>(sp, new
             {
                 @IdUsuarioPregunta = IdUsuarioCreador,
                 @IdPregunta = IdPregunta,
-                @Respuesta = Respuesta
+                @RespuestaPregunta = Respuesta
             }, commandType: System.Data.CommandType.StoredProcedure);
         }
 
