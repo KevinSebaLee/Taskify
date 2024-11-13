@@ -161,7 +161,6 @@ public class BD{
     }
 
     public static List<RespuestaChat> ObtenerRespuestasSeleccionadas(int IdPregunta)
-    public static List<RespuestaChat> ObtenerRespuestasSeleccionadas(int IdPregunta)
     {
         string query ="SELECT RespuestaChat.* FROM RespuestaChat INNER JOIN Preguntas ON Preguntas.IdPregunta = RespuestaChat.IdPregunta WHERE Preguntas.IdPregunta = @id";
         List<RespuestaChat> Respuestas = null;
@@ -236,7 +235,6 @@ public class BD{
         RespuestaChat respuestNueva = null;
         string sp = "SP_CrearRespuesta";
         using (SqlConnection db = new SqlConnection(_connectionString)){
-            respuestNueva = db.QuerySingleOrDefault<RespuestaChat>(sp, new
             respuestNueva = db.QuerySingleOrDefault<RespuestaChat>(sp, new
             {
                 @IdUsuarioPregunta = IdUsuarioCreador,
