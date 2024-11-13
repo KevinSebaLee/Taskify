@@ -202,6 +202,7 @@ public class HomeController : Controller
         }
 
         ViewBag.RespuestasPorConsigna = respuestasPorConsigna;
+        Console.WriteLine(ViewBag.RespuestasPorConsigna.Count);
 
         return View("TaskSeleccionado");
     }

@@ -161,10 +161,12 @@ public class BD{
     }
 
     public static List<RespuestaChat> ObtenerRespuestasSeleccionadas(int IdPregunta)
+    public static List<RespuestaChat> ObtenerRespuestasSeleccionadas(int IdPregunta)
     {
         string query ="SELECT RespuestaChat.* FROM RespuestaChat INNER JOIN Preguntas ON Preguntas.IdPregunta = RespuestaChat.IdPregunta WHERE Preguntas.IdPregunta = @id";
         List<RespuestaChat> Respuestas = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
+            Respuestas = db.Query<RespuestaChat>(query, new {@id = IdPregunta}).ToList();
             Respuestas = db.Query<RespuestaChat>(query, new {@id = IdPregunta}).ToList();
         }
 
@@ -235,6 +237,7 @@ public class BD{
         string sp = "SP_CrearRespuesta";
         using (SqlConnection db = new SqlConnection(_connectionString)){
             respuestNueva = db.QuerySingleOrDefault<RespuestaChat>(sp, new
+            respuestNueva = db.QuerySingleOrDefault<RespuestaChat>(sp, new
             {
                 @IdUsuarioPregunta = IdUsuarioCreador,
                 @IdPregunta = IdPregunta,
@@ -260,7 +263,7 @@ public class BD{
 
     public static List<Consigna> ObtenerConsignasXTask(int IdTask){
         List<Consigna> ConsignasXTask = null;
-        string query ="SELECT Pregunta FROM Consigna WHERE Consigna.IdTask = @id";
+        string query ="SELECT IdConsigna, IdTask, Pregunta FROM Consigna WHERE Consigna.IdTask = @id";
         using(SqlConnection db = new SqlConnection(_connectionString)){
             ConsignasXTask = db.Query<Consigna>(query, new {@id = IdTask}).ToList();
         }
@@ -280,7 +283,7 @@ public class BD{
     public static List<Respuesta> RespuestasXConsigna(int IdConsigna)
     {
         List<Respuesta> respuestas = null;
-        string query = "SELECT * FROM Respuesta WHERE IdConsigna = @IdConsigna";
+        string query = "SELECT * FROM RespuestaPregunta WHERE IdConsigna = @IdConsigna";
 
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
