@@ -37,7 +37,7 @@ CREATE TABLE Consigna(
     Foto NVARCHAR(200)
 );
 
-CREATE TABLE RespuestaChat(
+CREATE TABLE RespuestaPregunta(
     IdRespuesta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdConsigna INT NOT NULL FOREIGN KEY REFERENCES Consigna(IdConsigna),
     Contenido NVARCHAR(200) NOT NULL,
