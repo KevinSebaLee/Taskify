@@ -571,7 +571,7 @@ INSERT INTO consigna (IdTask, Pregunta) VALUES
 (4, 'Explica cómo crear una matriz de confusión en R y qué información nos proporciona.'),
 (4, '¿Cómo puedes aplicar un análisis de componentes principales (PCA) en R para reducción de dimensionalidad');
 
-INSERT INTO RespuestaChat (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES 
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES 
 ( 1, N'Usando bibliotecas como `os`, `shutil` y `subprocess` para automatizar tareas del sistema', 1, 1),
 ( 1, N'Usando Python únicamente para crear interfaces gráficas', 2, 0),
 ( 1, N'Automatizando tareas con herramientas como Task Scheduler o Cron', 3, 0),
