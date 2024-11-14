@@ -24,6 +24,14 @@
                             <h6 class="fw-bold">Nombre *</h6>
                             <input type="text" name="Nombre" class="bg-dark text-light ps-4" placeholder="Ingrese su nombre" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
                         </div>
+                    </div>
+                    <div class="col-5 mt-0.3">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Apellido *</h6>
+                            <input type="text" name="Apellido" class="bg-dark text-light ps-4" placeholder="Ingrese su apellido" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                        </div>
+                    </div>
+                    <div class="col-5 mt-0.3">
                         <div class="mb-3">
                             <h6 class="fw-bold">Genero *</h6>
                             <select class="bg-dark text-light ps-4" name="Genero" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
@@ -35,6 +43,20 @@
                                 }
                             </select>
                         </div>
+                    </div>
+                    <div class="col-5 mt-0.3">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Fecha de Nacimiento *</h6>
+                            <input type="date" name="FechaNacimiento" class="bg-dark text-light ps-4" placeholder="Ingrese su fecha de nacimiento" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                        </div>
+                    </div>
+                    <div class="col-5 mt-0.3">
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Número de Teléfono *</h6>
+                            <input type="tel" name="NumeroTelefono" class="bg-dark text-light ps-4" placeholder="Ingrese su número de teléfono" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
+                        </div>
+                    </div>
+                    <div class="col-5 mt-0.3">
                         <div class="mb-3">
                             <h6 class="fw-bold">País *</h6>
                             <select class="bg-dark text-light ps-4" name="Pais" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
@@ -46,10 +68,27 @@
                                 }
                             </select>
                         </div>
+                    </div>
+                    <div class="col-5 mt-0.3">
+                        <div class="mb-4">
+                            <h6 class="fw-bold">Elija su rol *</h6>
+                            <select class="bg-dark text-light ps-4" name="IdRol" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
+                                <option value="0">Eliga su rol</option>
+                                @foreach(Rol c in ViewBag.Roles){
+                                    sumatoriaRol++;
+
+                                    <option value="@sumatoriaRol">@c.Nombre</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-5 mt-0.3">
                         <div class="mb-3">
                             <h6 class="fw-bold">Email *</h6>
                             <input type="email" name="Email" class="bg-dark text-light ps-4" placeholder="Ingrese su email" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
                         </div>
+                    </div>
+                    <div class="col-5 mt-0.3">
                         <div class="mb-3">
                             <h6 class="fw-bold">Contraseña *</h6>
                             <input type="password" name="Contraseña" id="Contraseña" class="bg-dark text-light ps-4" placeholder="Ingrese su contraseña" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
@@ -66,37 +105,17 @@
                             </ul>
                         </div>
                     </div>
-
-                    <div class="col-6 mt-0">
-                        <div class="mb-3">
-                            <h6 class="fw-bold">Apellido *</h6>
-                            <input type="text" name="Apellido" class="bg-dark text-light ps-4" placeholder="Ingrese su apellido" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
-                        </div>
-                        <div class="mb-3">
-                            <h6 class="fw-bold">Fecha de Nacimiento *</h6>
-                            <input type="date" name="FechaNacimiento" class="bg-dark text-light ps-4" placeholder="Ingrese su fecha de nacimiento" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
-                        </div>
-                        <div class="mb-3">
-                            <h6 class="fw-bold">Número de Teléfono *</h6>
-                            <input type="tel" name="NumeroTelefono" class="bg-dark text-light ps-4" placeholder="Ingrese su número de teléfono" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh" required>
-                        </div>
-                        <div class="mb-4">
-                            <h6 class="fw-bold">Elija su rol *</h6>
-                            <select class="bg-dark text-light ps-4" name="IdRol" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh">
-                                <option value="0">Eliga su rol</option>
-                                @foreach(Rol c in ViewBag.Roles){
-                                    sumatoriaRol++;
-
-                                    <option value="@sumatoriaRol">@c.Nombre</option>
-                                }
-                            </select>
-                        </div>
+                    <div class="col-5 mt-0.3">
                         <div class="mb-3">
                             <input type="password" name="ConfirmarContraseña" class="bg-dark text-light ps-4" placeholder="Ingrese su contraseña nuevamente" style="width: 15vw; border: 0; border-radius: 10px; min-height: 4vh; margin-top:19px" required>
                         </div>
+                    </div>
+                        
+
+                    <div class="col-6 mt-0">
                         <div class="text-center mt-4 mx-auto">
-                    <button type="submit" id="registrarse" class="bg-success text-white text-center fw-bold shadow-lg" style="width: 8vw; border: 0; border-radius: 15px; height: 5vh; margin-top:17px">Registrarse</button>
-                </div>
+                            <button type="submit" id="registrarse" class="bg-success text-white text-center fw-bold shadow-lg" style="width: 8vw; border: 0; border-radius: 15px; height: 5vh; margin-top:17px">Registrarse</button>
+                        </div>
                     </div>
                 </div>
             </form>

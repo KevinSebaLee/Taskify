@@ -247,7 +247,8 @@ END
 
 INSERT INTO Generos(Nombre) VALUES
 ('Masculino'),
-('Femenino')
+('Femenino'),
+('Otros')
 
 INSERT INTO Rangos(Nombre, Color) VALUES
 ('Bronce I', '#c0620a'),
@@ -256,6 +257,9 @@ INSERT INTO Rangos(Nombre, Color) VALUES
 ('Plata I', '#c7c7c7'),
 ('Plata II', '#c7c7c7'),
 ('Plata III', '#c7c7c7'),
+('Oro I', '#ffd700'),
+('Oro II', '#ffd700'),
+('Oro III', '#ffd700'),
 ('Platino I', '#797878'),
 ('Platino II', '#797878'),
 ('Platino III', '#797878'),
