@@ -12,7 +12,13 @@
 
         <div class="row mt-5 pt-3">
             <a href="#" id="changeProfilePicLink" class="col-md-3 d-flex justify-content-center FotoPerfil">
-                <img src="~/img/SinSesion.png" alt="Profile Image" style="border-radius: 50%; width: 15vw; height: 15vw; border: 1px solid black;">
+                @if(TaskifyService.User.FotoPerfil == null){
+                    <img src="~/img/SinSesion.png" alt="Profile Image" style="border-radius: 50%; width: 15vw; height: 15vw; border: 1px solid black;">
+                }
+                else{
+                    <img src="@TaskifyService.User.FotoPerfil" alt="Profile Image" style="border-radius: 50%; width: 15vw; height: 15vw; border: 1px solid black;">
+                }
+                
                 <input type="hidden" id="idUsuario" value="@TaskifyService.User.IdUsuario">
             </a>
 

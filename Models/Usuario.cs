@@ -12,7 +12,7 @@ public class Usuario{
     public string Email { get; set; }
     public string NumeroTelefono { get; set;}
     public int Puntaje {get; set;}
-    public string FotoDePerfil { get; set; }
+    public string FotoPerfil { get; set; }
     public string Descripcion { get; set; }
     public DateTime FechaNacimiento {get; set;}
 }
