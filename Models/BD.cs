@@ -294,7 +294,12 @@ public class BD{
         string query = "UPDATE Usuarios SET FotoPerfil = @foto FROM Usuarios WHERE IdUsuario = @id";
         
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            db.ExecuteAsync(query, new { foto, id = IdUsuario });
+            using (var memoryStream = new MemoryStream())
+            {
+                foto.CopyTo(memoryStream);
+                string nvarchar = Convert.ToBase64String(memoryStream.ToArray());
+                db.Execute(query, new { foto = nvarchar, id = IdUsuario });
+            }
         }
     }
 }
