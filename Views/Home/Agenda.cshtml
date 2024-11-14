@@ -9,4 +9,17 @@
         <p>Postulaciones</p>
         <p>Entregas</p>
     </div>
+    <div id='calendar'></div>
 </div>
+
+<div id="eventModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="eventTitle"></h2>
+        <p id="eventDescription"></p>
+    </div>
+</div>
+
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
+<script src="~/js/agenda.js" asp-append-version="true"></script>
