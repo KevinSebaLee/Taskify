@@ -17,6 +17,7 @@
         <div class="bg-white shadow d-flex p-3 mb-5 ps-5 align-items-center" style="min-height: 25vh; margin: 0; padding: 0; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px;">
             <img src="~/img/SinSesion.png" class="rounded-circle ms-4" style="height: 20vh; width: 10vw;" alt="User profile image">
             <h3 class="text-dark ms-4">@ViewBag.PreguntaElegida.Titulo</h3>
+            <h5 class="text-dark ms-4">@ViewBag.PreguntaElegida.Preguntas</h5>
         </div>
 
         <div>
@@ -28,7 +29,7 @@
                         <img src="~/img/SinSesion.png" class="rounded-circle ms-4" style="height: 12vh; width: 7vw;" alt="User profile image">
                         <div class="row">
                             <div class="col-md-10">
-                                <p class="mb-0 ps-5 h5">@ViewBag.Respuestas[i].Respuesta</p>
+                                <p class="text-dark mb-0 ps-5 h5">@ViewBag.Respuestas[i].RespuestaCommunity</p>
                             </div>
                         </div>
                     </div>

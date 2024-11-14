@@ -160,7 +160,7 @@ CREATE TABLE RespuestaChat(
 	IdRespuesta INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
 	IdPregunta INT NOT NULL FOREIGN KEY REFERENCES Preguntas(IdPregunta),
 	IdUsuarioPregunta INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
-	RespuestaChat NVARCHAR(200) NOT NULL
+	RespuestaCommunity NVARCHAR(200) NOT NULL
 );
 
 CREATE PROCEDURE [dbo].[SP_CrearPerfil]
@@ -230,7 +230,7 @@ CREATE PROCEDURE [dbo].[SP_CrearRespuesta]
 	@RespuestaPregunta NVARCHAR(200)
 AS
 BEGIN
-	INSERT INTO RespuestaChat(IdPregunta, IdUsuarioPregunta, RespuestaPregunta)
+	INSERT INTO RespuestaChat(IdPregunta, IdUsuarioPregunta, RespuestaCommunity)
 	VALUES(@IdPregunta, @IdUsuarioPregunta, @RespuestaPregunta)
 END
 

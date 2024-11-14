@@ -312,6 +312,9 @@ header{
       color: white;
       width: 20px;
     }
+    input::placeholder{
+      color: rgba(255, 255, 255, 0.719);
+    }
   }
 
   .modal {

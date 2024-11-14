@@ -1,0 +1,165 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\Chat.png",
+      "PackagePath": "staticwebassets\\img\\Chat.png"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\Chat.webp",
+      "PackagePath": "staticwebassets\\img\\Chat.webp"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\Index.png",
+      "PackagePath": "staticwebassets\\img\\Index.png"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\LoginRegisterBG.jpg",
+      "PackagePath": "staticwebassets\\img\\LoginRegisterBG.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\SinSesion.png",
+      "PackagePath": "staticwebassets\\img\\SinSesion.png"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\faceIcon.webp",
+      "PackagePath": "staticwebassets\\img\\faceIcon.webp"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\fondoCommunity.jpeg",
+      "PackagePath": "staticwebassets\\img\\fondoCommunity.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\fondoHero.jpg",
+      "PackagePath": "staticwebassets\\img\\fondoHero.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\fondoHero.webp",
+      "PackagePath": "staticwebassets\\img\\fondoHero.webp"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\igIcon.webp",
+      "PackagePath": "staticwebassets\\img\\igIcon.webp"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\ilustracion.jpg",
+      "PackagePath": "staticwebassets\\img\\ilustracion.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\indexProjHTML.webp",
+      "PackagePath": "staticwebassets\\img\\indexProjHTML.webp"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\indexProjMobile.webp",
+      "PackagePath": "staticwebassets\\img\\indexProjMobile.webp"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\indexProjWeb.webp",
+      "PackagePath": "staticwebassets\\img\\indexProjWeb.webp"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\mailcon.png",
+      "PackagePath": "staticwebassets\\img\\mailcon.png"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\mari.jpg",
+      "PackagePath": "staticwebassets\\img\\mari.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\mercadoLibre.webp",
+      "PackagePath": "staticwebassets\\img\\mercadoLibre.webp"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\person.jpg",
+      "PackagePath": "staticwebassets\\img\\person.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\ronald.jpg",
+      "PackagePath": "staticwebassets\\img\\ronald.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\img\\twitterIcon.webp",
+      "PackagePath": "staticwebassets\\img\\twitterIcon.webp"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\js\\regex.js",
+      "PackagePath": "staticwebassets\\js\\regex.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48042387\\Desktop\\Taskify\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Taskify.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Taskify.props",
+      "PackagePath": "build\\Taskify.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Taskify.props",
+      "PackagePath": "buildMultiTargeting\\Taskify.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Taskify.props",
+      "PackagePath": "buildTransitive\\Taskify.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
