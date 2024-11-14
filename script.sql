@@ -94,7 +94,7 @@ CREATE TABLE Proyectos(
     Nombre NVARCHAR(200),
     NombreEmpresa NVARCHAR(200),
     Ubicacion NVARCHAR(200),
-    FechaPublicacion DATE NOT NULL,
+    FechaPublicacion DATETIME NOT NULL,
     CantIntegrantes INT NOT NULL,
     Descripcion NVARCHAR(200),
     Valoracion INT NOT NULL,
@@ -203,7 +203,7 @@ CREATE PROCEDURE SP_CrearProyecto
     @IdRol INT,
 	@IdCreadorUsuario INT,
     @Ubicacion NVARCHAR(200),
-    @FechaPublicacion DATE,
+    @FechaPublicacion DATETIME,
     @Descripcion NVARCHAR(200)
 AS
 BEGIN
