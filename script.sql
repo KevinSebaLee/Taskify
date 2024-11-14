@@ -652,3 +652,201 @@ INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES
 ( 19, N'Usando `unittest` para monitorear directorios', 2, 0),
 ( 19, N'Usando `csv` para enviar correos electrónicos', 3, 0),
 ( 19, N'Todas son correctas', 4, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES 
+( 1, N'Usando bibliotecas como `os`, `shutil` y `subprocess` para automatizar tareas del sistema', 1, 1),
+( 1, N'Usando Python únicamente para crear interfaces gráficas', 2, 0),
+( 1, N'Automatizando tareas con herramientas como Task Scheduler o Cron', 3, 0),
+( 1, N'Utilizando Python para generar documentación de código automáticamente', 4, 0),
+
+( 2, N'JavaScript permite la manipulación del DOM para actualizar dinámicamente el contenido de las páginas', 1, 1),
+( 2, N'JavaScript no tiene ningún impacto en la interactividad de las páginas web', 2, 0),
+( 2, N'JavaScript permite solo interacciones de entrada de datos del usuario', 3, 0),
+( 2, N'JavaScript se utiliza para mejorar la velocidad de carga de la página web', 4, 0),
+
+( 3, N'El DOM es una representación estructurada de la página web y JavaScript puede manipularlo', 1, 1),
+( 3, N'El DOM es un modelo de datos que solo puede ser leído por el navegador, no modificado por JavaScript', 2, 0),
+( 3, N'El DOM es un lenguaje de programación independiente de JavaScript', 3, 0),
+( 3, N'El DOM es un sistema de archivos utilizado para almacenar imágenes en el servidor', 4, 0),
+
+( 4, N'`var` tiene un alcance de función, `let` y `const` tienen un alcance de bloque', 1, 1),
+( 4, N'`var`, `let` y `const` son completamente intercambiables en su uso en JavaScript', 2, 0),
+( 4, N'`let` y `const` son utilizados solo para crear funciones en JavaScript', 3, 0),
+( 4, N'`var` es la forma más moderna de declarar variables en JavaScript', 4, 0),
+
+( 5, N'Puedes usar `addEventListener` para escuchar eventos como clics o movimientos del mouse', 1, 1),
+( 5, N'JavaScript no tiene soporte para eventos, solo se puede usar en funciones sin interacciones', 2, 0),
+( 5, N'Los eventos en JavaScript son solo para botones y formularios', 3, 0),
+( 5, N'Sólo se pueden manejar eventos dentro de funciones `onclick` y `onmouseover`', 4, 0),
+
+( 6, N'Utilizando `fetch` o `XMLHttpRequest` puedes realizar peticiones HTTP para obtener datos', 1, 1),
+( 6, N'JavaScript no soporta la realización de peticiones HTTP de manera directa', 2, 0),
+( 6, N'JavaScript solo puede realizar peticiones HTTP usando la API de Node.js', 3, 0),
+( 6, N'JavaScript solo puede enviar datos, pero no recibirlos de un servidor', 4, 0),
+
+( 7, N'AJAX permite la actualización asíncrona de partes de una página web sin recargarla completamente', 1, 1),
+( 7, N'AJAX solo sirve para cargar imágenes de forma asíncrona', 2, 0),
+( 7, N'AJAX solo puede usarse con el servidor local y no con servidores remotos', 3, 0),
+( 7, N'AJAX es una librería que reemplaza JavaScript para hacer solicitudes', 4, 0),
+
+( 8, N'Las promesas son objetos que representan el eventual valor de una operación asincrónica', 1, 1),
+( 8, N'Las promesas se usan solo para manejar eventos de clic y no operaciones asincrónicas', 2, 0),
+( 8, N'Las promesas bloquean el hilo principal de ejecución hasta que se completan', 3, 0),
+( 8, N'Las promesas no pueden ser utilizadas con `async` y `await` en JavaScript', 4, 0),
+
+( 9, N'Puedes manipular estilos con `document.getElementById().style` para cambiar propiedades CSS', 1, 1),
+( 9, N'JavaScript no puede manipular estilos, solo HTML', 2, 0),
+( 9, N'Se utilizan herramientas como SASS o LESS para manipular estilos con JavaScript', 3, 0),
+( 9, N'JavaScript puede cambiar estilos, pero solo en el lado del servidor', 4, 0),
+
+( 10, N'Las funciones flecha son una forma más compacta de escribir funciones anónimas en JavaScript', 1, 1),
+( 10, N'Las funciones flecha no pueden recibir parámetros', 2, 0),
+( 10, N'Las funciones flecha no tienen contexto propio para `this`', 3, 0),
+( 10, N'Las funciones flecha se usan exclusivamente en métodos de objetos', 4, 0),
+
+( 11, N'Puedes validar formularios usando `addEventListener` con el evento `submit` y validación personalizada', 1, 1),
+( 11, N'JavaScript no puede validar formularios, solo HTML5 tiene esa capacidad', 2, 0),
+( 11, N'JavaScript solo valida formularios en el servidor', 3, 0),
+( 11, N'Sólo se pueden validar formularios con jQuery', 4, 0),
+
+( 12, N'Un callback es una función que se pasa como argumento a otra función y se ejecuta más tarde', 1, 1),
+( 12, N'Los callbacks solo sirven para manejar errores en JavaScript', 2, 0),
+( 12, N'Un callback es una función que se ejecuta antes de que termine la función que la recibe', 3, 0),
+( 12, N'Los callbacks son usados para manipular variables globales', 4, 0),
+
+( 13, N'`localStorage` y `sessionStorage` permiten almacenar datos en el navegador de forma persistente o temporal', 1, 1),
+( 13, N'`localStorage` solo almacena datos durante la sesión activa, mientras que `sessionStorage` es permanente', 2, 0),
+( 13, N'`localStorage` y `sessionStorage` solo funcionan en la parte del servidor', 3, 0),
+( 13, N'`localStorage` y `sessionStorage` no permiten almacenar objetos o arrays', 4, 0),
+
+( 14, N'`try`, `catch` y `finally` permiten manejar excepciones, garantizando que siempre se ejecute un bloque de código', 1, 1),
+( 14, N'Los bloques `try` y `catch` sólo pueden ser utilizados con funciones sin retorno', 2, 0),
+( 14, N'El bloque `finally` puede evitar que se ejecute el bloque `catch`', 3, 0),
+( 14, N'`try`, `catch` y `finally` solo se usan para manejar eventos', 4, 0),
+
+( 15, N'Una SPA (Single Page Application) carga todo su contenido en una sola página HTML y cambia dinámicamente el contenido con JavaScript', 1, 1),
+( 15, N'Una SPA requiere de múltiples recargas de la página para actualizar su contenido', 2, 0),
+( 15, N'Las SPA no se pueden crear con JavaScript', 3, 0),
+( 15, N'Las SPA son una forma de almacenar datos sin mostrarlos al usuario', 4, 0),
+
+( 16, N'El concepto de "closure" se refiere a una función que mantiene acceso a su contexto léxico, incluso después de que la función externa haya terminado de ejecutarse', 1, 1),
+( 16, N'El "closure" solo puede usarse en funciones anónimas dentro de objetos', 2, 0),
+( 16, N'El "closure" se refiere a la capacidad de una función de almacenar valores globales', 3, 0),
+( 16, N'El "closure" es una propiedad exclusiva de los ciclos `for`', 4, 0),
+
+( 17, N'Puedes usar `window.location.href` para redirigir a otra URL en JavaScript', 1, 1),
+( 17, N'JavaScript no permite redirecciones, sólo lo hace el servidor', 2, 0),
+( 17, N'Sólo se puede redirigir mediante el uso de HTML', 3, 0),
+( 17, N'La redirección en JavaScript se realiza con el método `redirect()`', 4, 0),
+
+( 18, N'`fetch` es una API moderna que reemplaza a `XMLHttpRequest` para hacer solicitudes HTTP de forma más sencilla y legible', 1, 1),
+( 18, N'`fetch` es obsoleto y solo se utiliza en versiones anteriores de JavaScript', 2, 0),
+( 18, N'`fetch` solo puede realizar solicitudes a servidores locales y no a servidores remotos', 3, 0),
+( 18, N'`fetch` se usa exclusivamente en el contexto de Node.js, no en navegadores', 4, 0),
+
+( 19, N'Puedes usar `setTimeout` para ejecutar una función después de un tiempo específico y `setInterval` para ejecutar una función repetidamente', 1, 1),
+( 19, N'`setTimeout` y `setInterval` solo sirven para crear animaciones en el navegador', 2, 0),
+( 19, N'`setTimeout` es sinónimo de `setInterval` y viceversa', 3, 0),
+( 19, N'`setTimeout` y `setInterval` solo se pueden usar para manipular eventos de usuario', 4, 0),
+
+( 20, N'Las plantillas literales permiten incluir expresiones dentro de cadenas de texto utilizando `${}` para interpolación', 1, 1),
+( 20, N'Las plantillas literales solo permiten cadenas de texto sin ninguna interpolación de valores', 2, 0),
+( 20, N'Las plantillas literales requieren una sintaxis especial que no se puede usar dentro de funciones', 3, 0),
+( 20, N'Las plantillas literales se usan para declarar funciones, no para trabajar con cadenas de texto', 4, 0);
+
+
+-- INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES 
+-- ( 22, N'JavaScript permite la manipulación del DOM para actualizar dinámicamente el contenido de las páginas', 1, 1),
+-- ( 22, N'JavaScript no tiene ningún impacto en la interactividad de las páginas web', 2, 0),
+-- ( 22, N'JavaScript permite solo interacciones de entrada de datos del usuario', 3, 0),
+-- ( 22, N'JavaScript se utiliza para mejorar la velocidad de carga de la página web', 4, 0),
+
+-- ( 23, N'El DOM es una representación estructurada de la página web y JavaScript puede manipularlo', 1, 1),
+-- ( 23, N'El DOM es un modelo de datos que solo puede ser leído por el navegador, no modificado por JavaScript', 2, 0),
+-- ( 23, N'El DOM es un lenguaje de programación independiente de JavaScript', 3, 0),
+-- ( 23, N'El DOM es un sistema de archivos utilizado para almacenar imágenes en el servidor', 4, 0),
+
+-- ( 24, N'`var` tiene un alcance de función, `let` y `const` tienen un alcance de bloque', 1, 1),
+-- ( 24, N'`var`, `let` y `const` son completamente intercambiables en su uso en JavaScript', 2, 0),
+-- ( 24, N'`let` y `const` son utilizados solo para crear funciones en JavaScript', 3, 0),
+-- ( 24, N'`var` es la forma más moderna de declarar variables en JavaScript', 4, 0),
+
+-- ( 25, N'Puedes usar `addEventListener` para escuchar eventos como clics o movimientos del mouse', 1, 1),
+-- ( 25, N'JavaScript no tiene soporte para eventos, solo se puede usar en funciones sin interacciones', 2, 0),
+-- ( 25, N'Los eventos en JavaScript son solo para botones y formularios', 3, 0),
+-- ( 25, N'Sólo se pueden manejar eventos dentro de funciones `onclick` y `onmouseover`', 4, 0),
+
+-- ( 26, N'Utilizando `fetch` o `XMLHttpRequest` puedes realizar peticiones HTTP para obtener datos', 1, 1),
+-- ( 26, N'JavaScript no soporta la realización de peticiones HTTP de manera directa', 2, 0),
+-- ( 26, N'JavaScript solo puede realizar peticiones HTTP usando la API de Node.js', 3, 0),
+-- ( 26, N'JavaScript solo puede enviar datos, pero no recibirlos de un servidor', 4, 0),
+
+-- ( 27, N'AJAX permite la actualización asíncrona de partes de una página web sin recargarla completamente', 1, 1),
+-- ( 27, N'AJAX solo sirve para cargar imágenes de forma asíncrona', 2, 0),
+-- ( 27, N'AJAX solo puede usarse con el servidor local y no con servidores remotos', 3, 0),
+-- ( 27, N'AJAX es una librería que reemplaza JavaScript para hacer solicitudes', 4, 0),
+
+-- ( 28, N'Las promesas son objetos que representan el eventual valor de una operación asincrónica', 1, 1),
+-- ( 28, N'Las promesas se usan solo para manejar eventos de clic y no operaciones asincrónicas', 2, 0),
+-- ( 28, N'Las promesas bloquean el hilo principal de ejecución hasta que se completan', 3, 0),
+-- ( 28, N'Las promesas no pueden ser utilizadas con `async` y `await` en JavaScript', 4, 0),
+
+-- ( 29, N'Puedes manipular estilos con `document.getElementById().style` para cambiar propiedades CSS', 1, 1),
+-- ( 29, N'JavaScript no puede manipular estilos, solo HTML', 2, 0),
+-- ( 29, N'Se utilizan herramientas como SASS o LESS para manipular estilos con JavaScript', 3, 0),
+-- ( 29, N'JavaScript puede cambiar estilos, pero solo en el lado del servidor', 4, 0),
+
+-- ( 30, N'Las funciones flecha son una forma más compacta de escribir funciones anónimas en JavaScript', 1, 1),
+-- ( 30, N'Las funciones flecha no pueden recibir parámetros', 2, 0),
+-- ( 30, N'Las funciones flecha no tienen contexto propio para `this`', 3, 0),
+-- ( 30, N'Las funciones flecha se usan exclusivamente en métodos de objetos', 4, 0),
+
+-- ( 31, N'Puedes validar formularios usando `addEventListener` con el evento `submit` y validación personalizada', 1, 1),
+-- ( 31, N'JavaScript no puede validar formularios, solo HTML5 tiene esa capacidad', 2, 0),
+-- ( 31, N'JavaScript solo valida formularios en el servidor', 3, 0),
+-- ( 31, N'Sólo se pueden validar formularios con jQuery', 4, 0),
+
+-- ( 32, N'Un callback es una función que se pasa como argumento a otra función y se ejecuta más tarde', 1, 1),
+-- ( 32, N'Los callbacks solo sirven para manejar errores en JavaScript', 2, 0),
+-- ( 32, N'Un callback es una función que se ejecuta antes de que termine la función que la recibe', 3, 0),
+-- ( 32, N'Los callbacks son usados para manipular variables globales', 4, 0),
+
+-- ( 33, N'`localStorage` y `sessionStorage` permiten almacenar datos en el navegador de forma persistente o temporal', 1, 1),
+-- ( 33, N'`localStorage` solo almacena datos durante la sesión activa, mientras que `sessionStorage` es permanente', 2, 0),
+-- ( 33, N'`localStorage` y `sessionStorage` solo funcionan en la parte del servidor', 3, 0),
+-- ( 33, N'`localStorage` y `sessionStorage` no permiten almacenar objetos o arrays', 4, 0),
+
+-- ( 34, N'`try`, `catch` y `finally` permiten manejar excepciones, garantizando que siempre se ejecute un bloque de código', 1, 1),
+-- ( 34, N'Los bloques `try` y `catch` sólo pueden ser utilizados con funciones sin retorno', 2, 0),
+-- ( 34, N'El bloque `finally` puede evitar que se ejecute el bloque `catch`', 3, 0),
+-- ( 34, N'`try`, `catch` y `finally` solo se usan para manejar eventos', 4, 0),
+
+-- ( 35, N'Una SPA (Single Page Application) carga todo su contenido en una sola página HTML y cambia dinámicamente el contenido con JavaScript', 1, 1),
+-- ( 35, N'Una SPA requiere de múltiples recargas de la página para actualizar su contenido', 2, 0),
+-- ( 35, N'Las SPA no se pueden crear con JavaScript', 3, 0),
+-- ( 35, N'Las SPA son una forma de almacenar datos sin mostrarlos al usuario', 4, 0),
+
+-- ( 36, N'El concepto de "closure" se refiere a una función que mantiene acceso a su contexto léxico, incluso después de que la función externa haya terminado de ejecutarse', 1, 1),
+-- ( 36, N'El "closure" solo puede usarse en funciones anónimas dentro de objetos', 2, 0),
+-- ( 36, N'El "closure" se refiere a la capacidad de una función de almacenar valores globales', 3, 0),
+-- ( 36, N'El "closure" es una propiedad exclusiva de los ciclos `for`', 4, 0),
+
+-- ( 37, N'Puedes usar `window.location.href` para redirigir a otra URL en JavaScript', 1, 1),
+-- ( 37, N'JavaScript no permite redirecciones, sólo lo hace el servidor', 2, 0),
+-- ( 37, N'Sólo se puede redirigir mediante el uso de HTML', 3, 0),
+-- ( 37, N'La redirección en JavaScript se realiza con el método `redirect()`', 4, 0),
+
+-- ( 38, N'`fetch` es una API moderna que reemplaza a `XMLHttpRequest` para hacer solicitudes HTTP de forma más sencilla y legible', 1, 1),
+-- ( 38, N'`fetch` es obsoleto y solo se utiliza en versiones anteriores de JavaScript', 2, 0),
+-- ( 38, N'`fetch` solo puede realizar solicitudes a servidores locales y no a servidores remotos', 3, 0),
+-- ( 38, N'`fetch` se usa exclusivamente en el contexto de Node.js, no en navegadores', 4, 0),
+
+-- ( 39, N'Puedes usar `setTimeout` para ejecutar una función después de un tiempo específico y `setInterval` para ejecutar una función repetidamente', 1, 1),
+-- ( 39, N'`setTimeout` y `setInterval` solo sirven para crear animaciones en el navegador', 2, 0),
+-- ( 39, N'`setTimeout` es sinónimo de `setInterval` y viceversa', 3, 0),
+-- ( 39, N'`setTimeout` y `setInterval` solo se pueden usar para manipular eventos de usuario', 4, 0),
+
+-- ( 40, N'Las plantillas literales permiten incluir expresiones dentro de cadenas de texto utilizando `${}` para interpolación', 1, 1),
+-- ( 40, N'Las plantillas literales solo permiten cadenas de texto sin ninguna interpolación de valores', 2, 0),
+-- ( 40, N'Las plantillas literales requieren una sintaxis especial que no se puede usar dentro de funciones', 3, 0),
+-- ( 40, N'Las plantillas literales se usan para declarar funciones, no para trabajar con cadenas de texto', 4, 0);
