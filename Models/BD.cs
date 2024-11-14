@@ -290,5 +290,11 @@ public class BD{
         return respuestas;
     }
 
-
+    public static void CambiarPerfil(IFormFile foto, int IdUsuario){
+        string query = "UPDATE Usuarios SET FotoPerfil = @foto FROM Usuarios WHERE IdUsuario = @id";
+        
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            db.ExecuteAsync(query, new { foto, id = IdUsuario });
+        }
+    }
 }

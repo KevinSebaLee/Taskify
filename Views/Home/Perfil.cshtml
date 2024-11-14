@@ -1,4 +1,8 @@
-﻿<div class="d-flex flex-column align-items-center bg-secondary" style="min-height: 100vh;">
+﻿@{
+    ViewData["Title"] = "Perfil";
+}
+
+<div class="d-flex flex-column align-items-center bg-secondary" style="min-height: 100vh;">
     <div class="bg-white mt-5 pb-5 ps-5 pe-5" style="width: 80vw; border-radius: 40px;">
         <div class="bg-success" style="width: 100%; height: 12vh; border-radius: 20px;">
             <div class="container">
@@ -11,9 +15,9 @@
                 <img src="~/img/SinSesion.png" alt="Profile Image" style="border-radius: 50%; width: 15vw; height: 15vw; border: 1px solid black;">
             </a>
 
-            <div id="profilePicModal" class="modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+            <div id="profilePicModal" class="modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border-radius:10px;">
                 <form id="profilePicForm" enctype="multipart/form-data">
-                    <input type="file" name="profilePic" id="profilePicInput" required />
+                    <input type="file" name="profilePic" id="profilePicInput" style="display:none;" required />
                     <button type="submit">Upload</button>
                 </form>
             </div>
@@ -71,7 +75,7 @@
                         </div>
                         <h4 class="ms-5">Mercado Libre</h4>
 
-                        <div class="d-flex align-items-center justify-content-center" style="border-radius: 10px; width: 23%; height: 12%; background-color: #00481D; opacity: 0.84; position: absolute; bottom: 20px; right: 20px;">
+                        <div class="d-flex align-items-center justify-content-center" style="border-radius: 10px; width: 23%; height: 12%; background-color: #00481D; opacity: 0.84; position: absolute;">
                             <button class="bg-transparent" style="border: 0;"><h3 class="text-white">Más</h3></button>
                         </div>
                     </div>
@@ -90,4 +94,31 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#changeProfilePicLink").click(function(event) {
+        event.preventDefault();
+        $("#profilePicInput").click();
+        });
+
+        $("#profilePicInput").change(function(event) {
+        var formData = new FormData();
+        formData.append('profilePic', event.target.files[0]);
+
+        $.ajax({
+            url: '/Home/CambiarFotoPerfil',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                $("#changeProfilePicLink img").attr('src', response.newProfilePicUrl);
+            },
+            error: function(xhr, status, error) {
+            alert('Failed to upload profile picture. Please try again.');
+            }
+        });
+        });
+    });
+</script>
 <script src="~/js/PfpChange.js" asp-append-version="true"></script>

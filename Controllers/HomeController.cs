@@ -207,5 +207,9 @@ public class HomeController : Controller
         return View("TaskSeleccionado");
     }
 
+    public IActionResult CambiarFotoPerfil(IFormFile profilePic, int IdUsuario){
+        BD.CambiarPerfil(profilePic, IdUsuario);
 
+        return View("Perfil");
+    }
 }
