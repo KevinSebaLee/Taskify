@@ -183,12 +183,15 @@ header{
 
 /* Fin Proyecto */
 /* Inicio Agenda */
+.Agenda{
+  display: flex;
+}
 .costado{
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 20%;
+  width: 20%;
   background-color: #00481D;
   opacity: 0.84;
   padding: 3%;
@@ -290,32 +293,49 @@ header{
     margin-right: 4%;
   }
 
-  .About{
+  .About {
     margin-top: 3%;
     margin-bottom: 3%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    .form-control{
-      width: 100%;
-      background-color: rgb(51, 51, 51);
-      border-style: dashed;
-      
-    }
-    .form-control::placeholder {
-      color: rgba(255, 255, 255, 0.733);
-    }
-    p{
-      font-weight: bold;
-    }
-    .Dead{
-      color: white;
-      width: 20px;
-    }
-    input::placeholder{
-      color: rgba(255, 255, 255, 0.719);
-    }
-  }
+}
+
+.About .form-control {
+    width: 100%;
+    background-color: rgb(51, 51, 51); 
+    color: white; 
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.5);
+    padding: 10px; 
+    font-family: inherit; 
+}
+
+
+.About .form-control:focus {
+    outline: none; 
+    color: black; 
+    border-color: rgba(255, 255, 255, 0.8); 
+}
+
+.About .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+.About p {
+    font-weight: bold;
+    color: white; 
+}
+
+.About .Dead {
+    color: white;
+    width: 20px;
+}
+
+.About input::placeholder {
+    color: rgba(255, 255, 255, 0.719);
+}
+
 
   .modal {
     display: none;
@@ -335,3 +355,10 @@ button{
   border: none;
 }
 
+#calendar{
+  width: 60%;
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+
+}

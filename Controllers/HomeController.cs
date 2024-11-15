@@ -35,6 +35,12 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult CerrarSesion(){
+        TaskifyService.User = null;
+
+        return View("Index");
+    }
+
     public IActionResult Community()
     {
         ViewBag.Preguntas = TaskifyService.ObtenerPreguntas();
