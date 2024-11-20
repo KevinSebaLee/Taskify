@@ -152,7 +152,7 @@ header{
 }
 
 .aplicacion{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(../img/mercadoLibre.webp);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(../img/projBG.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -236,7 +236,6 @@ header{
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 20%;
   background-color: #00481D;
   opacity: 0.84;
@@ -262,13 +261,18 @@ header{
 /* Fin Agenda */
 /* Inicio PublicarProyecto */
 
+.preguntaCreate{
+  background-image: url(../img/LoginRegisterBG.jpg);
+}
 .create{
   margin: 3%;
-  width: 60%;
+  width: 40%;
   border-radius: 20px;
   background-color: rgb(51, 51, 51);
-
-
+  input{
+    background-color: rgb(51, 51, 51);
+    color: white;
+  } 
 
   h1{
     background-color: rgb(255, 255, 255);

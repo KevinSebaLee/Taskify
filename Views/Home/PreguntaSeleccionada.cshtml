@@ -1,3 +1,4 @@
+
 <div class="row no-gutters" style="min-height: 100vh; min-width: 99vw;">
     <div class="col-2 bg-white pt-5">
         <h1 class="text-center fw-bold">Community</h1>
@@ -16,8 +17,10 @@
     <div class="col-10 text-white p-0 fondoRespuestas" style="min-height: 100vh;">
         <div class="bg-white shadow d-flex p-3 mb-5 ps-5 align-items-center" style="min-height: 25vh; margin: 0; padding: 0; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px;">
             <img src="~/img/SinSesion.png" class="rounded-circle ms-4" style="height: 20vh; width: 10vw;" alt="User profile image">
-            <h3 class="text-dark ms-4">@ViewBag.PreguntaElegida.Titulo</h3>
-            <h5 class="text-dark ms-4">@ViewBag.PreguntaElegida.Preguntas</h5>
+            <div style = "display:flex; flex-direction:column;">
+                <h3 class="text-dark ms-4">@ViewBag.PreguntaElegida.Titulo</h3>
+                <h5 class="text-dark ms-4">@ViewBag.PreguntaElegida.Preguntas</h5>
+            </div>
         </div>
 
         <div>

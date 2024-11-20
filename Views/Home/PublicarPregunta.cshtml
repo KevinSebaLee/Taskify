@@ -1,17 +1,20 @@
-<form class="create" action='@Url.Action("CrearPregunta")' method="post">
-    <div class="contentForm">
+<div class="preguntaCreate">
+<form class="create" action='@Url.Action("CrearPregunta")' method="post" style="margin-left: 30%;">
+    <h1>Preguntar</h1>
+    <div class="contentFormPro">
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Name</span>
+            <span class="input-group-text" id="basic-addon1">Titulo</span>
             <input type="text" name="Titulo" class="form-control" placeholder="Project name" aria-label="Username" aria-describedby="basic-addon1" required>
         </div>
 
         <input type="hidden" name="IdUsuarioCreador" value="@TaskifyService.User.IdUsuario">        
 
-        <div class="input-group">
-            <span class="input-group-text">About the project</span>
-            <textarea name="Pregunta" class="form-control" aria-label="With textarea" required></textarea>
+        <div class="input-group About">
+            <span class="input-group-text ">Pregunta</span>
+            <textarea name="Pregunta" class="form-control" aria-label="With textarea" requiredn style="width:100%"></textarea>
         </div>
         
-        <button type="submit" class="btn btn-light">Create</button>
+        <button type="submit" class="btn btn-light">Publicar</button>
     </div>
 </form>
+</div>

@@ -1,13 +1,16 @@
-<form class="create" method="post" action='@Url.Action("CrearRespuesta")'>
-    <div class="contentForm">
+<div class="preguntaCreate" >
+<form class="create" method="post" action='@Url.Action("CrearRespuesta")' style="margin-left:30%">
+    <h1>Responder</h1>
+    <div class="contentFormPro">
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Name</span>
+            <span class="input-group-text" id="basic-addon1">Respuesta</span>
             <input type="text" name="Respuesta" class="form-control" placeholder="Project name" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
         <input type="hidden" name="IdUsuarioCreador" value="@TaskifyService.User.IdUsuario">
         <input type="hidden" name="IdPregunta" value="@ViewBag.IdPregunta">     
         
-        <button type="submit" class="btn btn-light">Create</button>
+        <button type="submit" class="btn btn-light">Publicar</button>
     </div>
 </form>
+</div>
