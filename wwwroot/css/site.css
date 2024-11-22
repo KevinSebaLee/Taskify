@@ -412,3 +412,17 @@ button{
   margin-bottom: 3%;
 
 }
+/* Inicio TASK */
+.task{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5%;
+  width: 100%;
+
+  .form-check{
+    margin-bottom: 1%;
+  }
+
+}
+/*  Fin Task */
