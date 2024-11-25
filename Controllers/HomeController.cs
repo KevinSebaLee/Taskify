@@ -220,16 +220,16 @@ public class HomeController : Controller
         return View("Perfil");
     }
 
-<<<<<<< HEAD
+
     public IActionResult Resultados(){
         ViewBag.Hecho = true;
         return View("Tasks");
-=======
+    }
+    
     [HttpPost]
     public IActionResult CrearEvento(int IdUsuario, int? IdContacto, string Nombre, string Descripcion, DateTime FechaInicio, DateTime FechaFin){
         BD.CrearEvento(IdUsuario, IdContacto, Nombre, Descripcion, FechaInicio, FechaFin);
 
         return View("Agenda");
->>>>>>> 70a1a38301fce3e11d170c8f9918315a00c889cf
     }
 }
