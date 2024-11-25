@@ -219,4 +219,11 @@ public class HomeController : Controller
 
         return View("Perfil");
     }
+
+    [HttpPost]
+    public IActionResult CrearEvento(int IdUsuario, int? IdContacto, string Nombre, string Descripcion, DateTime FechaInicio, DateTime FechaFin){
+        BD.CrearEvento(IdUsuario, IdContacto, Nombre, Descripcion, FechaInicio, FechaFin);
+
+        return View("Agenda");
+    }
 }

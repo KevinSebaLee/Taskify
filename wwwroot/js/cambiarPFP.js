@@ -9,7 +9,7 @@ $(document).ready(function() {
     $("#profilePicInput").change(function(event) {
         var formData = new FormData();
         formData.append('profilePic', event.target.files[0]);
-        formData.append('IdUsuario', IdUsuario); // Ensure IdUsuario is defined
+        formData.append('IdUsuario', IdUsuario);
 
         $.ajax({
             url: '/Home/CambiarFotoPerfil',
