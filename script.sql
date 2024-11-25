@@ -616,42 +616,72 @@ INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES
 ( 10, N'Utilizando `flask` para crear un servidor web que gestione los archivos CSV', 2, 0),
 ( 10, N'Usando `matplotlib` para visualizar los archivos CSV', 3, 0),
 ( 10, N'Automatizando el procesamiento de archivos CSV con `pygame`', 4, 0),
-( 11, N'Puedes usar la librería `shutil` para mover archivos, y `os` para renombrarlos o eliminarlos', 1, 1),
-( 11, N'Utilizando solo `tkinter` para organizar archivos en una interfaz gráfica', 2, 0),
-( 11, N'Puedes usar `pygame` para mover archivos', 3, 0),
-( 11, N'No es posible mover archivos con Python', 4, 0),
-( 12, N'Debes tener en cuenta el manejo de permisos de archivos, la validación de datos y la protección contra inyecciones de código', 1, 1),
-( 12, N'La seguridad no es un aspecto relevante en la automatización con Python', 2, 0),
-( 12, N'La seguridad es solo importante en aplicaciones web, no en scripts de automatización', 3, 0),
-( 12, N'No es necesario implementar ningún tipo de seguridad en tus scripts de automatización', 4, 0),
-( 13, N'Puedes usar `pandas` para procesar los datos y `matplotlib` para generar gráficos automáticamente', 1, 1),
-( 13, N'Es necesario usar `tkinter` para crear la interfaz gráfica para la generación de informes', 2, 0),
-( 13, N'Utilizando `pygame` para crear gráficos interactivos a partir de los datos de la base de datos', 3, 0),
-( 13, N'No es posible generar informes con Python', 4, 0),
-( 14, N'`pyautogui` permite automatizar interacciones con la interfaz gráfica del sistema operativo, como hacer clic y escribir texto', 1, 1),
-( 14, N'`pyautogui` se utiliza solo para crear gráficos interactivos', 2, 0),
-( 14, N'`pyautogui` es una librería para interactuar con bases de datos', 3, 0),
-( 14, N'No es posible automatizar interacciones con la interfaz gráfica en Python', 4, 0),
-( 15, N'Usando `watchdog` para monitorear el directorio y ejecutar un script cuando cambian los archivos', 1, 1),
-( 15, N'Usando `tkinter` para crear una interfaz gráfica que monitoree los cambios en un directorio', 2, 0),
-( 15, N'Usando `pygame` para monitorear directorios', 3, 0),
-( 15, N'Todas son correctas', 4, 0),
-( 16, N'Usando `subprocess` para ejecutar comandos en el sistema', 1, 1),
-( 16, N'Usando `random` para crear interfaces gráficas', 2, 0),
-( 16, N'Usando `collections` para monitorear directorios', 3, 0),
+( 12, N'Puedes usar la librería `shutil` para mover archivos, y `os` para renombrarlos o eliminarlos', 1, 1),
+( 12, N'Utilizando solo `tkinter` para organizar archivos en una interfaz gráfica', 2, 0),
+( 12, N'Puedes usar `pygame` para mover archivos', 3, 0),
+( 12, N'No es posible mover archivos con Python', 4, 0),
+( 13, N'Debes tener en cuenta el manejo de permisos de archivos, la validación de datos y la protección contra inyecciones de código', 1, 1),
+( 13, N'La seguridad no es un aspecto relevante en la automatización con Python', 2, 0),
+( 13, N'La seguridad es solo importante en aplicaciones web, no en scripts de automatización', 3, 0),
+( 13, N'No es necesario implementar ningún tipo de seguridad en tus scripts de automatización', 4, 0),
+( 14, N'Puedes usar `pandas` para procesar los datos y `matplotlib` para generar gráficos automáticamente', 1, 1),
+( 14, N'Es necesario usar `tkinter` para crear la interfaz gráfica para la generación de informes', 2, 0),
+( 14, N'Utilizando `pygame` para crear gráficos interactivos a partir de los datos de la base de datos', 3, 0),
+( 14, N'No es posible generar informes con Python', 4, 0),
+( 15, N'`pyautogui` permite automatizar interacciones con la interfaz gráfica del sistema operativo, como hacer clic y escribir texto', 1, 1),
+( 15, N'`pyautogui` se utiliza solo para crear gráficos interactivos', 2, 0),
+( 15, N'`pyautogui` es una librería para interactuar con bases de datos', 3, 0),
+( 15, N'No es posible automatizar interacciones con la interfaz gráfica en Python', 4, 0),
+( 16, N'Usando `watchdog` para monitorear el directorio y ejecutar un script cuando cambian los archivos', 1, 1),
+( 16, N'Usando `tkinter` para crear una interfaz gráfica que monitoree los cambios en un directorio', 2, 0),
+( 16, N'Usando `pygame` para monitorear directorios', 3, 0),
 ( 16, N'Todas son correctas', 4, 0),
-( 17, N'Usando `psutil` para obtener información del sistema, como uso de CPU y memoria', 1, 1),
-( 17, N'Usando `socket` para monitorear directorios', 2, 0),
-( 17, N'Usando `json` para crear gráficos', 3, 0),
+( 17, N'Usando `subprocess` para ejecutar comandos en el sistema', 1, 1),
+( 17, N'Usando `random` para crear interfaces gráficas', 2, 0),
+( 17, N'Usando `collections` para monitorear directorios', 3, 0),
 ( 17, N'Todas son correctas', 4, 0),
-( 18, N'Usando `logging` para registrar eventos en un archivo de log', 1, 1),
-( 18, N'Usando `email` para manejar gráficos', 2, 0),
-( 18, N'Usando `itertools` para crear interfaces gráficas', 3, 0),
-( 18, N'Todas son correctas', 4, 0),
-( 19, N'Usando `schedule` para programar tareas en intervalos de tiempo', 1, 1),
-( 19, N'Usando `unittest` para monitorear directorios', 2, 0),
-( 19, N'Usando `csv` para enviar correos electrónicos', 3, 0),
-( 19, N'Todas son correctas', 4, 0);
+( 11, N'Usando `schedule` para programar tareas en intervalos de tiempo', 1, 1),
+( 11, N'Usando `unittest` para monitorear directorios', 2, 0),
+( 11, N'Usando `csv` para enviar correos electrónicos', 3, 0),
+( 11, N'Todas son correctas', 4, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (18, 'Implementar herramientas para gestionar procesos de automatización', 1, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (18, 'Monitorear recursos y optimizar su uso en tiempo real', 2, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (18, 'Integrar estrategias para manejar errores de forma eficiente', 3, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (18, 'Todas las anteriores', 4, 1);
+
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (19, 'Utilizar módulos para registrar eventos en archivos de texto', 1, 1);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (19, 'Diseñar reportes personalizados basados en las actividades del script', 2, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (19, 'Ejecutar pruebas automatizadas y documentar los resultados', 3, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (19, 'Generar datos históricos para análisis futuros', 4, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (20, 'Es una herramienta que extrae datos de páginas web', 1, 1);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (20, 'Permite acceder a bases de datos directamente desde el navegador', 2, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (20, 'Facilita la creación de interfaces gráficas complejas', 3, 0);
+
+INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta)
+VALUES (20, 'Es una técnica para procesar imágenes web de forma dinámica', 4, 0);
+
 
 INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES 
 

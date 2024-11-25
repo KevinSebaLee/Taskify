@@ -219,4 +219,9 @@ public class HomeController : Controller
 
         return View("Perfil");
     }
+
+    public IActionResult Resultados(){
+        ViewBag.Hecho = true;
+        return View("Tasks");
+    }
 }
