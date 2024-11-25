@@ -31,27 +31,80 @@ document.addEventListener('DOMContentLoaded', function() {
         successCallback(fetchEvents());
     },
     select: function(info) {
-        var title = prompt('Enter Event Title:');
-        var description = prompt('Enter Event Description:');
-        if (title && description) {
-            var startDate = prompt('Enter Start Date and Time (YYYY-MM-DDTHH:MM):', info.startStr);
-            var endDate = prompt('Enter End Date and Time (YYYY-MM-DDTHH:MM):', info.endStr);
-            if (startDate && endDate) {
-                var event = { id: Date.now().toString(), title: title, description: description, start: startDate, end: endDate };
-                saveEvent(event);
-                calendar.addEvent(event);
+        const Usuario = document.getElementById('Usuario').value;
+        document.getElementById('eventStart').value = info.startStr.slice(0, 16);
+        document.getElementById('eventEnd').value = info.endStr.slice(0, 16);
+    
+        const createEventModal = new bootstrap.Modal(document.getElementById('createEventModal'));
+        createEventModal.show();
+    
+        document.getElementById('saveEventButton').onclick = function () {
+            let title = document.getElementById('eventTitle').value;
+            let description = document.getElementById('eventDescription').value;
+            let startDate = document.getElementById('eventStart').value;
+            let endDate = document.getElementById('eventEnd').value;
+    
+            if (title && description && startDate && endDate && new Date(startDate) < new Date(endDate)) {
+                var event = {
+                    IdUsuario: Usuario,
+                    Nombre: title,
+                    Descripcion: description,
+                    FechaInicio: startDate,
+                    FechaFin: endDate
+                };
+    
+                $.ajax({
+                    url: '/Home/CrearEvento',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(event),
+                    success: function(savedEvent) {
+                        calendar.addEvent({
+                            id: savedEvent.id,
+                            title: savedEvent.title,
+                            start: savedEvent.start,
+                            end: savedEvent.end,
+                            extendedProps: {
+                                description: savedEvent.description
+                            }
+                        });
+                        
+                        createEventModal.hide();
+                        alert('Event saved successfully!');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error saving event:', error);
+                        alert('Failed to save the event. Please try again.');
+                    }
+                });
+            } else {
+                alert('Please fill out all fields and ensure the dates are valid.');
             }
-        }
+        };
+    
         calendar.unselect();
     },
+    
     eventClick: function(info) {
         var event = info.event;
         var description = event.extendedProps.description;
-        alert('Title: ' + event.title + '\nDescription: ' + description);
-        if (confirm('Do you want to delete this event?')) {
-            info.event.remove();
-            deleteEvent(info.event.id);
-        }
+        
+        $.ajax({
+            url: '/your-endpoint',
+            type: 'GET',
+            data: { eventId: event.id },
+            success: function (response) {
+                document.getElementById("eventTitle").textContent = event.title;
+                document.getElementById("eventDescription").textContent = response.description;
+
+                var modal = new bootstrap.Modal(document.getElementById("eventModal"));
+                modal.show();
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching event details:", error);
+                alert("Failed to fetch event details. Please try again later.");
+            }
+        });
     },
     eventDrop: function(info) {
         var updatedEvent = {

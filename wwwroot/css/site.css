@@ -387,17 +387,6 @@ header{
 }
 
 
-  .modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
 
 /* Inicio Mejorá */
 button{
@@ -446,6 +435,7 @@ button{
 
 }
 
+<<<<<<< HEAD
 .titleTask{
   margin-bottom: 2%;
   h5{
@@ -477,4 +467,6 @@ button{
   margin-bottom: 1%;
   color: white;
 }
+=======
+>>>>>>> 70a1a38301fce3e11d170c8f9918315a00c889cf
 /*  Fin Task */

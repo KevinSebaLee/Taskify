@@ -142,7 +142,7 @@ CREATE TABLE Contactos(
 CREATE TABLE Eventos(
     IdEvento INT NOT NULL PRIMARY KEY IDENTITY(1, 1),
     IdUsuario INT NOT NULL FOREIGN KEY REFERENCES Usuarios(IdUsuario),
-    IdContacto INT NOT NULL FOREIGN KEY REFERENCES Contactos(IdContacto),
+    IdContacto INT FOREIGN KEY REFERENCES Contactos(IdContacto),
     Nombre NVARCHAR(200) NOT NULL,
     Descripcion NVARCHAR(200) NOT NULL,
     FechaInicio DATE NOT NULL,

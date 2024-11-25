@@ -9,16 +9,52 @@
         <p>Postulaciones</p>
         <p>Entregas</p>
     </div>
+
+    <input type="hidden" id="Usuario" value="@TaskifyService.User.IdUsuario">
+
+    @if(ViewBag.Contacto != null){
+        <input type="hidden" id="Contacto" value="@ViewBag.Contacto.IdContacto">
+    }
+
     <div id='calendar'></div>
 </div>
 
-<div id="eventModal" class="modal">
+<div class="modal fade" id="createEventModal" tabindex="-1" aria-labelledby="createEventModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="eventTitle"></h2>
-        <p id="eventDescription"></p>
+      <div class="modal-header">
+        <h5 class="modal-title" id="createEventModalLabel">Create Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="eventForm">
+          <div class="mb-3">
+            <label for="eventTitle" class="form-label">Event Title</label>
+            <input type="text" class="form-control" id="eventTitle" required>
+          </div>
+          <div class="mb-3">
+            <label for="eventDescription" class="form-label">Event Description</label>
+            <textarea class="form-control" id="eventDescription" rows="3" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="eventStart" class="form-label">Start Date and Time</label>
+            <input type="datetime-local" class="form-control" id="eventStart" required>
+          </div>
+          <div class="mb-3">
+            <label for="eventEnd" class="form-label">End Date and Time</label>
+            <input type="datetime-local" class="form-control" id="eventEnd" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveEventButton">Save Event</button>
+      </div>
     </div>
+  </div>
 </div>
+
+
 
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
