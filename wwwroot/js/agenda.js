@@ -34,36 +34,30 @@ document.addEventListener('DOMContentLoaded', function() {
         const Usuario = document.getElementById('Usuario').value;
         document.getElementById('eventStart').value = info.startStr.slice(0, 16);
         document.getElementById('eventEnd').value = info.endStr.slice(0, 16);
-
-        var createEventModal = new bootstrap.Modal(document.getElementById('createEventModal'));
+    
+        const createEventModal = new bootstrap.Modal(document.getElementById('createEventModal'));
         createEventModal.show();
-
+    
         document.getElementById('saveEventButton').onclick = function () {
             let title = document.getElementById('eventTitle').value;
             let description = document.getElementById('eventDescription').value;
             let startDate = document.getElementById('eventStart').value;
             let endDate = document.getElementById('eventEnd').value;
-
+    
             if (title && description && startDate && endDate && new Date(startDate) < new Date(endDate)) {
                 var event = {
-                    id: Date.now().toString(),
-                    title: title,
-                    description: description,
-                    start: startDate,
-                    end: endDate
+                    IdUsuario: Usuario,
+                    Nombre: title,
+                    Descripcion: description,
+                    FechaInicio: startDate,
+                    FechaFin: endDate
                 };
-
+    
                 $.ajax({
-                    url: '/Home/GuardarEvento',
+                    url: '/Home/CrearEvento',
                     type: 'POST',
                     contentType: 'application/json',
-                    data: {
-                        IdUsuario: Usuario,
-                        Nombre: title,
-                        Descripcion: description,
-                        FechaInicio: startDate,
-                        FechaFin: endDate
-                    },
+                    data: JSON.stringify(event),
                     success: function(savedEvent) {
                         calendar.addEvent({
                             id: savedEvent.id,
@@ -74,18 +68,23 @@ document.addEventListener('DOMContentLoaded', function() {
                                 description: savedEvent.description
                             }
                         });
-
+                        
                         createEventModal.hide();
+                        alert('Event saved successfully!');
                     },
                     error: function(xhr, status, error) {
                         console.error('Error saving event:', error);
+                        alert('Failed to save the event. Please try again.');
                     }
                 });
+            } else {
+                alert('Please fill out all fields and ensure the dates are valid.');
             }
         };
-
+    
         calendar.unselect();
     },
+    
     eventClick: function(info) {
         var event = info.event;
         var description = event.extendedProps.description;
