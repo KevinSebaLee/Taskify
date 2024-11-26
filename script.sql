@@ -685,11 +685,6 @@ VALUES (20, 'Es una técnica para procesar imágenes web de forma dinámica', 4,
 
 INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES 
 
-( 20, N'JavaScript permite la manipulación del DOM para actualizar dinámicamente el contenido de las páginas', 1, 1),
-( 20, N'JavaScript permite solo interacciones de entrada de datos del usuario', 3, 0),
-( 20, N'JavaScript no tiene ningún impacto en la interactividad de las páginas web', 2, 0),
-( 20, N'JavaScript se utiliza para mejorar la velocidad de carga de la página web', 4, 0),
-
 ( 21, N'El DOM es una representación estructurada de la página web y JavaScript puede manipularlo', 1, 1),
 ( 21, N'El DOM es un modelo de datos que solo puede ser leído por el navegador, no modificado por JavaScript', 2, 0),
 ( 21, N'El DOM es un lenguaje de programación independiente de JavaScript', 3, 0),
