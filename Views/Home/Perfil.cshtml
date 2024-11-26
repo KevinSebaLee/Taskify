@@ -3,11 +3,13 @@
 }
 
 <div class="d-flex flex-column align-items-center bg-secondary" style="min-height: 100vh;">
-    <div class="bg-white mt-5 pb-5 ps-5 pe-5" style="width: 80vw; border-radius: 40px;">
-        <div class="bg-success" style="width: 100%; height: 12vh; border-radius: 20px;">
-            <div class="container">
+    <div class="bg-white mt-5 pb-5" style="width: 80vw; border-radius: 40px;">
+        <div  style="width: 100%; height: 12vh; border-radius: 20px;">
+            <div class="headerPerfil bg-success">
                 <h3 class="text-white pt-3">Mi perfil</h3>
+                <a type="button" class="btn btn-dark" href='@Url.Action("CerrarSesion")'>Cerrar Sesion</a>
             </div>
+            
         </div>
 
         <div class="row mt-5 pt-3">
@@ -64,7 +66,7 @@
                 }
                 else{
                     <p>Nada en descripcion.</p>
-                    <a href='@Url.Action("CerrarSesion")'>Cerrar Sesion</a>
+                    
                 }
             </div>
         </div>
@@ -83,15 +85,15 @@
                         </div>
                         <h4 class="ms-5">Mercado Libre</h4>
 
-                        <div class="d-flex align-items-center justify-content-center" style="border-radius: 10px; width: 23%; height: 12%; background-color: #00481D; opacity: 0.84; position: absolute;">
-                            <button class="bg-transparent" style="border: 0;"><h3 class="text-white">Más</h3></button>
+                        <div class="d-flex align-items-center justify-content-center" style="border-radius: 10px; width: 23%; height: 12%; background-color: #00481D; margin-left:70%; opacity: 0.84; position: absolute;">
+                            <button type="submit" class="bg-transparent" style="border: 0;"><h4 class="text-white" style="">Más</h4></button>
                         </div>
                     </div>
                     
                     <div class="mt-4 mb-5" style="min-height: 7vh">
                         <div class="row">
                             <div class="col-md-8 offset-md-2">    
-                                <h5 class="text-center">Crear una app para gestionar personales, enfocada en la usabilidad y diseño intuitivo.</h5>
+                                <h5 >Vender en Mercado Libre no es lo que era antes, las reglas y las dinámicas cambiaron. Si queres conocer un poco mas te invitamos a ver nuestra serie de videos Problemática / Soluciones.</h5>
                             </div>
                         </div>
                     </div>

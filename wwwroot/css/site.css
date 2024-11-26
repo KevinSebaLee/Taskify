@@ -178,6 +178,20 @@ header{
   opacity: calc(1 - 0.4);
 }
 
+.headerPerfil{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  padding-left: 2%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  a{
+    margin-right: 2%;
+  }
+}
 
 /* Inicio Proyecto */
 
