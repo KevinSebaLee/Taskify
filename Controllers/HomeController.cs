@@ -224,7 +224,8 @@ public class HomeController : Controller
 
     public IActionResult Resultados(){
         ViewBag.Hecho = true;
-        return View("Tasks");
+
+        return RedirectToAction("Tasks");
     }
     
     [HttpPost]
