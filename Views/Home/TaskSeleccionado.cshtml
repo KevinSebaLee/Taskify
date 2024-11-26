@@ -1,9 +1,9 @@
 <div class="task">
     <div class="TaskInfo">
         <div class="d-flex justify-content-center titleTask">
-            <h1>Task Name</h1>
+            <h1>@ViewBag.TaskSeleccionado.Titulo</h1>
             <h5>|</h5>
-            <h5>Categoría</h5>
+            <h5>@TaskifyService.ObtenerCategorias()[ViewBag.TaskSeleccionado.IdLenguaje].Nombre</h5>
 
         </div>
         <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">

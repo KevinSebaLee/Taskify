@@ -450,6 +450,10 @@ button{
 }
 .titleTask{
   margin-bottom: 2%;
+
+  h1{
+    font-size: 2em;
+  }
   h5{
     margin-top: 1.5%;
     margin-left: 2%;
