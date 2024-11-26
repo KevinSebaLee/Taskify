@@ -43,16 +43,20 @@ document.addEventListener('DOMContentLoaded', function() {
             let description = document.getElementById('eventDescription').value;
             let startDate = document.getElementById('eventStart').value;
             let endDate = document.getElementById('eventEnd').value;
-    
+            let Usuario = document.getElementById('Usuario').value; // Assuming this is defined elsewhere
+        
             if (title && description && startDate && endDate && new Date(startDate) < new Date(endDate)) {
                 var event = {
                     IdUsuario: Usuario,
+                    IdContacto: null,
                     Nombre: title,
                     Descripcion: description,
                     FechaInicio: startDate,
                     FechaFin: endDate
                 };
-    
+        
+                console.log("Data being sent:", event);
+        
                 $.ajax({
                     url: '/Home/CrearEvento',
                     type: 'POST',
@@ -68,9 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 description: savedEvent.description
                             }
                         });
-                        
+        
                         createEventModal.hide();
-                        alert('Event saved successfully!');
                     },
                     error: function(xhr, status, error) {
                         console.error('Error saving event:', error);

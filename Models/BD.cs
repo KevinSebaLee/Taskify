@@ -304,7 +304,11 @@ public class BD{
     }
 
     public static void CrearEvento(int IdUsuario, int? IdContacto, string Nombre, string Descripcion, DateTime FechaInicio, DateTime FechaFin){
-        string query = "INSERT INTO Evento(IdUsuario, IdContacto, Nombre, Descripcion, FechaInicio, FechaFin) VALUES (@IdUsuario, @IdContacto, @Nombre, @Descripcion, @FechaInicio, @FechaFin)";
+        Console.WriteLine("FechaInicio: " + FechaInicio);
+        Console.WriteLine("FechaFin: " + FechaFin);
+        Console.WriteLine("IdUsuario: " + IdUsuario);
+        
+        string query = "INSERT INTO Eventos(IdUsuario, IdContacto, Nombre, Descripcion, FechaInicio, FechaFin) VALUES (@IdUsuario, @IdContacto, @Nombre, @Descripcion, @FechaInicio, @FechaFin)";
         using(SqlConnection db = new SqlConnection(_connectionString)){
             db.Execute(query, new {@IdUsuario = IdUsuario, @IdContacto = IdContacto, @Nombre = Nombre, @Descripcion = Descripcion, @FechaInicio = FechaInicio, @FechaFin = FechaFin});
         }

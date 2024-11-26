@@ -227,8 +227,9 @@ public class HomeController : Controller
     }
     
     [HttpPost]
-    public IActionResult CrearEvento(int IdUsuario, int? IdContacto, string Nombre, string Descripcion, DateTime FechaInicio, DateTime FechaFin){
-        BD.CrearEvento(IdUsuario, IdContacto, Nombre, Descripcion, FechaInicio, FechaFin);
+    public IActionResult CrearEvento([FromBody] Evento eventModel) {
+        Console.WriteLine($"Received Data - IdUsuario: {eventModel.IdUsuario}, Nombre: {eventModel.Nombre}, Descripcion: {eventModel.Descripcion}, FechaInicio: {eventModel.FechaInicio}, FechaFin: {eventModel.FechaFin}");
+        BD.CrearEvento(eventModel.IdUsuario, eventModel.IdContacto, eventModel.Nombre, eventModel.Descripcion, eventModel.FechaInicio, eventModel.FechaFin);
 
         return View("Agenda");
     }
