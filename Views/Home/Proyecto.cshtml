@@ -4,8 +4,8 @@
     <p> @ViewBag.ProyectoElegido.Nombre</p>
 
     @if(TaskifyService.User.IdUsuario != ViewBag.ProyectoElegido.IdCreadorUsuario){
-        <a rol="button" href= '@Url.Action("Agenda")' type="button" class="btn btn-success">Send</a>
-        <a rol="button" href='@Url.Action("Empleos")' type="button" class="btn btn-light">Save</a>
+        <a rol="button" href= '@Url.Action("Agenda")' type="button" class="btn btn-success">Postularme</a>
+        <a rol="button" href='@Url.Action("Empleos")' type="button" class="btn btn-light">Guardar</a>
     }
 </div>
 <div class="center">
@@ -16,7 +16,7 @@
     </div>
 
     <div class="des">
-        <h1>About the project...</h1>
+        <h1>Sobre el proyecto...</h1>
         <p>@ViewBag.ProyectoElegido.Descripcion</p>
     </div>
 </div>

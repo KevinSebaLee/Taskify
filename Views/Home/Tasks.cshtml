@@ -71,14 +71,14 @@
                         <div class="">
                             <form action='@Url.Action("TaskSeleccionado")'>
                                 <input type="hidden" name="IdTask" value="@ViewBag.ListaTask[i].IdTask">
-                                <button type="submit"><h3 class=" mt-2 ms-4 text-white" style="text-align: left; ">@ViewBag.ListaTask[i].Titulo</h3></button>
+                                <button type="submit"><h4 class=" mt-2 ms-4 text-white" style="text-align: left;">@ViewBag.ListaTask[i].Titulo</h4></button>
                             </form>
                         </div>
                     </div>
                 </div>
 
-                <div class="d-flex align-items-center">
-                    <h6 class="bg-success mt-4 text-white ps-4" style="min-height: 1vh; min-width: 100%; border-radius: 40px;">@ViewBag.ListaTask[i].Progreso %</h6>
+                <div class="d-flex align-items-center" >
+                    <h6 class="bg-success mt-4 text-white ps-4" style="min-height: 1vh; min-width: 50%; border-radius: 40px; margin:3%">@ViewBag.ListaTask[i].Progreso %</h6>
                 </div>
             </div>
         }

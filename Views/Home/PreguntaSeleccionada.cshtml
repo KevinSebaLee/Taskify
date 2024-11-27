@@ -27,11 +27,11 @@
             <h1 class="ms-5 mb-5">Respuestas</h1>
 
             @for(int i = 0; i < ViewBag.Respuestas.Count; i++){
-                <div class="bg-white text-dark p-3 shadow-sm ms-5 ps-5 mt-5" style="width: 77vw; height: 15vh; border-radius: 30px;">
+                <div class="bg-white text-dark p-3 shadow-sm ms-5 ps-5 mt-5 respuesta" style="width: 60vw; height: 15vh; border-radius: 30px;">
                     <div class="d-flex align-items-center">
                         <img src="~/img/SinSesion.png" class="rounded-circle ms-4" style="height: 12vh; width: 7vw;" alt="User profile image">
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-10" style="width:100%">
                                 <p class="text-dark mb-0 ps-5 h5">@ViewBag.Respuestas[i].RespuestaCommunity</p>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
         <div class="d-flex justify-content-end align-items-end m-3">
             <form action='@Url.Action("PublicarRespuesta")'>
                 <input type="hidden" name="IdPregunta" value="@ViewBag.PreguntaElegida.IdPregunta">
-                <button class="text-white bg-success ps-5 pe-5 pb-2 fw-bold text-decoration-none" type="submit" style="border: 0; border-radius: 100px; min-height: 4vh; padding-top:6px; font-size:1em">Reply</button>
+                <button class="text-white bg-success ps-5 pe-5 pb-2 fw-bold text-decoration-none" type="submit" style="border: 0; border-radius: 100px; min-height: 4vh; padding-top:6px; font-size:1em">Responder</button>
             </form>
         </div>
     </div>

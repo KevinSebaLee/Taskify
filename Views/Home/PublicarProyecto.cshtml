@@ -4,23 +4,23 @@
 }
 <div class="containerForm">
     <form class="create" action='@Url.Action("CrearProyecto")'>
-        <h1>Create project</h1>
+        <h1>Crear Proyecto</h1>
         
         <div class="contentFormPro">
             <div class="group">
                 <div class="input-group mb-3 input1">
-                    <span class="input-group-text" id="basic-addon1">Name</span>
+                    <span class="input-group-text" id="basic-addon1">Nombre</span>
                     <input type="text" name="Nombre" class="form-control input1" placeholder="Project name">
                 </div>
 
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon2">Company</span>
+                    <span class="input-group-text" id="basic-addon2">Empresa</span>
                     <input type="text" name="NombreEmpresa" class="form-control" placeholder="Company name" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 </div>
             </div>
         
         <div class="input-group mb-3">
-            <span class="input-group-text">Location</span>
+            <span class="input-group-text">Ubicación</span>
             <input type="text" name="Ubicacion" class="form-control " aria-label="Amount (to the nearest dollar)" placeholder="Company location">
         </div>
 
@@ -44,7 +44,7 @@
             </select>
             
             <div class="input-group mb-3 Dead" style="flex:0.5;">
-                <span class="input-group-text" id="basic-addon2">Deadline</span>
+                <span class="input-group-text" id="basic-addon2">Fecha Límite</span>
                 <input type="datetime-local" name="FechaPublicacion" class="form-control " aria-label="Amount (to the nearest dollar)" placeholder="Open until">
             </div>
 
@@ -54,11 +54,11 @@
         <input type="hidden" name="IdCreadorUsuario" value="@TaskifyService.User.IdUsuario" required>
 
         <div class="About">
-            <p class="text-light">About the Project...</p>
+            <p class="text-light">Sobre el proyecto...</p>
             <textarea name="Descripcion" class="form-control" aria-label="With textarea" placeholder="Type here..."></textarea>
         </div>
         
-        <button type="submit" class="btn btn-light CreateBtn">Create Project</button>
+        <button type="submit" class="btn btn-light CreateBtn">Publicar</button>
         </div>
     </form>
 </div>

@@ -23,32 +23,32 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="createEventModalLabel">Create Event</h5>
+        <h5 class="modal-title" id="createEventModalLabel">Crear Evento</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form id="eventForm">
           <div class="mb-3">
-            <label for="eventTitle" class="form-label">Event Title</label>
+            <label for="eventTitle" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="eventTitle" required>
           </div>
           <div class="mb-3">
-            <label for="eventDescription" class="form-label">Event Description</label>
+            <label for="eventDescription" class="form-label">Descripción</label>
             <textarea class="form-control" id="eventDescription" rows="3" required></textarea>
           </div>
           <div class="mb-3">
-            <label for="eventStart" class="form-label">Start Date and Time</label>
+            <label for="eventStart" class="form-label">Fecha Inicio</label>
             <input type="datetime-local" class="form-control" id="eventStart" required>
           </div>
           <div class="mb-3">
-            <label for="eventEnd" class="form-label">End Date and Time</label>
+            <label for="eventEnd" class="form-label">Fecha Límite</label>
             <input type="datetime-local" class="form-control" id="eventEnd" required>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success" id="saveEventButton">Save Event</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" id="saveEventButton">Agendar</button>
       </div>
     </div>
   </div>

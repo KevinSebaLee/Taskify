@@ -28,8 +28,28 @@ document.addEventListener('DOMContentLoaded', function() {
     selectable: true,
     selectHelper: true,
     events: function(fetchInfo, successCallback, failureCallback) {
-        successCallback(fetchEvents());
+        $.ajax({
+            url: '/Home/ObtenerEventos', // Este endpoint debería devolver los eventos de la base de datos
+            type: 'GET',
+            success: function(data) {
+                var events = data.map(function(event) {
+                    return {
+                        id: event.id,
+                        title: event.title,
+                        start: event.start,
+                        end: event.end,
+                        description: event.description
+                    };
+                });
+                successCallback(fetchEvents());// Pasar los eventos al calendario
+            },
+            error: function(xhr, status, error) {
+                console.error("Error fetching events:", error);
+                failureCallback(error); // Si hay error, manejarlo
+            }
+        });
     },
+   
     select: function(info) {
         const Usuario = document.getElementById('Usuario').value;
         document.getElementById('eventStart').value = info.startStr.slice(0, 16);
