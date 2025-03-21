@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     editable: true,
     selectable: true,
     selectHelper: true,
-    events: function(fetchInfo, successCallback, failureCallback) {
+    events: function(event, successCallback, failureCallback) {
         $.ajax({
             url: '/Home/ObtenerEventos', // Este endpoint debería devolver los eventos de la base de datos
             type: 'GET',
