@@ -533,10 +533,21 @@ margin-top: 10%;
   padding-top: 3%;
 
   p{
-    font-size: 0.8em;
-    font-weight: bold;
+    font-size: 0.9em;
+    color:black  ;
   }
   h6{
     padding-bottom: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    white-space: initial;
   }
+
+  h5{
+    color: #15750c  ;
+    white-space: nowrap;
+    overflow: hidden;
+    white-space: initial;
+  }
+  
 }
