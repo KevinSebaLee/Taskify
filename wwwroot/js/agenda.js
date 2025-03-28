@@ -97,7 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     error: function(xhr, status, error) {
                         console.error('Error saving event:', error);
-                        alert('Failed to save the event. Please try again.');
+                        location.reload();
+
                     }
                 });
             } else {

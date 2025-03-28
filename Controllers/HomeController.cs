@@ -32,6 +32,7 @@ public class HomeController : Controller
 
     public IActionResult Agenda()
     {
+        ViewBag.Eventos = TaskifyService.ObtenerEventos();
         return View();
     }
 

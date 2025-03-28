@@ -8,6 +8,32 @@
         <p>Entrevistas</p>
         <p>Postulaciones</p>
         <p>Entregas</p>
+
+
+      <div class= "ProximosEventos">
+
+      @for(int i = 0; i < @ViewBag.Eventos.Count; i++){
+            <div class = "Evento">
+                <div >
+                    <div>
+                        <p>@ViewBag.Eventos[i].FechaInicio.ToShortDateString()</p>
+                        <div >
+                            <form action='@Url.Action("Agenda")'>
+                                <input type="hidden" name="IdEvento" value="@ViewBag.Eventos[i].IdEvento">
+                                <h5>@ViewBag.Eventos[i].Nombre</h5>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h6>@ViewBag.Eventos[i].Descripcion</h6>
+                </div>
+            </div>
+      }
+      </div>
+
+        
     </div>
 
     <input type="hidden" id="Usuario" value="@TaskifyService.User.IdUsuario">

@@ -8,6 +8,9 @@ public class TaskifyService{
     public static List<Task> ObtenerTasks(){
         return BD.ObtenerTasks();
     }
+    public static List<Evento> ObtenerEventos(){
+        return BD.ObtenerEventos();
+    }
 
     public static List<Genero> ObtenerGeneros(){
         return BD.ObtenerGeneros();

@@ -85,6 +85,16 @@ public class BD{
         return Tasks;
     }
 
+     public static List<Evento> ObtenerEventos(){
+        string query = "SELECT * FROM Eventos";
+        List<Evento> Eventos = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            Eventos = db.Query<Evento>(query).ToList();
+        }
+
+        return Eventos;
+    }
+
     public static List<Proyecto> ObtenerEmpleos()
     {
         string query = "SELECT * FROM Proyectos";
