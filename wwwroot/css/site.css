@@ -265,6 +265,8 @@ header{
 /* Inicio Agenda */
 .Agenda{
   display: flex;
+  max-height: 860px;
+  margin: 0px;
 }
 .costado{
   color: white;
@@ -273,7 +275,10 @@ header{
   width: 20%;
   background-color: #00481D;
   opacity: 0.84;
-  padding: 3%;
+  padding-top: 3%;
+  padding-right: 3%;
+  padding-left: 3%;
+  max-height: 860px;
 
 
   h1{
@@ -514,11 +519,37 @@ button{
     width: 150px;
   }
 }
-/*  Fin Task */
-
 
 .ProximosEventos{
 margin-top: 10%;
+height: 60%;
+
+}
+.scroller{
+  height: 90%;
+  line-height: 3em;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+
+}
+.scroller::-webkit-scrollbar {
+  background-color: #95a5a600;
+  width: 15px;
+}
+
+.scroller::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #ffffff5e;
+
+}
+
+.scroller::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #ffffffa4;
+    margin-left: 3%;
+    height: 10px;
+
 }
 
 .Evento{
@@ -529,6 +560,8 @@ margin-top: 10%;
   margin-bottom: 5%;
   padding-left: 1em;
   padding-top: 3%;
+  padding-right: 2% !important;
+ 
 
   p{
     font-size: 0.9em;
@@ -546,9 +579,10 @@ margin-top: 10%;
     white-space: nowrap;
     overflow: hidden;
     white-space: initial;
-  } 
+  }
+  
 }
 
-input[type="radio"] {
-	accent-color: green;
+footer{
+  margin: 0px;
 }
