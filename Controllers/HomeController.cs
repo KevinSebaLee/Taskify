@@ -189,7 +189,8 @@ public class HomeController : Controller
 
     public IActionResult TaskSeleccionado(int IdTask)
     {
-        ViewBag.TaskSeleccionado = TaskifyService.ObtenerTask()[IdTask];
+        Console.WriteLine(IdTask);
+        ViewBag.TaskSeleccionado = TaskifyService.ObtenerTask()[IdTask - 1];
         List<Consigna> consignasXTask = TaskifyService.ConsignasXTask(IdTask);
         ViewBag.ConsignasXTask = consignasXTask;
 
