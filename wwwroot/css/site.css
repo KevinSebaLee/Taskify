@@ -535,7 +535,27 @@ height: 60%;
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
+
 }
+.scroller::-webkit-scrollbar {
+  background-color: #95a5a600;
+  width: 15px;
+}
+
+.scroller::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #ffffff5e;
+
+}
+
+.scroller::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #ffffffa4;
+    margin-left: 3%;
+    height: 10px;
+
+}
+
 .Evento{
   color: #333333;
   background-color: #ffffff;
