@@ -481,10 +481,7 @@ INSERT INTO lenguajes (NOMBRE, DESCRIPCION) VALUES
 ('R', 'Lenguaje de programación y entorno de software para la estadística y el análisis de datos, ampliamente utilizado en investigación y ciencia de datos.');
 
 INSERT INTO tasks (IdLenguaje, Area, Titulo, FechaPubli, Progreso) VALUES
-(1, 'Automatización de Tareas', 'Automatizar la recolección de datos con Python', '2024-09-05', 50),
-(2, 'Desarrollo Web', 'Desarrollar una aplicación de chat en tiempo real con Node.js y Socket.io', '2024-10-12', 80),
-(5, 'Desarrollo de Software', 'Crear un sistema de gestión de inventarios con Ruby on Rails', '2024-07-30', 10),
-(6, 'Ciencia de Datos', 'Análisis de grandes volúmenes de datos usando R para la predicción de ventas', '2024-10-15', 60);
+(1, 'Automatización de Tareas', 'Automatizar la recolección de datos con Python', '2024-09-05', 50)
 
 -- Tópico 1: Python - Automatización de Tareas
 INSERT INTO consigna (IdTask, Pregunta) VALUES
@@ -508,72 +505,6 @@ INSERT INTO consigna (IdTask, Pregunta) VALUES
 (1, '¿Qué desafíos pueden surgir al automatizar tareas complejas en Python y cómo podrías abordarlos?'),
 (1, '¿Cómo puedes usar Python para crear un archivo de log que registre las acciones realizadas por tus scripts de automatización?'),
 (1, '¿Qué es un “web scraper” y cómo lo puedes construir utilizando Python?');
-
--- Tópico 2: JavaScript - Desarrollo Web
-INSERT INTO consigna (IdTask, Pregunta) VALUES
-(2, '¿Cómo JavaScript mejora la interactividad de las páginas web?'),
-(2, '¿Qué es el modelo de objetos del documento (DOM) y cómo interactúa JavaScript con él?'),
-(2, 'Explica la diferencia entre `var`, `let` y `const` en JavaScript.'),
-(2, '¿Cómo puedes manejar eventos en JavaScript y cuáles son los tipos de eventos más comunes?'),
-(2, '¿Cómo puedes realizar una petición HTTP usando JavaScript para obtener datos de un servidor?'),
-(2, '¿Qué es AJAX y cómo se utiliza en JavaScript para cargar contenido de manera asíncrona?'),
-(2, 'Explica qué es la promesa en JavaScript y cómo se utiliza para manejar operaciones asincrónicas.'),
-(2, '¿Cómo puedes manipular los estilos de una página web usando JavaScript?'),
-(2, '¿Qué son las funciones flecha (`arrow functions`) y cómo se diferencian de las funciones tradicionales en JavaScript?'),
-(2, '¿Cómo puedes validar formularios en el lado del cliente usando JavaScript?'),
-(2, 'Explica qué es un "callback" en JavaScript y cómo se utilizan en la programación asincrónica.'),
-(2, '¿Cuál es la importancia de `localStorage` y `sessionStorage` en JavaScript para almacenar datos en el navegador?'),
-(2, '¿Cómo puedes gestionar errores y excepciones en JavaScript usando `try`, `catch`, y `finally`?'),
-(2, '¿Qué es una SPA (Single Page Application) y cómo JavaScript facilita su desarrollo?'),
-(2, 'Explica el concepto de "closure" en JavaScript y da un ejemplo práctico.'),
-(2, '¿Cómo puedes realizar una redirección en JavaScript a otra página web o URL?'),
-(2, '¿Qué es `fetch` en JavaScript y cómo puedes usarlo para hacer peticiones HTTP?'),
-(2, '¿Cómo se pueden crear animaciones y transiciones en JavaScript para mejorar la experiencia de usuario?'),
-(2, 'Explica el uso de `setTimeout` y `setInterval` en JavaScript y da un ejemplo de cada uno.'),
-(2, '¿Qué son las plantillas literales (template literals) y cómo facilitan la creación de cadenas de texto en JavaScript?');
-
--- Tópico 3: Ruby on Rails - Desarrollo de Software
-INSERT INTO consigna (IdTask, Pregunta) VALUES
-(3, '¿Qué es Ruby on Rails y por qué se considera un framework eficiente para el desarrollo web?'),
-(3, '¿Cómo puedes crear un nuevo proyecto de Ruby on Rails desde cero?'),
-(3, 'Explica el patrón de arquitectura MVC en el contexto de Ruby on Rails.'),
-(3, '¿Qué son los "migraciones" en Ruby on Rails y cómo se utilizan para modificar la base de datos?'),
-(3, '¿Cómo puedes manejar relaciones entre modelos en Ruby on Rails, como "has_many" y "belongs_to"?'),
-(3, 'Explica cómo crear una ruta personalizada en Ruby on Rails y qué archivo se debe modificar para hacerlo.'),
-(3, '¿Qué son los "scaffolds" en Rails y cómo ayudan a acelerar el desarrollo de una aplicación?'),
-(3, '¿Qué es ActiveRecord en Ruby on Rails y cómo se utiliza para interactuar con bases de datos?'),
-(3, '¿Cómo puedes validar los datos de un formulario en Ruby on Rails?'),
-(3, 'Explica cómo se implementa la autenticación de usuarios en Ruby on Rails.'),
-(3, '¿Qué son las "seeds" en Rails y cómo se utilizan para poblar la base de datos con datos de prueba?'),
-(3, '¿Cómo puedes realizar una consulta compleja en Rails utilizando ActiveRecord?'),
-(3, 'Explica cómo Rails maneja la autenticación de sesiones y cookies.'),
-(3, '¿Cómo puedes optimizar el rendimiento de una aplicación Ruby on Rails?'),
-(3, '¿Cómo se maneja el enrutamiento en Rails y qué es el archivo `routes.rb`?'),
-(3, 'Explica el uso de los "partials" en Rails para reutilizar código en vistas.'),
-(3, '¿Qué son los "concerns" en Ruby on Rails y cómo pueden ayudar a organizar mejor el código?'),
-(3, '¿Cómo puedes generar una nueva migración en Rails para agregar un campo a una tabla existente?'),
-(3, 'Explica cómo configurar un entorno de pruebas en Ruby on Rails utilizando RSpec o MiniTest.');
-
--- Tópico 4: R - Ciencia de Datos
-INSERT INTO consigna (IdTask, Pregunta) VALUES
-(4, '¿Cómo puedes cargar un conjunto de datos en R utilizando la función `read.csv`?'),
-(4, 'Explica qué son los data frames en R y cómo se utilizan para almacenar datos tabulares.'),
-(4, '¿Cómo puedes manejar valores faltantes (NA) en un conjunto de datos en R?'),
-(4, '¿Qué es una variable categórica en R y cómo se puede representar visualmente?'),
-(4, '¿Cómo puedes realizar un análisis exploratorio de datos en R utilizando el paquete `ggplot2`?'),
-(4, 'Explica cómo crear y manipular una serie temporal en R utilizando el paquete `zoo`.'),
-(4, '¿Qué son las funciones de agregación en R y cómo puedes utilizarlas para resumir datos?'),
-(4, '¿Cómo puedes aplicar un modelo de regresión lineal en R usando el paquete `lm`?'),
-(4, '¿Qué son las "funciones anónimas" en R y en qué situaciones pueden ser útiles?'),
-(4, 'Explica cómo realizar una validación cruzada para un modelo de machine learning en R.'),
-(4, '¿Cómo puedes visualizar la distribución de una variable numérica en R usando `hist()`?'),
-(4, '¿Qué es la "normalización" de datos y cómo se puede realizar en R?'),
-(4, '¿Cómo puedes realizar un análisis de correlación entre dos variables en R?'),
-(4, 'Explica el concepto de "overfitting" y cómo prevenirlo al construir modelos predictivos en R.'),
-(4, '¿Cómo se puede usar el paquete `dplyr` para manipular y transformar datos en R?'),
-(4, '¿Qué es un modelo de clasificación en R y cómo se entrena uno con `rpart`?'),
-(4, 'Explica cómo crear una matriz de confusión en R y qué información nos proporciona.'),
-(4, '¿Cómo puedes aplicar un análisis de componentes principales (PCA) en R para reducción de dimensionalidad');
 
 INSERT INTO RespuestaPregunta (IdConsigna, Contenido, Opcion, EsCorrecta) VALUES 
 ( 1, N'Usando bibliotecas como `os`, `shutil` y `subprocess` para automatizar tareas del sistema', 1, 1),

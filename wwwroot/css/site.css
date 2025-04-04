@@ -519,10 +519,8 @@ button{
 
 .ProximosEventos{
 margin-top: 10%;
-
-
-
 }
+
 .Evento{
   color: #333333;
   background-color: #ffffff;
@@ -548,6 +546,9 @@ margin-top: 10%;
     white-space: nowrap;
     overflow: hidden;
     white-space: initial;
-  }
-  
+  } 
+}
+
+input[type="radio"] {
+	accent-color: green;
 }
