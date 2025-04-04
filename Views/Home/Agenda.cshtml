@@ -11,7 +11,7 @@
 
 
       <div class= "ProximosEventos">
-
+  <div class="scroller">
       @for(int i = 0; i < @ViewBag.Eventos.Count; i++){
             <div class = "Evento">
                 <div >
@@ -32,6 +32,7 @@
             </div>
       }
       </div>
+      </div>
 
         
     </div>
@@ -42,7 +43,7 @@
         <input type="hidden" id="Contacto" value="@ViewBag.Contacto.IdContacto">
     }
 
-    <div id='calendar'></div>
+    <div id='calendar' style = "  max-height: 780px;"></div>
 </div>
 
 <div class="modal fade" id="createEventModal" tabindex="-1" aria-labelledby="createEventModalLabel" aria-hidden="true">
