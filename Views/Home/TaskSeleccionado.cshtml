@@ -4,46 +4,45 @@
             <h1>@ViewBag.TaskSeleccionado.Titulo</h1>
             <h5>|</h5>
             <h5>@TaskifyService.ObtenerCategorias()[ViewBag.TaskSeleccionado.IdLenguaje].Nombre</h5>
-
         </div>
         <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar bg-success" style="width: 25%">25%</div>
-</div>
-    </div>
-
-    <div class="contentTask">
-
-    @foreach (Consigna c in ViewBag.ConsignasXTask)
-    {
-        <h4>@c.Pregunta</h4>
-
-        Dictionary<int, List<Respuesta>> respuestasPorConsigna = ViewBag.RespuestasPorConsigna;
-
-        if (respuestasPorConsigna != null && respuestasPorConsigna.ContainsKey(c.IdConsigna) && respuestasPorConsigna[c.IdConsigna].Any())
-        {
-            List<Respuesta> respuestas = respuestasPorConsigna[c.IdConsigna]; 
-
-            for (int x = 0; x < respuestas.Count; x++)
-            {
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault-@c.IdConsigna" id="flexRadioDefault-@c.IdConsigna-@x">
-                    <label class="form-check-label" for="flexRadioDefault-@c.IdConsigna-@x">
-                        @respuestas[x].Contenido
-                    </label>
-                </div>
-            }
-        }
-        else
-        {
-            <p>No hay respuestas disponibles para esta consigna.</p>
-        }
-    }
-        <div class="taskBut">   
-        <a href='@Url.Action("Resultados")' style="margin-top: 3%;"><button href='@Url.Action("Resultados")' type="submit" class="btn btn-dark" style="width:100%;">Guardar</button></a>
-
-        <a href='@Url.Action("Resultados")' style="margin-top: 3%;"><button href='@Url.Action("Resultados")' type="submit" class="btn btn-success" style="width:100%;">Enviar</button></a>
+            <div class="progress-bar bg-success" style="width: 25%">25%</div>
         </div>
-
     </div>
 
+    <form class="contentTask" action='@Url.Action("Resultados")'>
+        @{
+            Dictionary<int, List<Respuesta>> respuestasPorConsigna = ViewBag.RespuestasPorConsigna;
+        }
+
+        @foreach (Consigna c in ViewBag.ConsignasXTask)
+        {
+            <div class="question-container-@c.IdConsigna">
+                <h4>@c.Pregunta</h4>
+
+                @if (respuestasPorConsigna != null && respuestasPorConsigna.ContainsKey(c.IdConsigna) && respuestasPorConsigna[c.IdConsigna].Any())
+                {
+                    List<Respuesta> respuestas = respuestasPorConsigna[c.IdConsigna]; 
+
+                    for (int x = 0; x < respuestas.Count; x++)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault-@c.IdConsigna" id="flexRadioDefault-@c.IdConsigna-@x">
+                            <label class="form-check-label" for="flexRadioDefault-@c.IdConsigna-@x">@respuestas[x].Contenido</label>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No hay respuestas disponibles para esta consigna.</p>
+                }
+            </div>
+        }
+
+        <div class="taskBut">
+            <button type="submit" class="btn btn-success" style="width:100%;">Enviar</button>
+        </div>
+    </form>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

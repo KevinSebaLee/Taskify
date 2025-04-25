@@ -224,12 +224,29 @@ public class HomeController : Controller
     }
 
 
-    public IActionResult Resultados(){
-        ViewBag.Hecho = true;
+    [HttpPost]
+    public ActionResult Resultados(Dictionary<int, List<Respuesta>> answers)
+    {
+        int correctAnswers = 0;
 
-        return RedirectToAction("Tasks");
+        var correctAnswersDict = GetCorrectAnswers(); 
+
+        foreach (Respuesta respuesta in answers)
+        {
+            int consignaId = answer.Key;
+            int selectedAnswerId = answer.Value;
+
+            if (correctAnswersDict.ContainsKey(consignaId) && correctAnswersDict[consignaId] == selectedAnswerId)
+            {
+                correctAnswers++;
+            }
+        }
+
+        ViewBag.CorrectAnswers = correctAnswers;
+
+        return View();
     }
-    
+        
     [HttpPost]
     public IActionResult CrearEvento([FromBody] Evento eventModel) {
         Console.WriteLine($"Received Data - IdUsuario: {eventModel.IdUsuario}, Nombre: {eventModel.Nombre}, Descripcion: {eventModel.Descripcion}, FechaInicio: {eventModel.FechaInicio}, FechaFin: {eventModel.FechaFin}");
