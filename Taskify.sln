@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskify", "Taskify.csproj", "{7831FA19-7333-EC53-0A23-6E1608A38945}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7831FA19-7333-EC53-0A23-6E1608A38945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7831FA19-7333-EC53-0A23-6E1608A38945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7831FA19-7333-EC53-0A23-6E1608A38945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7831FA19-7333-EC53-0A23-6E1608A38945}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3260E728-4246-4987-82CD-1D8AFA492A01}
+	EndGlobalSection
+EndGlobal

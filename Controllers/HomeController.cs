@@ -229,16 +229,22 @@ public class HomeController : Controller
     {
         int correctAnswers = 0;
 
-        var correctAnswersDict = GetCorrectAnswers(); 
+        // Get the correct answers dictionary
+        Dictionary<int, int> correctAnswersDict = TaskifyService.GetCorrectAnswers();
 
-        foreach (Respuesta respuesta in answers)
+        foreach (var answer in answers)
         {
             int consignaId = answer.Key;
-            int selectedAnswerId = answer.Value;
+            List<Respuesta> selectedAnswers = answer.Value;
 
-            if (correctAnswersDict.ContainsKey(consignaId) && correctAnswersDict[consignaId] == selectedAnswerId)
+            foreach (var respuesta in selectedAnswers)
             {
-                correctAnswers++;
+                int selectedAnswerId = respuesta.IdRespuesta;
+
+                if (correctAnswersDict.ContainsKey(consignaId) && correctAnswersDict[consignaId] == selectedAnswerId)
+                {
+                    correctAnswers++;
+                }
             }
         }
 

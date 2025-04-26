@@ -101,4 +101,25 @@ public class TaskifyService{
     public static List<Respuesta> RespuestaXConsigna (int IdConsigna){
         return BD.RespuestasXConsigna(IdConsigna);
     }
+
+    public static Dictionary<int, int> GetCorrectAnswers()
+    {
+        List<Consigna> consignas = TaskifyService.ConsignasXTask(0); 
+
+        Dictionary<int, int> correctAnswersDict = new Dictionary<int, int>();
+
+        foreach (Consigna consigna in consignas)
+        {
+            List<Respuesta> respuestas = TaskifyService.RespuestaXConsigna(consigna.IdConsigna);
+
+            Respuesta correctAnswer = respuestas.FirstOrDefault(r => r.EsCorrecta);
+
+            if (correctAnswer != null)
+            {
+                correctAnswersDict[consigna.IdConsigna] = correctAnswer.IdRespuesta;
+            }
+        }
+
+        return correctAnswersDict;
+    }
 }

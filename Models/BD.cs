@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using Dapper;
 
 public class BD{
-    private static string _connectionString = @"Server=localhost; DataBase=Taskify; Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost\SQLEXPRESS; DataBase=Taskify; Trusted_Connection=True;";
 
     public static List<Pais> ObtenerPais(){
         string query = "SELECT * FROM Paises";
