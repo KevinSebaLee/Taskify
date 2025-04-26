@@ -1,0 +1,68 @@
+@{
+    int correctAnswers = ViewBag.CorrectAnswers;
+    int totalQuestions = ViewBag.TotalQuestions; 
+    int incorrectAnswers = totalQuestions - correctAnswers;
+}
+
+<div class="resultados-container">
+    <h2>Resultados</h2>
+
+    <div class="result-summary">
+        <p><strong>Total de preguntas:</strong> @totalQuestions</p>
+        <p><strong>Respuestas correctas:</strong> @correctAnswers</p>
+        <p><strong>Respuestas incorrectas:</strong> @incorrectAnswers</p>
+    </div>
+
+    <div class="result-feedback">
+        @if (correctAnswers == totalQuestions)
+        {
+            <p class="success-message">¡Felicidades! Obtuviste todas las respuestas correctas.</p>
+        }
+        else if (correctAnswers > totalQuestions / 2)
+        {
+            <p class="good-job-message">¡Buen trabajo! Obtuviste más de la mitad correctas.</p>
+        }
+        else
+        {
+            <p class="try-again-message">No te preocupes, sigue practicando para mejorar.</p>
+        }
+    </div>
+
+    <div class="action-buttons">
+        <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Volver al Inicio</a>
+        <a class="btn btn-secondary" href="@Url.Action("Consignas", "Home")">Intentar de Nuevo</a>
+    </div>
+</div>
+
+<style>
+    .resultados-container {
+        text-align: center;
+        margin: 20px auto;
+        max-width: 600px;
+    }
+    .result-summary {
+        margin-bottom: 20px;
+    }
+    .result-feedback p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    .success-message {
+        color: green;
+        font-weight: bold;
+    }
+    .good-job-message {
+        color: orange;
+        font-weight: bold;
+    }
+    .try-again-message {
+        color: red;
+        font-weight: bold;
+    }
+    .action-buttons {
+        margin-top: 20px;
+    }
+    .action-buttons .btn {
+        margin: 0 10px;
+    }
+</style>

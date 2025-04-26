@@ -223,32 +223,35 @@ public class HomeController : Controller
         return View("Perfil");
     }
 
-
     [HttpPost]
-    public ActionResult Resultados(Dictionary<int, List<Respuesta>> answers)
+    public ActionResult Resultados(Dictionary<int, int> answers) // answers: { consignaId -> selectedAnswerId }
     {
         int correctAnswers = 0;
 
-        // Get the correct answers dictionary
-        Dictionary<int, int> correctAnswersDict = TaskifyService.GetCorrectAnswers();
+        Dictionary<int, int> correctAnswersDict = TaskifyService.GetCorrectAnswers(); // correctAnswersDict: { consignaId -> correctAnswerId }
+
+        if (correctAnswersDict == null || correctAnswersDict.Count == 0)
+        {
+            ViewBag.CorrectAnswers = 0;
+            ViewBag.TotalQuestions = 0;
+            return View();
+        }
+
+        int totalQuestions = correctAnswersDict.Count;
 
         foreach (var answer in answers)
         {
             int consignaId = answer.Key;
-            List<Respuesta> selectedAnswers = answer.Value;
+            int selectedAnswerId = answer.Value;
 
-            foreach (var respuesta in selectedAnswers)
+            if (correctAnswersDict.ContainsKey(consignaId) && correctAnswersDict[consignaId] == selectedAnswerId)
             {
-                int selectedAnswerId = respuesta.IdRespuesta;
-
-                if (correctAnswersDict.ContainsKey(consignaId) && correctAnswersDict[consignaId] == selectedAnswerId)
-                {
-                    correctAnswers++;
-                }
+                correctAnswers++;
             }
         }
 
         ViewBag.CorrectAnswers = correctAnswers;
+        ViewBag.TotalQuestions = totalQuestions;
 
         return View();
     }

@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <form class="contentTask" action='@Url.Action("Resultados")'>
+    <form method="post" class="contentTask" action='@Url.Action("Resultados")'>
         @{
             Dictionary<int, List<Respuesta>> respuestasPorConsigna = ViewBag.RespuestasPorConsigna;
         }
@@ -24,11 +24,11 @@
                 {
                     List<Respuesta> respuestas = respuestasPorConsigna[c.IdConsigna]; 
 
-                    for (int x = 0; x < respuestas.Count; x++)
+                    foreach (var respuesta in respuestas)
                     {
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault-@c.IdConsigna" id="flexRadioDefault-@c.IdConsigna-@x">
-                            <label class="form-check-label" for="flexRadioDefault-@c.IdConsigna-@x">@respuestas[x].Contenido</label>
+                            <input class="form-check-input" type="radio" name="answers[@c.IdConsigna]" value="@respuesta.IdRespuesta" id="flexRadioDefault-@c.IdConsigna-@respuesta.IdRespuesta">
+                            <label class="form-check-label" for="flexRadioDefault-@c.IdConsigna-@respuesta.IdRespuesta">@respuesta.Contenido</label>
                         </div>
                     }
                 }
