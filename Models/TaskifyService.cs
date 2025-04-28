@@ -104,7 +104,7 @@ public class TaskifyService{
 
     public static Dictionary<int, int> GetCorrectAnswers()
     {
-        List<Consigna> consignas = TaskifyService.ConsignasXTask(0); 
+        List<Consigna> consignas = TaskifyService.ConsignasXTask(1); 
 
         Dictionary<int, int> correctAnswersDict = new Dictionary<int, int>();
 

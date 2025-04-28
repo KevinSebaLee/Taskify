@@ -224,11 +224,11 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public ActionResult Resultados(Dictionary<int, int> answers) // answers: { consignaId -> selectedAnswerId }
+    public ActionResult Resultados(Dictionary<int, int> answers) 
     {
         int correctAnswers = 0;
 
-        Dictionary<int, int> correctAnswersDict = TaskifyService.GetCorrectAnswers(); // correctAnswersDict: { consignaId -> correctAnswerId }
+        Dictionary<int, int> correctAnswersDict = TaskifyService.GetCorrectAnswers(); 
 
         if (correctAnswersDict == null || correctAnswersDict.Count == 0)
         {
