@@ -4,65 +4,43 @@
     int incorrectAnswers = totalQuestions - correctAnswers;
 }
 
-<div class="resultados-container">
-    <h2>Resultados</h2>
-
-    <div class="result-summary">
-        <p><strong>Total de preguntas:</strong> @totalQuestions</p>
-        <p><strong>Respuestas correctas:</strong> @correctAnswers</p>
-        <p><strong>Respuestas incorrectas:</strong> @incorrectAnswers</p>
-    </div>
-
-    <div class="result-feedback">
-        @if (correctAnswers == totalQuestions)
-        {
-            <p class="success-message">¡Felicidades! Obtuviste todas las respuestas correctas.</p>
-        }
-        else if (correctAnswers > totalQuestions / 2)
-        {
-            <p class="good-job-message">¡Buen trabajo! Obtuviste más de la mitad correctas.</p>
-        }
-        else
-        {
-            <p class="try-again-message">No te preocupes, sigue practicando para mejorar.</p>
-        }
-    </div>
-
-    <div class="action-buttons">
-        <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Volver al Inicio</a>
-        <a class="btn btn-secondary" href="@Url.Action("Consignas", "Home")">Intentar de Nuevo</a>
-    </div>
+<div class="d-flex justify-content-center mt-5">
+    @if (correctAnswers == totalQuestions)
+    {
+        <h1 class="text-success">¡Felicidades! Obtuviste todas las respuestas correctas.</h1>
+    }
+    else if (correctAnswers > totalQuestions / 2)
+    {
+        <h1 class="text-warning">¡Buen trabajo! Obtuviste más de la mitad correctas.</h1>
+    }
+    else
+    {
+        <h1 class="text-danger">No te preocupes, sigue practicando para mejorar.</h1>
+    }
 </div>
 
-<style>
-    .resultados-container {
-        text-align: center;
-        margin: 20px auto;
-        max-width: 600px;
-    }
-    .result-summary {
-        margin-bottom: 20px;
-    }
-    .result-feedback p {
-        font-size: 18px;
-        margin: 10px 0;
-    }
-    .success-message {
-        color: green;
-        font-weight: bold;
-    }
-    .good-job-message {
-        color: orange;
-        font-weight: bold;
-    }
-    .try-again-message {
-        color: red;
-        font-weight: bold;
-    }
-    .action-buttons {
-        margin-top: 20px;
-    }
-    .action-buttons .btn {
-        margin: 0 10px;
-    }
-</style>
+<div class="container mb-5">
+    <div class="row mt-5 bg-dark p-5" style="border-radius: 30px">
+        <div class="col-3 d-flex align-items-center">
+            <h1 class="text-white">Resultados:</h1>
+        </div>
+        <div class="col-10 d-flex justify-content-center">
+            <div class="row">
+                <div class="col-3 bg-white p-5 m-4" style="border-radius: 30px">
+                    <p><strong>Total de preguntas:</strong> @totalQuestions</p>
+                </div>
+                <div class="col-3 bg-white p-5 m-4" style="border-radius: 30px">
+                    <p><strong>Respuestas correctas:</strong> @correctAnswers</p>
+                </div>
+                <div class="col-3 bg-white p-5 m-4" style="border-radius: 30px">
+                    <p><strong >Respuestas incorrectas:</strong> @incorrectAnswers</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-primary me-5 mb-5 mt-5 bg-success" style="border: none" href='@Url.Action("Index", "Home")'>Volver al Inicio</a>
+            <a class="btn btn-secondary me-5 mb-5 mt-5" href='@Url.Action("Consignas", "Home")'>Intentar de Nuevo</a>
+        </div>
+    </div>
+</div>
